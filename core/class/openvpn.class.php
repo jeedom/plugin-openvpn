@@ -104,6 +104,8 @@ class openvpn extends eqLogic {
 			'#remote_port#' => $this->getConfiguration('remote_port', 1194),
 			'#ca_path#' => dirname(__FILE__) . '/../../data/ca_' . $this->getConfiguration('key') . '.crt',
 			'#compression#' => $this->getConfiguration('compression'),
+			'#script_security#' => $this->getConfiguration('script_security'),
+			'#pull#' => $this->getConfiguration('pull'),
 			'#auth_path#' => '/tmp/openvpn_auth_' . $this->getConfiguration('key') . '.conf',
 		);
 		$config = str_replace(array_keys($replace), $replace, file_get_contents(dirname(__FILE__) . '/../config/openvpn.client.tmpl.ovpn'));

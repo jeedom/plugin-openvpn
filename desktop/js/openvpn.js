@@ -14,13 +14,25 @@
  * You should have received a copy of the GNU General Public License
  * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
  */
-
+ function printEqLogic(_eqLogic){
+    $('#bt_uploadCaCrt').fileupload({
+        replaceFileInput: false,
+        url: 'plugins/openvpn/core/ajax/openvpn.ajax.php?action=uploadCaCrt&id=' + _eqLogic.id,
+        dataType: 'json',
+        done: function (e, data) {
+            if (data.result.state != 'ok') {
+                $('#div_alert').showAlert({message: data.result.result, level: 'danger'});
+                return;
+            }
+        }
+    });
+}
 
 
 /*
  * Fonction pour l'ajout de commande, appellé automatiquement par plugin.template
  */
-function addCmdToTable(_cmd) {
+ function addCmdToTable(_cmd) {
     if (!isset(_cmd)) {
         var _cmd = {configuration: {}};
     }
