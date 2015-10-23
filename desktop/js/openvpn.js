@@ -14,10 +14,40 @@
  * You should have received a copy of the GNU General Public License
  * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
  */
+ $('.eqLogicAttr[data-l1key=configuration][data-l2key=auth_mode]').on('change',function(){
+    $('.auth_mode').hide();
+    $('.auth_mode.'+$(this).value()).show();
+});
+
+
  function printEqLogic(_eqLogic){
     $('#bt_uploadCaCrt').fileupload({
         replaceFileInput: false,
-        url: 'plugins/openvpn/core/ajax/openvpn.ajax.php?action=uploadCaCrt&id=' + _eqLogic.id,
+        url: 'plugins/openvpn/core/ajax/openvpn.ajax.php?action=uploadCaCrt&type=ca&id=' + _eqLogic.id,
+        dataType: 'json',
+        done: function (e, data) {
+            if (data.result.state != 'ok') {
+                $('#div_alert').showAlert({message: data.result.result, level: 'danger'});
+                return;
+            }
+        }
+    });
+
+    $('#bt_uploadCaCrtClient').fileupload({
+        replaceFileInput: false,
+        url: 'plugins/openvpn/core/ajax/openvpn.ajax.php?action=uploadCaCrt&type=caClient&id=' + _eqLogic.id,
+        dataType: 'json',
+        done: function (e, data) {
+            if (data.result.state != 'ok') {
+                $('#div_alert').showAlert({message: data.result.result, level: 'danger'});
+                return;
+            }
+        }
+    });
+
+    $('#bt_uploadCaKeyClient').fileupload({
+        replaceFileInput: false,
+        url: 'plugins/openvpn/core/ajax/openvpn.ajax.php?action=uploadCaCrt&type=keyClient&id=' + _eqLogic.id,
         dataType: 'json',
         done: function (e, data) {
             if (data.result.state != 'ok') {

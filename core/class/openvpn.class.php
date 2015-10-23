@@ -108,9 +108,16 @@ class openvpn extends eqLogic {
 			'#pull#' => $this->getConfiguration('pull'),
 			'#auth_path#' => '/tmp/openvpn_auth_' . $this->getConfiguration('key') . '.conf',
 		);
+
+		if ($this->getConfiguration('auth_mode') == 'password') {
+			$replace['#authentification#'] = 'auth-user-pass /tmp/openvpn_auth_' . $this->getConfiguration('key') . '.conf';
+			file_put_contents('/tmp/openvpn_auth_' . $this->getConfiguration('key') . '.conf', $this->getConfiguration('username') . "\n" . $this->getConfiguration('password'));
+		} else {
+			$replace['#authentification#'] = 'cert ' . dirname(__FILE__) . '/../../data/cert_' . $this->getConfiguration('key') . '.crt' . "\n";
+			$replace['#authentification#'] .= 'key ' . dirname(__FILE__) . '/../../data/key_' . $this->getConfiguration('key') . '.key';
+		}
 		$config = str_replace(array_keys($replace), $replace, file_get_contents(dirname(__FILE__) . '/../config/openvpn.client.tmpl.ovpn'));
 		file_put_contents('/tmp/openvpn_' . $this->getId() . '.ovpn', $config);
-		file_put_contents('/tmp/openvpn_auth_' . $this->getConfiguration('key') . '.conf', $this->getConfiguration('username') . "\n" . $this->getConfiguration('password'));
 	}
 
 	public function getCmdLine() {
@@ -118,16 +125,17 @@ class openvpn extends eqLogic {
 	}
 
 	public function start_openvpn() {
+		$this->stop_openvpn();
 		$this->writeConfig();
 		log::remove('openvpn_' . $this->getName());
-		$cmd = $this->getCmdLine() . ' 2>&1 >> ' . log::getPathToLog('openvpn_' . $this->getName()) . ' &';
+		$cmd = 'sudo ' . $this->getCmdLine() . ' >> ' . log::getPathToLog('openvpn_' . $this->getName()) . '  2>&1 &';
 		log::add('openvpn_' . $this->getName(), 'info', __('Lancement openvpn : ', __FILE__) . $cmd);
 		shell_exec($cmd);
 		$this->updateState();
 	}
 
 	public function stop_openvpn() {
-		exec("(ps ax || ps w) | grep -ie '" . $this->getCmdLine() . "' | grep -v grep | awk '{print $2}' | xargs kill -9 > /dev/null 2>&1");
+		exec("(ps ax || ps w) | grep -ie '" . $this->getCmdLine() . "' | grep -v grep | awk '{print $1}' | xargs sudo kill -9 > /dev/null 2>&1");
 		$this->updateState();
 	}
 

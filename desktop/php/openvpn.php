@@ -52,15 +52,15 @@ foreach ($eqLogics as $eqLogic) {
         <fieldset>
           <legend><i class="fa fa-arrow-circle-left eqLogicAction cursor" data-action="returnToThumbnailDisplay"></i> {{Général}}  <i class='fa fa-cogs eqLogicAction pull-right cursor expertModeVisible' data-action='configure'></i></legend>
           <div class="form-group">
-            <label class="col-sm-3 control-label">{{Nom de l'équipement openvpn}}</label>
-            <div class="col-sm-3">
+            <label class="col-sm-4 control-label">{{Nom de l'équipement openvpn}}</label>
+            <div class="col-sm-4">
               <input type="text" class="eqLogicAttr form-control" data-l1key="id" style="display : none;" />
               <input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'équipement openvpn}}"/>
             </div>
           </div>
           <div class="form-group">
-            <label class="col-sm-3 control-label" >{{Objet parent}}</label>
-            <div class="col-sm-3">
+            <label class="col-sm-4 control-label" >{{Objet parent}}</label>
+            <div class="col-sm-4">
               <select id="sel_object" class="eqLogicAttr form-control" data-l1key="object_id">
                 <option value="">{{Aucun}}</option>
                 <?php
@@ -72,52 +72,77 @@ foreach (object::all() as $object) {
            </div>
          </div>
          <div class="form-group">
-          <label class="col-sm-3 control-label" >{{Activer}}</label>
-          <div class="col-sm-9">
+          <label class="col-sm-4 control-label" >{{Activer}}</label>
+          <div class="col-sm-8">
            <input type="checkbox" class="eqLogicAttr bootstrapSwitch" data-label-text="{{Activer}}" data-l1key="isEnable" checked/>
            <input type="checkbox" class="eqLogicAttr bootstrapSwitch" data-label-text="{{Visible}}" data-l1key="isVisible" checked/>
          </div>
        </div>
        <div class="form-group">
-        <label class="col-sm-3 control-label">{{Envoyer clef CA}}</label>
-        <div class="col-sm-9">
+        <label class="col-sm-4 control-label">{{Certificat CA}}</label>
+        <div class="col-sm-8">
           <input  id="bt_uploadCaCrt" type="file" name="file" style="display: inline-block;">
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-3 control-label">{{Serveur hote}}</label>
-        <div class="col-sm-3">
+        <label class="col-sm-4 control-label">{{Serveur hote}}</label>
+        <div class="col-sm-4">
           <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="remote_host" />
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-3 control-label">{{Port hote}}</label>
-        <div class="col-sm-3">
+        <label class="col-sm-4 control-label">{{Port hote}}</label>
+        <div class="col-sm-4">
           <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="remote_port" />
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-3 control-label">{{Nom d'utilisateur}}</label>
-        <div class="col-sm-3">
-          <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="username" />
+        <label class="col-sm-4 control-label">{{Authentification mode}}</label>
+        <div class="col-sm-4">
+          <select class="eqLogicAttr form-control expertModeVisible" data-l1key="configuration" data-l2key="auth_mode">
+            <option value="cert">Certificat</option>
+            <option value="password">Mot de passe</option>
+          </select>
+        </div>
+      </div>
+      <div class="auth_mode password" style="display:none;">
+        <div class="form-group">
+          <label class="col-sm-4 control-label">{{Nom d'utilisateur}}</label>
+          <div class="col-sm-4">
+            <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="username" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-4 control-label">{{Password}}</label>
+          <div class="col-sm-4">
+            <input type="password" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="password" />
+          </div>
+        </div>
+      </div>
+      <div class="auth_mode cert">
+       <div class="form-group">
+        <label class="col-sm-4 control-label">{{Certification client}}</label>
+        <div class="col-sm-8">
+          <input  id="bt_uploadCaCrtClient" type="file" name="file" style="display: inline-block;">
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-3 control-label">{{Password}}</label>
-        <div class="col-sm-3">
-          <input type="password" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="password" />
+        <label class="col-sm-4 control-label">{{Clef client}}</label>
+        <div class="col-sm-8">
+          <input  id="bt_uploadCaKeyClient" type="file" name="file" style="display: inline-block;">
         </div>
       </div>
-    </fieldset>
-  </form>
+    </div>
+  </fieldset>
+</form>
 </div>
 <div class="col-sm-6">
   <form class="form-horizontal">
     <fieldset>
       <legend>{{Configuration}}</legend>
       <div class="form-group">
-        <label class="col-sm-3 control-label">{{Protocole}}</label>
-        <div class="col-sm-3">
+        <label class="col-sm-4 control-label">{{Protocole}}</label>
+        <div class="col-sm-4">
           <select class="eqLogicAttr form-control expertModeVisible" data-l1key="configuration" data-l2key="proto">
             <option value="udp">UDP</option>
             <option value="tcp">TCP</option>
@@ -125,8 +150,8 @@ foreach (object::all() as $object) {
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-3 control-label">{{Interface}}</label>
-        <div class="col-sm-3">
+        <label class="col-sm-4 control-label">{{Interface}}</label>
+        <div class="col-sm-4">
           <select class="eqLogicAttr form-control expertModeVisible" data-l1key="configuration" data-l2key="dev">
             <option value="tun">TUN</option>
             <option value="tap">TAP</option>
@@ -134,8 +159,8 @@ foreach (object::all() as $object) {
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-3 control-label">{{Compression}}</label>
-        <div class="col-sm-3">
+        <label class="col-sm-4 control-label">{{Compression}}</label>
+        <div class="col-sm-4">
           <select class="eqLogicAttr form-control expertModeVisible" data-l1key="configuration" data-l2key="compression">
             <option value="">Non</option>
             <option value="comp-lzo">Oui</option>
@@ -143,17 +168,17 @@ foreach (object::all() as $object) {
         </div>
       </div>
       <div class="form-group">
-        <label class="col-sm-3 control-label">{{Script sécurité}}</label>
-        <div class="col-sm-3">
+        <label class="col-sm-4 control-label">{{Script sécurité}}</label>
+        <div class="col-sm-4">
           <select class="eqLogicAttr form-control expertModeVisible" data-l1key="configuration" data-l2key="script_security">
             <option value="">Non</option>
             <option value="script-security 2">2</option>
           </select>
         </div>
       </div>
-       <div class="form-group">
-        <label class="col-sm-3 control-label">{{Pull}}</label>
-        <div class="col-sm-3">
+      <div class="form-group">
+        <label class="col-sm-4 control-label">{{Pull}}</label>
+        <div class="col-sm-4">
           <select class="eqLogicAttr form-control expertModeVisible" data-l1key="configuration" data-l2key="pull">
             <option value="">Non</option>
             <option value="pull">Oui</option>

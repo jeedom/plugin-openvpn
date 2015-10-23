@@ -33,13 +33,24 @@ try {
 			throw new Exception(__('Aucun fichier trouvé. Vérifié parametre PHP (post size limit)', __FILE__));
 		}
 		$extension = strtolower(strrchr($_FILES['file']['name'], '.'));
-		if (!in_array($extension, array('.crt'))) {
-			throw new Exception('Extension du fichier non valide (autorisé .crt) : ' . $extension);
+		if (!in_array($extension, array('.crt', '.key'))) {
+			throw new Exception('Extension du fichier non valide (autorisé .crt .key) : ' . $extension);
 		}
 		if (filesize($_FILES['file']['tmp_name']) > 1000000) {
 			throw new Exception(__('Le fichier est trop gros (maximum 1mo)', __FILE__));
 		}
-		$filepath = dirname(__FILE__) . '/../../data/ca_' . $eqLogic->getConfiguration('key') . '.crt';
+		switch (init('type')) {
+			case 'ca':
+				$filepath = dirname(__FILE__) . '/../../data/ca_' . $eqLogic->getConfiguration('key') . '.crt';
+				break;
+			case 'caClient':
+				$filepath = dirname(__FILE__) . '/../../data/cert_' . $eqLogic->getConfiguration('key') . '.crt';
+				break;
+			case 'keyClient':
+				$filepath = dirname(__FILE__) . '/../../data/key_' . $eqLogic->getConfiguration('key') . '.key';
+				break;
+		}
+
 		file_put_contents($filepath, file_get_contents($_FILES['file']['tmp_name']));
 		ajax::success();
 	}
