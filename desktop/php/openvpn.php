@@ -81,7 +81,9 @@ foreach (object::all() as $object) {
        <div class="form-group">
         <label class="col-sm-4 control-label">{{Certificat CA}}</label>
         <div class="col-sm-8">
-          <input  id="bt_uploadCaCrt" type="file" name="file" style="display: inline-block;">
+          <span class="btn btn-default btn-file">
+            <i class="fa fa-cloud-upload"></i> {{Envoyer}}<input  id="bt_uploadCaCrt" type="file" name="file" style="display: inline-block;">
+          </span>
         </div>
       </div>
       <div class="form-group">
@@ -123,13 +125,17 @@ foreach (object::all() as $object) {
        <div class="form-group">
         <label class="col-sm-4 control-label">{{Certification client}}</label>
         <div class="col-sm-8">
-          <input  id="bt_uploadCaCrtClient" type="file" name="file" style="display: inline-block;">
+          <span class="btn btn-default btn-file">
+            <i class="fa fa-cloud-upload"></i> {{Envoyer}}<input  id="bt_uploadCaCrtClient" type="file" name="file" style="display: inline-block;">
+          </span>
         </div>
       </div>
       <div class="form-group">
         <label class="col-sm-4 control-label">{{Clef client}}</label>
         <div class="col-sm-8">
-          <input  id="bt_uploadCaKeyClient" type="file" name="file" style="display: inline-block;">
+          <span class="btn btn-default btn-file">
+            <i class="fa fa-cloud-upload"></i> {{Envoyer}}<input  id="bt_uploadCaKeyClient" type="file" name="file" style="display: inline-block;">
+          </span>
         </div>
       </div>
     </div>
