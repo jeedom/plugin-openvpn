@@ -18,62 +18,35 @@
 require_once dirname(__FILE__) . '/../../../core/php/core.inc.php';
 include_file('core', 'authentification', 'php');
 if (!isConnect()) {
-    include_file('desktop', '404', 'php');
-    die();
+	include_file('desktop', '404', 'php');
+	die();
 }
 ?>
 <form class="form-horizontal">
     <fieldset>
-        <div class="form-group">
-            <label class="col-lg-4 control-label">{{KNX BAOS IP}}</label>
-            <div class="col-lg-2">
-                <input class="configKey form-control" data-l1key="knxipbaosAddr" />
-            </div>
+        <?php
+if (jeedom::isCapable('sudo')) {
+	echo '<div class="form-group">
+           <label class="col-lg-4 control-label">{{Dépendance Openvpn}}</label>
+           <div class="col-lg-3">
+            <a class="btn btn-warning bt_installDeps"><i class="fa fa-check"></i> {{Installer/Mettre à jour}}</a>
         </div>
-        <div class="form-group">
-            <label class="col-lg-4 control-label">{{KNX BAOS port}}</label>
-            <div class="col-lg-2">
-                <input class="configKey form-control" data-l1key="knxipbaosPort" value="80" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-lg-4 control-label">{{Modele}}</label>
-            <div class="col-lg-2">
-                <select class="configKey form-control" data-l1key="knxipbaosModel">
-                    <option value="knxipbaos771">KNX IP BAOS 771</option>
-                    <option value="knxipbaos772">KNX IP BAOS 772</option>
-                </select>
-            </div>
-        </div>
-        <div class="form-group">
-            <label class="col-lg-4 control-label">{{Synchronisation}}</label>
-            <div class="col-lg-2">
-              <a class="btn btn-default" id="bt_syncWithKnxipbaos"><i class="fa fa-retweet"></i> Synchroniser</a>
-          </div>
-      </div>
-  </fieldset>
+    </div>';
+} else {
+	echo '<div class="alert alert danger">{{Jeedom n\'a pas les droits sudo sur votre système, il faut lui ajouter pour qu\'il puisse installer le démon openzwave, voir <a target="_blank" href="https://jeedom.fr/doc/documentation/installation/fr_FR/doc-installation.html#autre">ici</a> partie 1.7.4}}</div>';
+}
+?>
+</fieldset>
 </form>
 
 <script>
-    $('#bt_syncWithKnxipbaos').on('click',function(){
- $.ajax({// fonction permettant de faire de l'ajax
-            type: "POST", // methode de transmission des données au fichier php
-            url: "plugins/knxipbaos/core/ajax/knxipbaos.ajax.php", // url du fichier php
-            data: {
-                action: "synchronisation",
-            },
-            dataType: 'json',
-            error: function (request, status, error) {
-                handleAjaxError(request, status, error);
-            },
-            success: function (data) { // si l'appel a bien fonctionné
-            if (data.state != 'ok') {
-                $('#div_alert').showAlert({message: data.result, level: 'danger'});
-                return;
+    $('.bt_installDeps').on('click',function(){
+        bootbox.confirm('{{Etes-vous sûr de vouloir installer/mettre à jour Openvpn ? }}', function (result) {
+            if (result) {
+                $('#md_modal').dialog({title: "{{Installation / Mise à jour}}"});
+                $('#md_modal').load('index.php?v=d&plugin=openvpn&modal=update.openvpn').dialog('open');
             }
-            $('#div_alert').showAlert({message: '{{Synchronisation réussie}}', level: 'success'});
-        }
+        });
     });
-});
 </script>
 

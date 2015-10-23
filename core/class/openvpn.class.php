@@ -24,26 +24,12 @@ class openvpn extends eqLogic {
 
 	/*     * ***********************Methode static*************************** */
 
-	/*
-	 * Fonction exécutée automatiquement toutes les minutes par Jeedom
-	public static function cron() {
-
+	public static function updateOpenvpn() {
+		log::remove('openvpn_update');
+		$cmd = 'sudo /bin/bash ' . dirname(__FILE__) . '/../../ressources/install.sh';
+		$cmd .= ' >> ' . log::getPathToLog('openvpn_update') . ' 2>&1 &';
+		exec($cmd);
 	}
-	 */
-
-	/*
-	 * Fonction exécutée automatiquement toutes les heures par Jeedom
-	public static function cronHourly() {
-
-	}
-	 */
-
-	/*
-	 * Fonction exécutée automatiquement tous les jours par Jeedom
-	public static function cronDayly() {
-
-	}
-	 */
 
 	/*     * *********************Méthodes d'instance************************* */
 
