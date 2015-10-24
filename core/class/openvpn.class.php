@@ -48,6 +48,10 @@ class openvpn extends eqLogic {
 
 	/*     * *********************Méthodes d'instance************************* */
 
+	public function preRemove() {
+		$this->stop_openvpn();
+	}
+
 	public function preInsert() {
 		$this->setConfiguration('remote_port', 1194);
 	}
@@ -95,6 +99,10 @@ class openvpn extends eqLogic {
 		$stop->setSubType('other');
 		$stop->setEqLogic_id($this->getId());
 		$stop->save();
+
+		if ($this->getIsEnable() == 0) {
+			$this->stop_openvpn();
+		}
 	}
 
 	private function writeConfig() {
