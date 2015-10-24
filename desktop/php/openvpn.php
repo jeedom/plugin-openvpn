@@ -79,6 +79,19 @@ foreach (object::all() as $object) {
          </div>
        </div>
        <div class="form-group">
+        <label class="col-sm-4 control-label">Catégorie</label>
+        <div class="col-sm-8">
+          <?php
+foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
+	echo '<label class="checkbox-inline">';
+	echo '<input type="checkbox" class="eqLogicAttr" data-l1key="category" data-l2key="' . $key . '" />' . $value['name'];
+	echo '</label>';
+}
+?>
+
+        </div>
+      </div>
+      <div class="form-group">
         <label class="col-sm-4 control-label">{{Certificat CA}}</label>
         <div class="col-sm-8">
           <span class="btn btn-default btn-file">
@@ -98,7 +111,15 @@ foreach (object::all() as $object) {
           <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="remote_port" />
         </div>
       </div>
-      <div class="form-group">
+
+  </fieldset>
+</form>
+</div>
+<div class="col-sm-6">
+  <form class="form-horizontal">
+    <fieldset>
+      <legend>{{Configuration}}</legend>
+       <div class="form-group">
         <label class="col-sm-4 control-label">{{Authentification mode}}</label>
         <div class="col-sm-4">
           <select class="eqLogicAttr form-control expertModeVisible" data-l1key="configuration" data-l2key="auth_mode">
@@ -139,13 +160,6 @@ foreach (object::all() as $object) {
         </div>
       </div>
     </div>
-  </fieldset>
-</form>
-</div>
-<div class="col-sm-6">
-  <form class="form-horizontal">
-    <fieldset>
-      <legend>{{Configuration}}</legend>
       <div class="form-group">
         <label class="col-sm-4 control-label">{{Protocole}}</label>
         <div class="col-sm-4">
