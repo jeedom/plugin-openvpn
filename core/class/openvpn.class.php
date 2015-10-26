@@ -139,9 +139,10 @@ class openvpn extends eqLogic {
 	public function start_openvpn() {
 		$this->stop_openvpn();
 		$this->writeConfig();
-		log::remove('openvpn_' . $this->getName());
-		$cmd = 'sudo ' . $this->getCmdLine() . ' >> ' . log::getPathToLog('openvpn_' . str_replace(' ', '_', $this->getName())) . '  2>&1 &';
-		log::add('openvpn_' . $this->getName(), 'info', __('Lancement openvpn : ', __FILE__) . $cmd);
+		$log_name = ('openvpn_' . str_replace(' ', '_', $this->getName()));
+		log::remove($log_name);
+		$cmd = 'sudo ' . $this->getCmdLine() . ' >> ' . log::getPathToLog($log_name) . '  2>&1 &';
+		log::add($log_name, 'info', __('Lancement openvpn : ', __FILE__) . $cmd);
 		shell_exec($cmd);
 		$this->updateState();
 	}
