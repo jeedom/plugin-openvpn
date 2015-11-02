@@ -48,6 +48,12 @@ class openvpn extends eqLogic {
 
 	/*     * *********************Méthodes d'instance************************* */
 
+	public function getInterfaceName() {
+		$log_name = ('openvpn_' . str_replace(' ', '_', $this->getName()));
+		$result = shell_exec('grep "/sbin/ip addr add dev " ' . log::getPathToLog($log_name) . ' | tail -n 1');
+		return trim(substr($result, strpos($result, 'tun'), 4));
+	}
+
 	public function preRemove() {
 		$this->stop_openvpn();
 	}
