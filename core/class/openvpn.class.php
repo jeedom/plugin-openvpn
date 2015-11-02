@@ -43,6 +43,7 @@ class openvpn extends eqLogic {
 			if ($eqLogic->getConfiguration('enable') == 0 && $eqLogic->getState()) {
 				$eqLogic->stop_openvpn();
 			}
+			$eqLogic->updateState();
 		}
 	}
 
@@ -52,6 +53,19 @@ class openvpn extends eqLogic {
 		$log_name = ('openvpn_' . str_replace(' ', '_', $this->getName()));
 		$result = shell_exec('grep "/sbin/ip addr add dev " ' . log::getPathToLog($log_name) . ' | tail -n 1');
 		return trim(substr($result, strpos($result, 'tun'), 4));
+	}
+
+	public function getIp() {
+		$log_name = ('openvpn_' . str_replace(' ', '_', $this->getName()));
+		$result = shell_exec('grep "/sbin/ip addr add dev " ' . log::getPathToLog($log_name) . ' | tail -n 1');
+		$result = trim(substr($result, strpos($result, 'local') + 5));
+		return trim(substr($result, 0, strpos($result, 'peer')));
+	}
+
+	public function isUp() {
+		$interface = $this->getInterfaceName();
+		$result = shell_exec('sudo ip addr show ' . $interface . ' 2>&1 | wc -l');
+		return ($result > 1);
 	}
 
 	public function preRemove() {
@@ -74,13 +88,28 @@ class openvpn extends eqLogic {
 			$state = new openvpnCmd();
 			$state->setLogicalId('state');
 			$state->setIsVisible(1);
-			$state->setName(__('Status', __FILE__));
+			$state->setName(__('Démarré', __FILE__));
+			$state->setOrder(1);
 		}
 		$state->setType('info');
-		$state->setSubType('string');
+		$state->setSubType('binary');
 		$state->setEventOnly(1);
 		$state->setEqLogic_id($this->getId());
 		$state->save();
+
+		$up = $this->getCmd(null, 'up');
+		if (!is_object($up)) {
+			$up = new openvpnCmd();
+			$up->setLogicalId('up');
+			$up->setIsVisible(1);
+			$up->setName(__('Actif', __FILE__));
+			$state->setOrder(2);
+		}
+		$up->setType('info');
+		$up->setSubType('binary');
+		$up->setEventOnly(1);
+		$up->setEqLogic_id($this->getId());
+		$up->save();
 
 		$start = $this->getCmd(null, 'start');
 		if (!is_object($start)) {
@@ -88,6 +117,7 @@ class openvpn extends eqLogic {
 			$start->setLogicalId('start');
 			$start->setIsVisible(1);
 			$start->setName(__('Démarrer', __FILE__));
+			$state->setOrder(4);
 		}
 		$start->setType('action');
 		$start->setSubType('other');
@@ -100,15 +130,31 @@ class openvpn extends eqLogic {
 			$stop->setLogicalId('stop');
 			$stop->setIsVisible(1);
 			$stop->setName(__('Arrêter', __FILE__));
+			$state->setOrder(5);
 		}
 		$stop->setType('action');
 		$stop->setSubType('other');
 		$stop->setEqLogic_id($this->getId());
 		$stop->save();
 
+		$ip = $this->getCmd(null, 'ip');
+		if (!is_object($ip)) {
+			$ip = new openvpnCmd();
+			$ip->setLogicalId('ip');
+			$ip->setIsVisible(1);
+			$ip->setName(__('IP', __FILE__));
+			$state->setOrder(3);
+		}
+		$ip->setType('info');
+		$ip->setSubType('string');
+		$ip->setEventOnly(1);
+		$ip->setEqLogic_id($this->getId());
+		$ip->save();
+
 		if ($this->getIsEnable() == 0) {
 			$this->stop_openvpn();
 		}
+		$this->updateState();
 	}
 
 	private function writeConfig() {
@@ -170,6 +216,21 @@ class openvpn extends eqLogic {
 			} else {
 				$cmd->event(0);
 			}
+		}
+		$up = $this->isUp();
+		$up_cmd = $this->getCmd('info', 'up');
+		if (is_object($up_cmd) && $up_cmd->execCmd(null, 2) != $up_cmd->formatValue($up)) {
+			$up_cmd->event($up);
+		}
+
+		$ip_cmd = $this->getCmd('info', 'ip');
+		if ($up) {
+			$ip = $this->getIp();
+		} else {
+			$ip = __('Aucune', __FILE__);
+		}
+		if (is_object($ip_cmd) && $ip_cmd->execCmd(null, 2) != $ip_cmd->formatValue($ip)) {
+			$ip_cmd->event($ip);
 		}
 	}
 
