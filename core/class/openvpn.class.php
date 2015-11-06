@@ -51,7 +51,7 @@ class openvpn extends eqLogic {
 
 	public function getInterfaceName() {
 		$log_name = ('openvpn_' . str_replace(' ', '_', $this->getName()));
-		if(!file_exists(log::getPathToLog($log_name)){
+		if (!file_exists(log::getPathToLog($log_name))) {
 			return false;
 		}
 		$result = shell_exec('grep "/sbin/ip addr add dev " ' . log::getPathToLog($log_name) . ' | tail -n 1');
@@ -60,7 +60,7 @@ class openvpn extends eqLogic {
 
 	public function getIp() {
 		$log_name = ('openvpn_' . str_replace(' ', '_', $this->getName()));
-		if(!file_exists(log::getPathToLog($log_name)){
+		if (!file_exists(log::getPathToLog($log_name))) {
 			return false;
 		}
 		$result = shell_exec('grep "/sbin/ip addr add dev " ' . log::getPathToLog($log_name) . ' | tail -n 1');
@@ -70,7 +70,7 @@ class openvpn extends eqLogic {
 
 	public function isUp() {
 		$interface = $this->getInterfaceName();
-		if($interface === false){
+		if ($interface === false) {
 			return false;
 		}
 		$result = shell_exec('sudo ip addr show ' . $interface . ' 2>&1 | wc -l');
