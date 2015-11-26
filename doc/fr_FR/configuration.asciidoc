@@ -30,7 +30,7 @@ Vous retrouvez ici toute la configuration de votre équipement :
 * *Visible* : rend votre équipement visible sur le dashboard,
 
 [NOTE]
-Les autres options ne seront pas détaillée ici, pour avoir des informations dessus il faut vous referer à la link::https://openvpn.net/index.php/open-source/documentation.html[documention openvpn]
+Les autres options ne seront pas détaillée ici, pour avoir des informations dessus il faut vous referer à la link:https://openvpn.net/index.php/open-source/documentation.html[documention openvpn]
 
 
 En-dessous vous retrouvez la liste des commandes : 
