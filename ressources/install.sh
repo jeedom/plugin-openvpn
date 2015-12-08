@@ -1,3 +1,4 @@
+touch /tmp/dependancy_openvpn_in_progress
 #!/bin/bash
 
 # Automatically generated script by
@@ -10,3 +11,4 @@ sudo apt-get update
 sudo apt-get install -y openvpn
 
 echo "Everything is successfully installed!"
+rm /tmp/dependancy_openvpn_in_progress

@@ -24,7 +24,22 @@ class openvpn extends eqLogic {
 
 	/*     * ***********************Methode static*************************** */
 
-	public static function updateOpenvpn() {
+	public static function dependancy_info() {
+		$return = array();
+		$return['log'] = 'openvpn_update';
+		if (file_exists('/tmp/dependancy_openvpn_in_progress')) {
+			$return['state'] = 'in_progress';
+		} else {
+			if (exec('which openvpn | wc -l') != 0) {
+				$return['state'] = 'ok';
+			} else {
+				$return['state'] = 'nok';
+			}
+		}
+		return $return;
+	}
+
+	public static function dependancy_install() {
 		log::remove('openvpn_update');
 		$cmd = 'sudo /bin/bash ' . dirname(__FILE__) . '/../../ressources/install.sh';
 		$cmd .= ' >> ' . log::getPathToLog('openvpn_update') . ' 2>&1 &';
@@ -254,11 +269,11 @@ class openvpnCmd extends cmd {
 	/*     * *********************Methode d'instance************************* */
 
 	/*
-	 * Non obligatoire permet de demander de ne pas supprimer les commandes même si elles ne sont pas dans la nouvelle configuration de l'équipement envoyé en JS
-	public function dontRemoveCmd() {
-	return true;
-	}
-	 */
+		 * Non obligatoire permet de demander de ne pas supprimer les commandes même si elles ne sont pas dans la nouvelle configuration de l'équipement envoyé en JS
+		public function dontRemoveCmd() {
+		return true;
+		}
+	*/
 
 	public function execute($_options = array()) {
 		$eqLogic = $this->getEqLogic();

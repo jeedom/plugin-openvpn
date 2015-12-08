@@ -9,5 +9,6 @@
     <installation>Aucune</installation>
     <require>1.209</require>
     <category>communication</category>
+    <hasDependency>1</hasDependency>
 </info>
 
