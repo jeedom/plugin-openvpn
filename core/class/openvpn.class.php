@@ -27,14 +27,11 @@ class openvpn extends eqLogic {
 	public static function dependancy_info() {
 		$return = array();
 		$return['log'] = 'openvpn_update';
-		if (file_exists('/tmp/dependancy_openvpn_in_progress')) {
-			$return['state'] = 'in_progress';
+		$return['progress_file'] = '/tmp/dependancy_openvpn_in_progress';
+		if (exec('which openvpn | wc -l') != 0) {
+			$return['state'] = 'ok';
 		} else {
-			if (exec('which openvpn | wc -l') != 0) {
-				$return['state'] = 'ok';
-			} else {
-				$return['state'] = 'nok';
-			}
+			$return['state'] = 'nok';
 		}
 		return $return;
 	}
