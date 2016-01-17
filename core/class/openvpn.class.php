@@ -174,6 +174,10 @@ class openvpn extends eqLogic {
 
 		if ($this->getIsEnable() == 0) {
 			$this->stop_openvpn();
+		} else {
+			if ($this->getConfiguration('enable') == 1 && !$this->getState()) {
+				$this->start_openvpn();
+			}
 		}
 		$this->updateState();
 	}
