@@ -29,6 +29,8 @@
             if (data.result.state != 'ok') {
                 $('#div_alert').showAlert({message: data.result.result, level: 'danger'});
                 return;
+            }else{
+                $('#div_alert').showAlert({message: '{{Fichier envoyé avec succès}}', level: 'success'});
             }
         }
     });
@@ -41,6 +43,8 @@
             if (data.result.state != 'ok') {
                 $('#div_alert').showAlert({message: data.result.result, level: 'danger'});
                 return;
+            }else{
+                $('#div_alert').showAlert({message: '{{Fichier envoyé avec succès}}', level: 'success'});
             }
         }
     });
@@ -53,6 +57,8 @@
             if (data.result.state != 'ok') {
                 $('#div_alert').showAlert({message: data.result.result, level: 'danger'});
                 return;
+            }else{
+                $('#div_alert').showAlert({message: '{{Fichier envoyé avec succès}}', level: 'success'});
             }
         }
     });
