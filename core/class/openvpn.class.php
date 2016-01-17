@@ -196,7 +196,7 @@ class openvpn extends eqLogic {
 
 		if ($this->getConfiguration('auth_mode') == 'password') {
 			$replace['#authentification#'] = 'auth-user-pass /tmp/openvpn_auth_' . $this->getConfiguration('key') . '.conf';
-			file_put_contents('/tmp/openvpn_auth_' . $this->getConfiguration('key') . '.conf', $this->getConfiguration('username') . "\n" . $this->getConfiguration('password'));
+			file_put_contents('/tmp/openvpn_auth_' . $this->getConfiguration('key') . '.conf', trim($this->getConfiguration('username')) . "\n" . trim($this->getConfiguration('password')));
 		} else {
 			$replace['#authentification#'] = 'cert ' . dirname(__FILE__) . '/../../data/cert_' . $this->getConfiguration('key') . '.crt' . "\n";
 			$replace['#authentification#'] .= 'key ' . dirname(__FILE__) . '/../../data/key_' . $this->getConfiguration('key') . '.key';
