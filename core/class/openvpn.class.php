@@ -282,14 +282,14 @@ class openvpnCmd extends cmd {
 			$eqLogic->start_openvpn();
 			if ($eqLogic->getConfiguration('enable') == 0) {
 				$eqLogic->setConfiguration('enable', 1);
-				$eqLogic->save();
+				$eqLogic->save(true);
 			}
 		}
 		if ($this->getLogicalId() == 'stop') {
 			$eqLogic->stop_openvpn();
 			if ($eqLogic->getConfiguration('enable') == 1) {
 				$eqLogic->setConfiguration('enable', 0);
-				$eqLogic->save();
+				$eqLogic->save(true);
 			}
 		}
 	}
