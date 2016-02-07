@@ -7,7 +7,7 @@
     <licence>AGPL</licence>
     <author>Loïc Gevrey</author>
     <installation>Aucune</installation>
-    <require>1.209</require>
+    <require>2.0</require>
     <category>communication</category>
     <hasDependency>1</hasDependency>
 </info>
