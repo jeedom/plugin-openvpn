@@ -114,7 +114,6 @@ class openvpn extends eqLogic {
 		}
 		$state->setType('info');
 		$state->setSubType('binary');
-		$state->setEventOnly(1);
 		$state->setEqLogic_id($this->getId());
 		$state->save();
 
@@ -128,7 +127,6 @@ class openvpn extends eqLogic {
 		}
 		$up->setType('info');
 		$up->setSubType('binary');
-		$up->setEventOnly(1);
 		$up->setEqLogic_id($this->getId());
 		$up->save();
 
@@ -168,7 +166,6 @@ class openvpn extends eqLogic {
 		}
 		$ip->setType('info');
 		$ip->setSubType('string');
-		$ip->setEventOnly(1);
 		$ip->setEqLogic_id($this->getId());
 		$ip->save();
 
