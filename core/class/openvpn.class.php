@@ -244,7 +244,7 @@ class openvpn extends eqLogic {
 		}
 		$up = $this->isUp();
 		$up_cmd = $this->getCmd('info', 'up');
-		if (is_object($up_cmd) && $up_cmd->execCmd(null, 2) != $up_cmd->formatValue($up)) {
+		if (is_object($up_cmd) && $up_cmd->execCmd() != $up_cmd->formatValue($up)) {
 			$up_cmd->event($up);
 		}
 
@@ -254,7 +254,7 @@ class openvpn extends eqLogic {
 		} else {
 			$ip = __('Aucune', __FILE__);
 		}
-		if (is_object($ip_cmd) && $ip_cmd->execCmd(null, 2) != $ip_cmd->formatValue($ip)) {
+		if (is_object($ip_cmd) && $ip_cmd->execCmd() != $ip_cmd->formatValue($ip)) {
 			$ip_cmd->event($ip);
 		}
 	}
