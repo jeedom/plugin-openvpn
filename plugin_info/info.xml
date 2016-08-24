@@ -3,10 +3,8 @@
     <id>openvpn</id>
     <name>Openvpn</name>
     <description>Plugin permettant de gerer la connxion à un serveur openvpn</description>
-    <icon>fa fa-keyboard-o</icon>
     <licence>AGPL</licence>
-    <author>Loïc Gevrey</author>
-    <installation>Aucune</installation>
+    <author>Loïc</author>
     <require>2.0</require>
     <category>communication</category>
     <hasDependency>1</hasDependency>

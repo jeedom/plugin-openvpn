@@ -1,0 +1,10 @@
+{
+	"id" : "openvpn",
+	"name" : "Openvpn",
+	"description" : "Plugin permettant de gerer la connxion à un serveur openvpn",
+	"licence" : "AGPL",
+	"author" : "Loïc",
+	"require" : "2.3",
+	"category" : "communication",
+	"hasDependency" : true
+}
