@@ -1,0 +1,43 @@
+== Configuration du plugin
+
+Après téléchargement du plugin, il vous suffit juste d'activer et d'installer les dependances openvpn (clique sur le bouton Installer/Mettre à jour)
+
+image::../images/openvpn.PNG[]
+
+== Configuration des équipements
+
+La configuration des équipements openvpn est accessible à partir du menu plugin : 
+
+image::../images/openvpn2.PNG[]
+
+Voilà à quoi ressemble la page du plugin Openvpn (ici avec déjà 1 équipement) : 
+
+image::../images/openvpn3.PNG[]
+
+[TIP]
+Comme à beaucoup d'endroits sur Jeedom, placer la souris tout à gauche permet de faire apparaître un menu d'accès rapide (vous pouvez, à partir de votre profil, le laisser toujours visible).
+
+Une fois que vous cliquez sur l'un d'eux, vous obtenez : 
+
+image::../images/openvpn4.PNG[]
+
+Vous retrouvez ici toute la configuration de votre équipement : 
+
+* *Nom de l'équipement Openvpn* : nom de votre équipement Openvpn,
+* *Objet parent* : indique l'objet parent auquel appartient l'équipement,
+* *Catégorie* : les catégories de l'équipement (il peut appartenir à plusieurs catégories),
+* *Activer* : permet de rendre votre équipement actif,
+* *Visible* : rend votre équipement visible sur le dashboard,
+
+[NOTE]
+Les autres options ne seront pas détaillée ici, pour avoir des informations dessus il faut vous referer à la link:https://openvpn.net/index.php/open-source/documentation.html[documention openvpn]
+
+
+En-dessous vous retrouvez la liste des commandes : 
+
+* *Nom* : le nom affiché sur le dashboard,
+* *Afficher* : permet d'afficher la donnée sur le dashboard,
+* *Tester* : permet de tester la commande
+
+[NOTE]
+Jeedom va vérifier toute les 15 minutes si le VPN est bien démarré ou arreté (si il le faut) et agir en conséquence si ce n'est pas le cas
