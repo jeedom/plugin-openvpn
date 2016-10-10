@@ -240,20 +240,13 @@ class openvpn extends eqLogic {
 			}
 		}
 		$up = $this->isUp();
-		$up_cmd = $this->getCmd('info', 'up');
-		if (is_object($up_cmd) && $up_cmd->execCmd() != $up_cmd->formatValue($up)) {
-			$up_cmd->event($up);
-		}
-
-		$ip_cmd = $this->getCmd('info', 'ip');
 		if ($up) {
 			$ip = $this->getIp();
 		} else {
 			$ip = __('Aucune', __FILE__);
 		}
-		if (is_object($ip_cmd) && $ip_cmd->execCmd() != $ip_cmd->formatValue($ip)) {
-			$ip_cmd->event($ip);
-		}
+		$this->checkAndUpdateCmd('up', $up);
+		$this->checkAndUpdateCmd('ip', $ip);
 	}
 
 	/*     * **********************Getteur Setteur*************************** */
