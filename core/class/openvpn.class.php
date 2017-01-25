@@ -83,7 +83,7 @@ class openvpn extends eqLogic {
 		if ($interface === false) {
 			return false;
 		}
-		$result = shell_exec('sudo ip addr show ' . $interface . ' 2>&1 | wc -l');
+		$result = shell_exec('ip addr show ' . $interface . ' 2>&1 | wc -l');
 		return ($result > 1);
 	}
 
@@ -213,7 +213,7 @@ class openvpn extends eqLogic {
 		$this->writeConfig();
 		$log_name = ('openvpn_' . str_replace(' ', '_', $this->getName()));
 		log::remove($log_name);
-		$cmd = 'sudo ' . $this->getCmdLine() . ' >> ' . log::getPathToLog($log_name) . '  2>&1 &';
+		$cmd = system::getCmdSudo() . $this->getCmdLine() . ' >> ' . log::getPathToLog($log_name) . '  2>&1 &';
 		log::add($log_name, 'info', __('Lancement openvpn : ', __FILE__) . $cmd);
 		shell_exec($cmd);
 		$this->updateState();
