@@ -190,22 +190,22 @@ class openvpn extends eqLogic {
 			'#compression#' => $this->getConfiguration('compression'),
 			'#script_security#' => $this->getConfiguration('script_security'),
 			'#pull#' => $this->getConfiguration('pull'),
-			'#auth_path#' => '/tmp/openvpn_auth_' . $this->getConfiguration('key') . '.conf',
+			'#auth_path#' => jeedom::getTmpFolder('openvpn').'/openvpn_auth_' . $this->getConfiguration('key') . '.conf',
 		);
 
 		if ($this->getConfiguration('auth_mode') == 'password') {
-			$replace['#authentification#'] = 'auth-user-pass /tmp/openvpn_auth_' . $this->getConfiguration('key') . '.conf';
-			file_put_contents('/tmp/openvpn_auth_' . $this->getConfiguration('key') . '.conf', trim($this->getConfiguration('username')) . "\n" . trim($this->getConfiguration('password')));
+			$replace['#authentification#'] = 'auth-user-pass '.jeedom::getTmpFolder('openvpn').'/openvpn_auth_' . $this->getConfiguration('key') . '.conf';
+			file_put_contents(jeedom::getTmpFolder('openvpn').'/openvpn_auth_' . $this->getConfiguration('key') . '.conf', trim($this->getConfiguration('username')) . "\n" . trim($this->getConfiguration('password')));
 		} else {
 			$replace['#authentification#'] = 'cert ' . dirname(__FILE__) . '/../../data/cert_' . $this->getConfiguration('key') . '.crt' . "\n";
 			$replace['#authentification#'] .= 'key ' . dirname(__FILE__) . '/../../data/key_' . $this->getConfiguration('key') . '.key';
 		}
 		$config = str_replace(array_keys($replace), $replace, file_get_contents(dirname(__FILE__) . '/../config/openvpn.client.tmpl.ovpn'));
-		file_put_contents('/tmp/openvpn_' . $this->getId() . '.ovpn', $config);
+		file_put_contents(jeedom::getTmpFolder('openvpn').'/openvpn_' . $this->getId() . '.ovpn', $config);
 	}
 
 	public function getCmdLine() {
-		return 'openvpn --config /tmp/openvpn_' . $this->getId() . '.ovpn';
+		return 'openvpn --config '.jeedom::getTmpFolder('openvpn').'/openvpn_' . $this->getId() . '.ovpn';
 	}
 
 	public function start_openvpn() {
