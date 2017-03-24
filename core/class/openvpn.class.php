@@ -190,11 +190,11 @@ class openvpn extends eqLogic {
 			'#compression#' => $this->getConfiguration('compression'),
 			'#script_security#' => $this->getConfiguration('script_security'),
 			'#pull#' => $this->getConfiguration('pull'),
-			'#auth_path#' => jeedom::getTmpFolder('openvpn') . '/openvpn_auth_' . $this->getConfiguration('key') . '.conf',
+			'#auth_path#' => trim(jeedom::getTmpFolder('openvpn')) . '/openvpn_auth_' . $this->getConfiguration('key') . '.conf',
 		);
 
 		if ($this->getConfiguration('auth_mode') == 'password') {
-			$replace['#authentification#'] = 'auth-user-pass ' . jeedom::getTmpFolder('openvpn') . '/openvpn_auth_' . $this->getConfiguration('key') . '.conf';
+			$replace['#authentification#'] = 'auth-user-pass ' . trim(jeedom::getTmpFolder('openvpn')) . '/openvpn_auth_' . $this->getConfiguration('key') . '.conf';
 			file_put_contents(jeedom::getTmpFolder('openvpn') . '/openvpn_auth_' . $this->getConfiguration('key') . '.conf', trim($this->getConfiguration('username')) . "\n" . trim($this->getConfiguration('password')));
 		} else {
 			$replace['#authentification#'] = 'cert ' . dirname(__FILE__) . '/../../data/cert_' . $this->getConfiguration('key') . '.crt' . "\n";
