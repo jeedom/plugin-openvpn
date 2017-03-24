@@ -213,7 +213,7 @@ class openvpn extends eqLogic {
 		$this->writeConfig();
 		$log_name = ('openvpn_' . str_replace(' ', '_', $this->getName()));
 		log::remove($log_name);
-		$cmd = $this->getCmdLine() . ' >> ' . log::getPathToLog($log_name) . '  2>&1 &';
+		$cmd = system::getCmdSudo() . $this->getCmdLine() . ' >> ' . log::getPathToLog($log_name) . '  2>&1 &';
 		log::add($log_name, 'info', __('Lancement openvpn : ', __FILE__) . $cmd);
 		shell_exec($cmd);
 		$this->updateState();
