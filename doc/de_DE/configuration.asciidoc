@@ -2,24 +2,7 @@
 
 Après téléchargement du plugin, il vous suffit juste d'activer et d'installer les dépendances openvpn (clic sur le bouton Installer/Mettre à jour)
 
-image::../images/openvpn.PNG[]
-
 == Geräte Konfiguration
-
-Die Konfiguration von OpenVPN-Geräten ist in dem Plugin-Menü verfügbar : 
-
-image::../images/openvpn2.PNG[]
-
-Das sieht wie die Openvpn Plugin-Seite aus (hier bereits mit 1 Gerät) : 
-
-image::../images/openvpn3.PNG[]
-
-[TIP]
-Wie an vielen Stellen in Jeedom kann mit dem Mauszeiger ganz links, ein Menü mit Schnellzugriff aufgerufen werden (Sie können in Ihrem Profil immer sichtbar einstellen).  
-
-Sobald Sie eines davon anklicken, erhalten Sie : 
-
-image::../images/openvpn4.PNG[]
 
 Hier finden sie die ganze Konfiguration Ihrer Geräte: 
 
@@ -31,7 +14,6 @@ Hier finden sie die ganze Konfiguration Ihrer Geräte:
 
 [NOTE]
 Les autres options ne seront pas détaillées ici, pour avoir des informations dessus il faut vous référer à la link:https://openvpn.net/index.php/open-source/documentation.html[documention openvpn]
-
 
 En-dessous vous retrouvez la liste des commandes : 
 
