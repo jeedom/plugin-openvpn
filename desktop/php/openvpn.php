@@ -130,7 +130,7 @@ foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
         <div class="form-group">
           <label class="col-sm-4 control-label">{{Authentification mode}}</label>
           <div class="col-sm-4">
-            <select class="eqLogicAttr form-control expertModeVisible" data-l1key="configuration" data-l2key="auth_mode">
+            <select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="auth_mode">
               <option value="cert">Certificat</option>
               <option value="password">Mot de passe</option>
             </select>
@@ -171,7 +171,7 @@ foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
       <div class="form-group">
         <label class="col-sm-4 control-label">{{Protocole}}</label>
         <div class="col-sm-4">
-          <select class="eqLogicAttr form-control expertModeVisible" data-l1key="configuration" data-l2key="proto">
+          <select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="proto">
             <option value="udp">UDP</option>
             <option value="tcp">TCP</option>
           </select>
@@ -180,7 +180,7 @@ foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
       <div class="form-group">
         <label class="col-sm-4 control-label">{{Interface}}</label>
         <div class="col-sm-4">
-          <select class="eqLogicAttr form-control expertModeVisible" data-l1key="configuration" data-l2key="dev">
+          <select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="dev">
             <option value="tun">TUN</option>
             <option value="tap">TAP</option>
           </select>
@@ -189,7 +189,7 @@ foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
       <div class="form-group">
         <label class="col-sm-4 control-label">{{Compression}}</label>
         <div class="col-sm-4">
-          <select class="eqLogicAttr form-control expertModeVisible" data-l1key="configuration" data-l2key="compression">
+          <select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="compression">
             <option value="">Non</option>
             <option value="comp-lzo">Oui</option>
           </select>
@@ -198,7 +198,7 @@ foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
       <div class="form-group">
         <label class="col-sm-4 control-label">{{Script sécurité}}</label>
         <div class="col-sm-4">
-          <select class="eqLogicAttr form-control expertModeVisible" data-l1key="configuration" data-l2key="script_security">
+          <select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="script_security">
             <option value="">Non</option>
             <option value="script-security 2">2</option>
           </select>
@@ -207,7 +207,7 @@ foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
       <div class="form-group">
         <label class="col-sm-4 control-label">{{Pull}}</label>
         <div class="col-sm-4">
-          <select class="eqLogicAttr form-control expertModeVisible" data-l1key="configuration" data-l2key="pull">
+          <select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="pull">
             <option value="">Non</option>
             <option value="pull">Oui</option>
           </select>
