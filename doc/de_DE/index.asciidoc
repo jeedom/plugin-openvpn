@@ -1,6 +1,6 @@
 = Openvpn
 
-Ce plugin permet de connecter Jeedom à un serveur openvpn (il est aussi utilisé par le DNS jeedom)
+Ce plugin permet de connecter Jeedom à un serveur openvpn. Il est aussi utilisé et donc obligatoire pour le service DNS Jeedom qui vous permet d'accèder à votre Jeedom depuis internet
 
 include::configuration.asciidoc[]
 
