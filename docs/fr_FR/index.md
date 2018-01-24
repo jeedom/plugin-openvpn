@@ -44,6 +44,3 @@ En-dessous vous retrouvez la liste des commandes :
 >
 > Jeedom va vérifier toutes les 15 minutes si le VPN est bien démarré ou
 > arreté (s’il le faut) et agir en conséquence si ce n’est pas le cas
-
-Changelog détaillé :
-<https://github.com/jeedom/plugin-openvpn/commits/stable>
