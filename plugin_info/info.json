@@ -6,7 +6,7 @@
 	"author" : "Loïc",
 	"require" : "3.0",
 	"category" : "communication",
-	"hasDependency" : true,
-	"changelog" : "https://github.com/jeedom/plugin-openvpn/blob/stable/doc/#language#/changelog.asciidoc",
-	"documentation" : "https://github.com/jeedom/plugin-openvpn/blob/stable/doc/#language#/index.asciidoc"
+        "hasDependency" : true,
+        "changelog" : "https://jeedom.github.io/plugin-openvpn/#language#/changelog",
+        "documentation" : "https://jeedom.github.io/plugin-openvpn/#language#/"
 }
