@@ -12,11 +12,11 @@ d’installer les dépendances openvpn (clic sur le bouton Installer/Mettre
 Configuration des équipements 
 =============================
 
-Vous retrouvez ici toute la configuration de votre équipement :
+Aquí encontrará toda la configuración de su dispositivo:
 
 -   **Nom de l’équipement Openvpn** : nom de votre équipement Openvpn,
 
--   **Objet parent** : indique l’objet parent auquel appartient
+-   **Objeto padre** : especifica el objeto padre al que pertenece
     l’équipement,
 
 -   **Catégorie** : les catégories de l’équipement (il peut appartenir à

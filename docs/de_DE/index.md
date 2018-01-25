@@ -12,7 +12,7 @@ d’installer les dépendances openvpn (clic sur le bouton Installer/Mettre
 Configuration des équipements 
 =============================
 
-Vous retrouvez ici toute la configuration de votre équipement :
+Hier finden sie die ganze Konfiguration Ihrer Geräte:
 
 -   **Nom de l’équipement Openvpn** : nom de votre équipement Openvpn,
 
