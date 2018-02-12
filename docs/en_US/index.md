@@ -8,7 +8,7 @@ Après téléchargement du plugin, il vous suffit juste d’activer et
 d’installer les dépendances openvpn (clic sur le bouton Installer/Mettre
 à jour)
 
-Configuration des équipements 
+Equipment configuration
 =============================
 
 You can find here the full configuration of your device :
@@ -18,7 +18,7 @@ You can find here the full configuration of your device :
 -   **Parent Object** : means the parent object the equipment depend
     equipment,
 
--   **Catégorie** : les catégories de l’équipement (il peut appartenir à
+-   **Category**: categories of equipment (it may belong to
     plusieurs catégories),
 
 -   **Enable**: to make your equipment active,

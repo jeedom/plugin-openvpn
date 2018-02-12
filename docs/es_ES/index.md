@@ -9,7 +9,7 @@ Après téléchargement du plugin, il vous suffit juste d’activer et
 d’installer les dépendances openvpn (clic sur le bouton Installer/Mettre
 à jour)
 
-Configuration des équipements 
+Configuración del dispositivo
 =============================
 
 Aquí encontrará toda la configuración de su dispositivo:
@@ -19,7 +19,7 @@ Aquí encontrará toda la configuración de su dispositivo:
 -   **Objeto padre** : especifica el objeto padre al que pertenece
     equipos,
 
--   **Catégorie** : les catégories de l’équipement (il peut appartenir à
+-   ** ** Categoría: categorías de equipos (que pueden pertenecer a
     plusieurs catégories),
 
 -   ** ** Activar: para que su equipo activo,
