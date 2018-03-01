@@ -23,7 +23,7 @@
  function printEqLogic(_eqLogic){
     $('#bt_uploadCaCrt').fileupload({
         replaceFileInput: false,
-        url: 'plugins/openvpn/core/ajax/openvpn.ajax.php?action=uploadCaCrt&type=ca&id=' + _eqLogic.id+'&jeedom_token='+JEEDOM_AJAX_TOKEN,,
+        url: 'plugins/openvpn/core/ajax/openvpn.ajax.php?action=uploadCaCrt&type=ca&id=' + _eqLogic.id+'&jeedom_token='+JEEDOM_AJAX_TOKEN,
         dataType: 'json',
         done: function (e, data) {
             if (data.result.state != 'ok') {
@@ -37,7 +37,7 @@
 
     $('#bt_uploadCaCrtClient').fileupload({
         replaceFileInput: false,
-        url: 'plugins/openvpn/core/ajax/openvpn.ajax.php?action=uploadCaCrt&type=caClient&id=' + _eqLogic.id+'&jeedom_token='+JEEDOM_AJAX_TOKEN,,
+        url: 'plugins/openvpn/core/ajax/openvpn.ajax.php?action=uploadCaCrt&type=caClient&id=' + _eqLogic.id+'&jeedom_token='+JEEDOM_AJAX_TOKEN,
         dataType: 'json',
         done: function (e, data) {
             if (data.result.state != 'ok') {
@@ -51,7 +51,7 @@
 
     $('#bt_uploadCaKeyClient').fileupload({
         replaceFileInput: false,
-        url: 'plugins/openvpn/core/ajax/openvpn.ajax.php?action=uploadCaCrt&type=keyClient&id=' + _eqLogic.id+'&jeedom_token='+JEEDOM_AJAX_TOKEN,,
+        url: 'plugins/openvpn/core/ajax/openvpn.ajax.php?action=uploadCaCrt&type=keyClient&id=' + _eqLogic.id+'&jeedom_token='+JEEDOM_AJAX_TOKEN,
         dataType: 'json',
         done: function (e, data) {
             if (data.result.state != 'ok') {
