@@ -1,2 +1,3 @@
-Changelog détaillé :
-<https://github.com/jeedom/plugin-openvpn/commits/master>
+# 01/03/2018
+
+-	Correction d'un bug sur l'upload de fichier (CA et autres)
