@@ -42,7 +42,7 @@ class openvpn extends eqLogic {
 	}
 
 	public static function start() {
-		self::cron15();
+		self::cron5();
 	}
 
 	public static function cron5() {
