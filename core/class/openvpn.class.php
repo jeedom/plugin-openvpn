@@ -47,16 +47,29 @@ class openvpn extends eqLogic {
 
 	public static function cron5() {
 		foreach (self::byType('openvpn') as $eqLogic) {
-			if ($eqLogic->getConfiguration('enable') == 1 && !$eqLogic->getState()) {
-				if($eqLogic->getLogicalId() == 'dnsjeedom'){
-					network::dns_create();
+			try {
+				if ($eqLogic->getConfiguration('enable') == 1 && !$eqLogic->getState()) {
+					if($eqLogic->getLogicalId() == 'dnsjeedom'){
+						try {
+							repo_market::test();
+						} catch (Exception $e) {
+
+						}
+						if( !$eqLogic->getState()){
+							$eqLogic->start_openvpn();
+						}
+						$eqLogic->updateState();
+						return;
+					}
+					$eqLogic->start_openvpn();
 				}
-				$eqLogic->start_openvpn();
+				if ($eqLogic->getConfiguration('enable') == 0 && $eqLogic->getState()) {
+					$eqLogic->stop_openvpn();
+				}
+				$eqLogic->updateState();
+			} catch (Exception $e) {
+
 			}
-			if ($eqLogic->getConfiguration('enable') == 0 && $eqLogic->getState()) {
-				$eqLogic->stop_openvpn();
-			}
-			$eqLogic->updateState();
 		}
 	}
 

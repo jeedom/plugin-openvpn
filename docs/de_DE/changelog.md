@@ -1,3 +1,7 @@
+# 29/05/2018
+
+- Optimisation du plugin pour les DNS Jeedom
+
 # 20/04/2018
 
 - Correction d'un bug sur le démarrage du plugin
