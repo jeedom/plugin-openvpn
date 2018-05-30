@@ -49,7 +49,15 @@ class openvpn extends eqLogic {
 		foreach (self::byType('openvpn') as $eqLogic) {
 			if ($eqLogic->getConfiguration('enable') == 1 && !$eqLogic->getState()) {
 				if($eqLogic->getLogicalId() == 'dnsjeedom'){
-					network::dns_create();
+					try {
+						repo_market::test();
+					} catch (Exception $e) {
+
+					}
+					if( !$eqLogic->getState()){
+						$eqLogic->start_openvpn();
+					}
+					return;
 				}
 				$eqLogic->start_openvpn();
 			}
