@@ -24,15 +24,15 @@ class openvpn extends eqLogic {
 
 	/*     * ***********************Methode static*************************** */
 
-	public static function dependancy_info() {
+		public static function dependancy_info() {
 		$return = array();
 		$return['log'] = 'openvpn_update';
 		$return['progress_file'] = jeedom::getTmpFolder('openvpn') . '/dependance';
-		$return['state'] = 'nok';
-		if (exec('which openvpn | wc -l') != 0) {
+		$return['state'] = 'ok';
+		if (exec('which openvpn | wc -l') == 0) {
 			sleep(2);
-			if (exec('which openvpn | wc -l') != 0) {
-				$return['state'] = 'ok';
+			if (exec('which openvpn | wc -l') == 0) {
+				$return['state'] = 'nok';
 			}
 		}
 		return $return;
