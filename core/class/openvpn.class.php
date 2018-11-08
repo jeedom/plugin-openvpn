@@ -24,7 +24,7 @@ class openvpn extends eqLogic {
 
 	/*     * ***********************Methode static*************************** */
 
-		public static function dependancy_info() {
+	public static function dependancy_info() {
 		$return = array();
 		$return['log'] = 'openvpn_update';
 		$return['progress_file'] = jeedom::getTmpFolder('openvpn') . '/dependance';
@@ -51,13 +51,13 @@ class openvpn extends eqLogic {
 		foreach (self::byType('openvpn') as $eqLogic) {
 			try {
 				if ($eqLogic->getConfiguration('enable') == 1 && !$eqLogic->getState()) {
-					if($eqLogic->getLogicalId() == 'dnsjeedom'){
+					if ($eqLogic->getLogicalId() == 'dnsjeedom') {
 						try {
 							repo_market::test();
 						} catch (Exception $e) {
 
 						}
-						if( !$eqLogic->getState()){
+						if (!$eqLogic->getState()) {
 							$eqLogic->start_openvpn();
 						}
 						$eqLogic->updateState();
@@ -219,6 +219,9 @@ class openvpn extends eqLogic {
 			$replace['#authentification#'] .= 'key ' . dirname(__FILE__) . '/../../data/key_' . $this->getConfiguration('key') . '.key';
 		}
 		$config = str_replace(array_keys($replace), $replace, file_get_contents(dirname(__FILE__) . '/../config/openvpn.client.tmpl.ovpn'));
+		if (trim($this->getConfiguration('additionalVpnParameters')) != '') {
+			$config .= "\n\n" . $this->getConfiguration('additionalVpnParameters');
+		}
 		file_put_contents(jeedom::getTmpFolder('openvpn') . '/openvpn_' . $this->getId() . '.ovpn', $config);
 	}
 
@@ -234,6 +237,10 @@ class openvpn extends eqLogic {
 		$cmd = system::getCmdSudo() . $this->getCmdLine() . ' >> ' . log::getPathToLog($log_name) . '  2>&1 &';
 		log::add($log_name, 'info', __('Lancement openvpn : ', __FILE__) . $cmd);
 		shell_exec($cmd);
+		if (trim($this->getConfiguration('optionsAfterStart')) != '') {
+			sleep(2);
+			shell_exec(str_replace('#interface#', $this->getInterfaceName(), $this->getConfiguration('optionsAfterStart')));
+		}
 		$this->updateState();
 	}
 
