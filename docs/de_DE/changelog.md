@@ -1,3 +1,7 @@
+# 30/10/2018
+
+- Amélioration du calcul de l'installation ou non des dépendances
+
 # 29/05/2018
 
 - Optimisation du plugin pour les DNS Jeedom

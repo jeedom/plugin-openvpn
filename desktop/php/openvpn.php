@@ -122,7 +122,18 @@ foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
             <input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="remote_port" />
           </div>
         </div>
-
+        <div class="form-group">
+          <label class="col-sm-4 control-label">{{Paramètre optionnels}}</label>
+          <div class="col-sm-8">
+            <textarea class="eqLogicAttr form-control ta_autosize" data-l1key="configuration" data-l2key="additionalVpnParameters" ></textarea>
+          </div>
+        </div>
+         <div class="form-group">
+          <label class="col-sm-4 control-label">{{Commande post démarrage}}</label>
+          <div class="col-sm-8">
+            <textarea class="eqLogicAttr form-control ta_autosize" data-l1key="configuration" data-l2key="optionsAfterStart" ></textarea>
+          </div>
+        </div>
       </fieldset>
     </form>
   </div>
