@@ -32,6 +32,10 @@ Sie werden hier alle die Konfiguration Ihrer Geräte finden:
 > amples informations merci de vous référer à la [documention
 > openvpn](https://openvpn.net/index.php/open-source/documentation.html)
 
+> **Note**
+>
+> Pour les commandes shell executées après le démarrage vous avez le tag #interface# pour le nom de l'interface automatiquement remplacé
+
 En-dessous vous retrouvez la liste des commandes :
 
 -   **Nom** : le nom affiché sur le dashboard,

@@ -1,3 +1,8 @@
+# 09/11/2018
+
+- Possibilité d'ajouté des options sur la configuration openvpn
+- Possibilité d'executer des commandes après le démarrage du DNS (le tag #interface# permet d'avoir le nom de l'interface)
+
 # 30/10/2018
 
 - Amélioration du calcul de l'installation ou non des dépendances
