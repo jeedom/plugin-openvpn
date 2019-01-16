@@ -1,3 +1,7 @@
+# 16/01/2019
+
+- Correction d'un soucis sur les dépendance
+
 # 23/11/2018
 
 - Optimisations
