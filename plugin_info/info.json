@@ -1,10 +1,10 @@
 {
 	"id" : "openvpn",
 	"name" : "Openvpn",
-	"description" : "Plugin permettant de gerer la connxion à un serveur openvpn",
+	"description" : "Plugin permettant de gérer la connexion à un serveur openvpn",
 	"licence" : "AGPL",
 	"author" : "Jeedom SAS",
-	"require" : "3.0",
+	"require" : "3.3",
 	"category" : "communication",
 	"hasDependency" : true,
 	"changelog" : "https://jeedom.github.io/plugin-openvpn/#language#/changelog",
