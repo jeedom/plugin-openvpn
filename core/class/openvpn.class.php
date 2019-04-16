@@ -128,6 +128,7 @@ class openvpn extends eqLogic {
 		$state->setType('info');
 		$state->setSubType('binary');
 		$state->setEqLogic_id($this->getId());
+		$state->setConfiguration('repeatEventManagement','never');
 		$state->save();
 		
 		$up = $this->getCmd(null, 'up');
@@ -141,6 +142,7 @@ class openvpn extends eqLogic {
 		$up->setType('info');
 		$up->setSubType('binary');
 		$up->setEqLogic_id($this->getId());
+		$up->setConfiguration('repeatEventManagement','never');
 		$up->save();
 		
 		$start = $this->getCmd(null, 'start');
