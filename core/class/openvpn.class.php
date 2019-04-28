@@ -244,7 +244,12 @@ class openvpn extends eqLogic {
 	}
 	
 	public function getState() {
-		return (shell_exec("(ps ax || ps w) | grep -ie '" . $this->getCmdLine() . "' | grep -v grep | wc -l") > 0);
+		$return = (shell_exec("(ps ax || ps w) | grep -ie '" . $this->getCmdLine() . "' | grep -v grep | wc -l") > 0);
+		if(!$return){
+			usleep(rand(10000,2000000));
+			$return = (shell_exec("(ps ax || ps w) | grep -ie '" . $this->getCmdLine() . "' | grep -v grep | wc -l") > 0);
+		}
+		return $return;
 	}
 	
 	public function updateState() {

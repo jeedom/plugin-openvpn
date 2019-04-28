@@ -79,7 +79,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-sm-4 control-label">Catégorie</label>
+									<label class="col-sm-4 control-label">{{Catégorie}}</label>
 									<div class="col-sm-8">
 										<?php
 										foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
