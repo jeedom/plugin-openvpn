@@ -76,10 +76,20 @@ class openvpn extends eqLogic {
 	
 	public function getInterfaceName() {
 		$log_name = ('openvpn_' . str_replace(' ', '_', $this->getName()));
-		if (!file_exists(log::getPathToLog($log_name))) {
+		$path =  log::getPathToLog($log_name);
+		if (!file_exists($path)) {
 			return false;
 		}
-		$result = shell_exec('grep "/sbin/ip addr add dev " ' . log::getPathToLog($log_name) . ' | tail -n 1');
+		$result = shell_exec('grep "/sbin/ip addr add dev " ' . $path . ' | tail -n 1');
+		$i = 0;
+		while($result == ''){
+			sleep(1);
+			$result = shell_exec('grep "/sbin/ip addr add dev " ' . $path . ' | tail -n 1');
+			$i++;
+			if($i > 5){
+				break;
+			}
+		}
 		return trim(substr($result, strpos($result, 'tun'), 4));
 	}
 	
