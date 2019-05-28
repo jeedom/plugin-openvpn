@@ -1,3 +1,7 @@
+# 28/04/2019
+
+- Corrección de errores
+
 # 16/04/2019
 
 - Optimisations
