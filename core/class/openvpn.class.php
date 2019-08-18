@@ -246,6 +246,39 @@ class openvpn extends eqLogic {
 			shell_exec(str_replace('#interface#', $this->getInterfaceName(), $this->getConfiguration('optionsAfterStart')));
 		}
 		$this->updateState();
+		if($this->getLogicalId() == 'dnsjeedom'){
+			$interface = $this->getInterfaceName();
+			if ($interface !== null && $interface != '' && $interface !== false) {
+				$rules = shell_exec(system::getCmdSudo().'iptables -L INPUT -v --line-numbers | grep '.$interface);
+				$c = 0;
+				while($rules != ''){
+					$ln = explode(" ",explode("\n",$rules)[0])[0];
+					if($ln == ''){
+						break;
+					}
+					shell_exec(system::getCmdSudo().'iptables -D INPUT '.$ln);
+					$rules = shell_exec(system::getCmdSudo().'iptables -L INPUT -v --line-numbers | grep '.$interface);
+					$c++;
+					if($c > 25){
+						break;
+					}
+				}
+				shell_exec(system::getCmdSudo() . 'iptables -A INPUT -i ' . $interface . ' -p tcp  --destination-port 80 -j ACCEPT');
+				if (config::byKey('dns::openport') != '') {
+					foreach (explode(',', config::byKey('dns::openport')) as $port) {
+						if (is_nan($port)) {
+							continue;
+						}
+						try {
+							shell_exec(system::getCmdSudo() . 'iptables -A INPUT -i ' . $interface . ' -p tcp  --destination-port ' . $port . ' -j ACCEPT');
+						} catch (Exception $e) {
+							
+						}
+					}
+				}
+				shell_exec(system::getCmdSudo() . 'iptables -A INPUT -i ' . $interface . ' -j DROP');
+			}
+		}
 	}
 	
 	public function stop_openvpn() {
