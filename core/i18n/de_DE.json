@@ -1,0 +1,64 @@
+{
+    "plugin_info\/configuration.php": {
+        "401 - Accès non autorisé": "401 - Nicht autorisierter Zugriff"
+    },
+    "desktop\/js\/openvpn.js": {
+        "Fichier envoyé avec succès": "Datei erfolgreich gesendet",
+        "Afficher": "Anzeige",
+        "Historiser": "historisieren",
+        "Tester": "Test"
+    },
+    "desktop\/php\/openvpn.php": {
+        "401 - Accès non autorisé": "401 - Nicht autorisierter Zugriff",
+        "Gestion": "Management",
+        "Ajouter": "hinzufügen",
+        "Mes openvpns": "Meine openvpns",
+        "Rechercher": "Suche",
+        "Configuration avancée": "Erweiterte Konfiguration",
+        "Sauvegarder": "speichern",
+        "Supprimer": "Entfernen",
+        "Equipement": "Ausrüstung",
+        "Commandes": "Befehle",
+        "Nom de l'équipement openvpn": "Name des openvpn-Geräts",
+        "Objet parent": "Übergeordnetes Objekt",
+        "Aucun": "keine",
+        "Catégorie": "Kategorie",
+        "Activer": "activate",
+        "Visible": "sichtbar",
+        "Certificat CA": "CA-Zertifikat",
+        "Envoyer": "send",
+        "Serveur hôte": "Host-Server",
+        "Port hôte": "Host-Port",
+        "Paramètres optionnels": "Optionale Parameter",
+        "Commande post démarrage": "Befehl nach dem Start",
+        "Authentification mode": "Modeauthentifizierung",
+        "Nom d'utilisateur": "Benutzername",
+        "Password": "Kennwort",
+        "Certification client": "Kundenzertifizierung",
+        "Clef client": "Kundenschlüssel",
+        "Protocole": "Protokoll",
+        "Interface": "Schnittstelle",
+        "Compression": "Kompression",
+        "Script sécurité": "Sicherheitsskript",
+        "Pull": "Pullover",
+        "Nom": "Name",
+        "Type": "Typ",
+        "Action": "Aktion"
+    },
+    "core\/ajax\/openvpn.ajax.php": {
+        "401 - Accès non autorisé": "401 - Nicht autorisierter Zugriff",
+        "EqLogic inconnu verifié l\\'id": "Unbekannte EqLogic-verifizierte ID",
+        "Aucun fichier trouvé. Vérifiez paramètre PHP (post size limit)": "Keine Dateien gefunden. Überprüfen Sie die PHP-Einstellung (Postgrößenbeschränkung)",
+        "Le fichier est trop gros (maximum 1mo)": "Die Datei ist zu groß (maximal 1Mo)",
+        "Aucune méthode correspondante à : ": "Keine Methode entsprechend:"
+    },
+    "core\/class\/openvpn.class.php": {
+        "Démarré": "Started",
+        "Actif": "Active",
+        "Démarrer": "Start",
+        "Arrêter": "Stop",
+        "IP": "IP",
+        "Lancement openvpn : ": "Openvpn launch:",
+        "Aucune": "Any"
+    }
+}
