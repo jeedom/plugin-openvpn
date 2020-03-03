@@ -1,14 +1,14 @@
 {
-    "plugin_info\/configuration.php": {
+    "plugins\/openvpn\/plugin_info\/configuration.php": {
         "401 - Accès non autorisé": "401 - Unauthorized access"
     },
-    "desktop\/js\/openvpn.js": {
+    "plugins\/openvpn\/desktop\/js\/openvpn.js": {
         "Fichier envoyé avec succès": "File successfully sent",
         "Afficher": "Pin up",
-        "Historiser": "historicize",
+        "Historiser": "Historicize",
         "Tester": "Test"
     },
-    "desktop\/php\/openvpn.php": {
+    "plugins\/openvpn\/desktop\/php\/openvpn.php": {
         "401 - Accès non autorisé": "401 - Unauthorized access",
         "Gestion": "Management",
         "Ajouter": "Add",
@@ -32,7 +32,7 @@
         "Paramètres optionnels": "Optional parameters",
         "Commande post démarrage": "Post start command",
         "Authentification mode": "Fashion authentication",
-        "Nom d'utilisateur": "username",
+        "Nom d'utilisateur": "Username",
         "Password": "Password",
         "Certification client": "Customer certification",
         "Clef client": "Customer key",
@@ -45,14 +45,14 @@
         "Type": "Type",
         "Action": "Action"
     },
-    "core\/ajax\/openvpn.ajax.php": {
+    "plugins\/openvpn\/core\/ajax\/openvpn.ajax.php": {
         "401 - Accès non autorisé": "401 - Unauthorized access",
         "EqLogic inconnu verifié l\\'id": "Unknown EqLogic verified id",
         "Aucun fichier trouvé. Vérifiez paramètre PHP (post size limit)": "No files found. Check PHP setting (post size limit)",
         "Le fichier est trop gros (maximum 1mo)": "The file is too large (maximum 1mo)",
         "Aucune méthode correspondante à : ": "No method corresponding to:"
     },
-    "core\/class\/openvpn.class.php": {
+    "plugins\/openvpn\/core\/class\/openvpn.class.php": {
         "Démarré": "Started",
         "Actif": "Active",
         "Démarrer": "Start",

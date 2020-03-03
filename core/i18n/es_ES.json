@@ -1,64 +1,64 @@
 {
-    "plugin_info\/configuration.php": {
+    "plugins\/openvpn\/plugin_info\/configuration.php": {
         "401 - Accès non autorisé": "401 - Acceso no autorizado"
     },
-    "desktop\/js\/openvpn.js": {
+    "plugins\/openvpn\/desktop\/js\/openvpn.js": {
         "Fichier envoyé avec succès": "Archivo enviado con éxito",
-        "Afficher": "visualización",
-        "Historiser": "historizar",
-        "Tester": "prueba"
+        "Afficher": "Visualización",
+        "Historiser": "Historizar",
+        "Tester": "Prueba"
     },
-    "desktop\/php\/openvpn.php": {
+    "plugins\/openvpn\/desktop\/php\/openvpn.php": {
         "401 - Accès non autorisé": "401 - Acceso no autorizado",
-        "Gestion": "administración",
-        "Ajouter": "añadir",
+        "Gestion": "Administración",
+        "Ajouter": "Añadir",
         "Mes openvpns": "Mi openvpns",
         "Rechercher": "Buscar",
         "Configuration avancée": "Configuración avanzada",
         "Sauvegarder": "Guardar",
-        "Supprimer": "remove",
-        "Equipement": "equipo",
-        "Commandes": "comandos",
+        "Supprimer": "Remove",
+        "Equipement": "Equipo",
+        "Commandes": "Comandos",
         "Nom de l'équipement openvpn": "Nombre del dispositivo openvpn",
         "Objet parent": "Objeto padre",
-        "Aucun": "no",
-        "Catégorie": "categoría",
+        "Aucun": "No",
+        "Catégorie": "Categoría",
         "Activer": "Activar",
-        "Visible": "visible",
+        "Visible": "Visible",
         "Certificat CA": "Certificado de CA",
-        "Envoyer": "enviar a",
+        "Envoyer": "Enviar a",
         "Serveur hôte": "Servidor host",
         "Port hôte": "Puerto host",
         "Paramètres optionnels": "Parámetros opcionales",
         "Commande post démarrage": "Comando post inicio",
         "Authentification mode": "Autenticación de moda",
-        "Nom d'utilisateur": "nombre del usuario",
-        "Password": "contraseña",
+        "Nom d'utilisateur": "Nombre del usuario",
+        "Password": "Contraseña",
         "Certification client": "Certificación del cliente",
         "Clef client": "Clave de cliente",
-        "Protocole": "protocolo",
-        "Interface": "interfaz",
-        "Compression": "compresión",
+        "Protocole": "Protocolo",
+        "Interface": "Interfaz",
+        "Compression": "Compresión",
         "Script sécurité": "Script de seguridad",
-        "Pull": "suéter",
-        "Nom": "apellido",
-        "Type": "tipo",
-        "Action": "acción"
+        "Pull": "Suéter",
+        "Nom": "Apellido",
+        "Type": "Tipo",
+        "Action": "Acción"
     },
-    "core\/ajax\/openvpn.ajax.php": {
+    "plugins\/openvpn\/core\/ajax\/openvpn.ajax.php": {
         "401 - Accès non autorisé": "401 - Acceso no autorizado",
         "EqLogic inconnu verifié l\\'id": "Identificación verificada de EqLogic desconocida",
         "Aucun fichier trouvé. Vérifiez paramètre PHP (post size limit)": "No se encontraron archivos. Verifique la configuración de PHP (límite de tamaño de publicación)",
         "Le fichier est trop gros (maximum 1mo)": "El archivo es demasiado grande (máximo 1mo)",
         "Aucune méthode correspondante à : ": "Ningún método correspondiente a:"
     },
-    "core\/class\/openvpn.class.php": {
-        "Démarré": "Started",
-        "Actif": "Active",
-        "Démarrer": "Start",
-        "Arrêter": "Stop",
+    "plugins\/openvpn\/core\/class\/openvpn.class.php": {
+        "Démarré": "Comenzado",
+        "Actif": "Bienes",
+        "Démarrer": "Comienzo",
+        "Arrêter": "Parar",
         "IP": "IP",
-        "Lancement openvpn : ": "Openvpn launch:",
-        "Aucune": "Any"
+        "Lancement openvpn : ": "Lanzamiento de Openvpn:",
+        "Aucune": "No"
     }
 }

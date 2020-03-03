@@ -1,14 +1,14 @@
 {
-    "plugin_info\/configuration.php": {
+    "plugins\/openvpn\/plugin_info\/configuration.php": {
         "401 - Accès non autorisé": "401 - Accès non autorisé"
     },
-    "desktop\/js\/openvpn.js": {
+    "plugins\/openvpn\/desktop\/js\/openvpn.js": {
         "Fichier envoyé avec succès": "Fichier envoyé avec succès",
         "Afficher": "Afficher",
         "Historiser": "Historiser",
         "Tester": "Tester"
     },
-    "desktop\/php\/openvpn.php": {
+    "plugins\/openvpn\/desktop\/php\/openvpn.php": {
         "401 - Accès non autorisé": "401 - Accès non autorisé",
         "Gestion": "Gestion",
         "Ajouter": "Ajouter",
@@ -45,14 +45,14 @@
         "Type": "Type",
         "Action": "Action"
     },
-    "core\/ajax\/openvpn.ajax.php": {
+    "plugins\/openvpn\/core\/ajax\/openvpn.ajax.php": {
         "401 - Accès non autorisé": "401 - Accès non autorisé",
         "EqLogic inconnu verifié l\\'id": "EqLogic inconnu verifié l\\'id",
         "Aucun fichier trouvé. Vérifiez paramètre PHP (post size limit)": "Aucun fichier trouvé. Vérifiez paramètre PHP (post size limit)",
         "Le fichier est trop gros (maximum 1mo)": "Le fichier est trop gros (maximum 1mo)",
         "Aucune méthode correspondante à : ": "Aucune méthode correspondante à : "
     },
-    "core\/class\/openvpn.class.php": {
+    "plugins\/openvpn\/core\/class\/openvpn.class.php": {
         "Démarré": "Démarré",
         "Actif": "Actif",
         "Démarrer": "Démarrer",
