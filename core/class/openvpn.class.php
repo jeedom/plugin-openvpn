@@ -77,10 +77,14 @@ class openvpn extends eqLogic {
 		}
 	}
 	
+	public static function cleanVpnName($_name){
+		return str_replace(array(' ','(',')','/',',',';','\\','%','*','$'), '_', $_name);
+	}
+	
 	/*     * *********************Méthodes d'instance************************* */
 	
 	public function getInterfaceName() {
-		$log_name = ('openvpn_' . str_replace(' ', '_', $this->getName()));
+		$log_name = ('openvpn_' . self::cleanVpnName($this->getName()));
 		$path =  log::getPathToLog($log_name);
 		if (!file_exists($path)) {
 			return false;
@@ -99,7 +103,7 @@ class openvpn extends eqLogic {
 	}
 	
 	public function getIp() {
-		$log_name = ('openvpn_' . str_replace(' ', '_', $this->getName()));
+		$log_name = ('openvpn_' . self::cleanVpnName($this->getName()));
 		if (!file_exists(log::getPathToLog($log_name))) {
 			return false;
 		}
@@ -241,47 +245,59 @@ class openvpn extends eqLogic {
 	public function start_openvpn() {
 		$this->stop_openvpn();
 		$this->writeConfig();
-		$log_name = ('openvpn_' . str_replace(' ', '_', $this->getName()));
+		$log_name = ('openvpn_' . self::cleanVpnName($this->getName()));
 		log::remove($log_name);
 		$cmd = system::getCmdSudo() . $this->getCmdLine() . ' >> ' . log::getPathToLog($log_name) . '  2>&1 &';
 		log::add($log_name, 'info', __('Lancement openvpn : ', __FILE__) . $cmd);
 		shell_exec($cmd);
+		$this->updateState();
 		if (trim($this->getConfiguration('optionsAfterStart')) != '') {
 			sleep(2);
-			shell_exec(str_replace('#interface#', $this->getInterfaceName(), $this->getConfiguration('optionsAfterStart')));
+			$cmd = str_replace('#interface#', $this->getInterfaceName(), $this->getConfiguration('optionsAfterStart'));
+			log::add('openvpn','debug','Exec post start cmd : '.$cmd);
+			shell_exec($cmd);
 		}
-		$this->updateState();
 		if($this->getLogicalId() == 'dnsjeedom'){
 			$interface = $this->getInterfaceName();
 			if ($interface !== null && $interface != '' && $interface !== false) {
-				$rules = shell_exec(system::getCmdSudo().'iptables -L INPUT -v --line-numbers | grep '.$interface);
+				$cmd = system::getCmdSudo().'iptables -L INPUT -v --line-numbers | grep '.$interface;
+				log::add('openvpn','debug',$cmd);
+				$rules = shell_exec($cmd);
 				$c = 0;
 				while($rules != ''){
 					$ln = explode(" ",explode("\n",$rules)[0])[0];
 					if($ln == ''){
 						break;
 					}
-					shell_exec(system::getCmdSudo().'iptables -D INPUT '.$ln);
+					$cmd = system::getCmdSudo().'iptables -D INPUT '.$ln;
+					log::add('openvpn','debug',$cmd);
+					shell_exec($cmd);
 					$rules = shell_exec(system::getCmdSudo().'iptables -L INPUT -v --line-numbers | grep '.$interface);
 					$c++;
 					if($c > 25){
 						break;
 					}
 				}
-				shell_exec(system::getCmdSudo() . 'iptables -A INPUT -i ' . $interface . ' -p tcp  --destination-port 80 -j ACCEPT');
+				$cmd = system::getCmdSudo() . 'iptables -A INPUT -i ' . $interface . ' -p tcp  --destination-port 80 -j ACCEPT';
+				log::add('openvpn','debug',$cmd);
+				shell_exec($cmd);
 				if (config::byKey('dns::openport') != '') {
 					foreach (explode(',', config::byKey('dns::openport')) as $port) {
 						if (is_nan($port)) {
 							continue;
 						}
 						try {
-							shell_exec(system::getCmdSudo() . 'iptables -A INPUT -i ' . $interface . ' -p tcp  --destination-port ' . $port . ' -j ACCEPT');
+							$cmd = system::getCmdSudo() . 'iptables -A INPUT -i ' . $interface . ' -p tcp  --destination-port ' . $port . ' -j ACCEPT';
+							log::add('openvpn','debug',$cmd);
+							shell_exec($cmd);
 						} catch (Exception $e) {
 							
 						}
 					}
 				}
-				shell_exec(system::getCmdSudo() . 'iptables -A INPUT -i ' . $interface . ' -j DROP');
+				$cmd = system::getCmdSudo() . 'iptables -A INPUT -i ' . $interface . ' -j DROP';
+				log::add('openvpn','debug',$cmd);
+				shell_exec($cmd);
 			}
 		}
 	}

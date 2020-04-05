@@ -1,40 +1,44 @@
-# 28/04/2019
+# 2019.11.14
 
 - Fehlerbehebungen
 
-# 16/04/2019
+# 2019.04.28
 
-- Optimisations
+- Fehlerbehebungen
 
-# 16/01/2019
+# 2019.04.16
 
-- Correction d'un soucis sur les dépendance
+- Optimierungen
 
-# 23/11/2018
+# 2019.01.16
 
-- Optimisations
+- Korrektur eines Abhängigkeitsproblems
 
-# 09/11/2018
+# 2018.11.23
 
-- Possibilité d'ajouté des options sur la configuration openvpn
-- Possibilité d'executer des commandes après le démarrage du DNS (le tag #interface# permet d'avoir le nom de l'interface)
+- Optimierungen
 
-# 30/10/2018
+# 2018.09.11
 
-- Amélioration du calcul de l'installation ou non des dépendances
+- Möglichkeit, Optionen zur openvpn-Konfiguration hinzuzufügen
+- Möglichkeit, Befehle nach dem Starten von DNS auszuführen (das Tag # interface # gibt den Namen der Schnittstelle an)
 
-# 29/05/2018
+# 2018.10.30
 
-- Optimisation du plugin pour les DNS Jeedom
+- Verbesserung der Berechnung der Installation oder nicht der Abhängigkeiten
 
-# 20/04/2018
+# 2018.05.29
 
-- Correction d'un bug sur le démarrage du plugin
+- Optimierung des Plugins für Jeedom DNS
 
-# 15/04/2018
+# 2018.04.20
 
-- La vérification du status du VPN se fait maintenant toute les 5min au lieu de 15min
+- Behebung eines Fehlers beim Start des Plugins
 
-# 01/03/2018
+# 2018.04.15
 
--   Correction d'un bug sur l'upload de fichier (CA et autres)
+- Die Überprüfung des VPN-Status erfolgt jetzt alle 5 Minuten statt 15 Minuten
+
+# 2018.01.03
+
+-	Behebung eines Fehlers beim Hochladen von Dateien (CA und andere)
