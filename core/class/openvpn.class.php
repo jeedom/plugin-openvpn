@@ -25,19 +25,24 @@ class openvpn extends eqLogic {
 	/*     * ***********************Methode static*************************** */
 	
 	public static function dependancy_info() {
+		$packages = json_decode(file_get_contents(__DIR__.'/../../plugin_info/packages.json'),true);
+		$results = system::checkAndInstall($packages);
 		$return = array();
 		$return['log'] = 'openvpn_update';
 		$return['progress_file'] = jeedom::getTmpFolder('openvpn') . '/dependance';
 		$return['state'] = 'ok';
-		if (exec('which openvpn | wc -l') == 0 && exec('dpkg -s openvpn | grep install | wc -l') == 0){
-			$return['state'] = 'nok';
+		foreach ($results as $packages => $info) {
+			if($info['status'] == 0){
+				$return['state'] = 'nok';
+				break;
+			}
 		}
 		return $return;
 	}
 	
 	public static function dependancy_install() {
 		log::remove(__CLASS__ . '_update');
-		return array('script' => dirname(__FILE__) . '/../../resources/install_#stype#.sh ' . jeedom::getTmpFolder('openvpn') . '/dependance', 'log' => log::getPathToLog(__CLASS__ . '_update'));
+		return array('package_only' => true,'script' => dirname(__FILE__) . '/../../resources/install_#stype#.sh ' . jeedom::getTmpFolder('openvpn') . '/dependance', 'log' => log::getPathToLog(__CLASS__ . '_update'));
 	}
 	
 	public static function start() {
