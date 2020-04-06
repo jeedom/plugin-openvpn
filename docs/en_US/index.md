@@ -14,7 +14,7 @@ Equipment configuration
 
 Here you find all the configuration of your equipment :
 
--   **Name of the Openvpn device** : name of your Openvpn device,
+-   **Name of the openvpn device** : name of your Openvpn device,
 
 -   **Parent object** : indicates the parent object to which belongs
     equipment,
@@ -26,25 +26,25 @@ Here you find all the configuration of your equipment :
 
 -   **Visible** : makes your equipment visible on the dashboard,
 
-> **Note**
+> **NOTE**
 >
 > The other options will not be detailed here, to have more
 > further information please refer to the [documention
-> openvpn] (https://openvpn.net/index.php/open-source/documentation.html)
+> openvpn] (https:
 
-> **Note**
+> **NOTE**
 >
 > For shell commands executed after startup you have the tag # interface # for the name of the interface automatically replaced
 
 Below you find the list of orders :
 
--   **Last name** : the name displayed on the dashboard,
+-   **Name** : the name displayed on the dashboard,
 
 -   **Pin up** : allows to display the data on the dashboard,
 
--   **Test** : allows to test the command
+-   **Test** : Used to test the command
 
-> **Note**
+> **NOTE**
 >
 > Jeedom will check every 15 minutes if the VPN is started or
 > arrested (if necessary) and act accordingly if this is not the case

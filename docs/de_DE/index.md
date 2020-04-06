@@ -14,7 +14,7 @@ Gerätekonfiguration
 
 Hier finden Sie die gesamte Konfiguration Ihrer Geräte :
 
--   **Name des Openvpn-Geräts** : Name Ihres Openvpn-Geräts,
+-   **Name des openvpn-Geräts** : Name Ihres Openvpn-Geräts,
 
 -   **Übergeordnetes Objekt** : gibt das übergeordnete Objekt an, zu dem es gehört
     Ausrüstung,
@@ -22,7 +22,7 @@ Hier finden Sie die gesamte Konfiguration Ihrer Geräte :
 -   **Kategorie** : Gerätekategorien (es kann gehören
     mehrere Kategorien),
 
--   **Activate** : macht Ihre Ausrüstung aktiv,
+-   **Aktivieren** : macht Ihre Ausrüstung aktiv,
 
 -   **Sichtbar** : macht Ihre Ausrüstung auf dem Armaturenbrett sichtbar,
 
@@ -30,7 +30,7 @@ Hier finden Sie die gesamte Konfiguration Ihrer Geräte :
 >
 > Die anderen Optionen werden hier nicht näher erläutert, um mehr zu haben
 > Weitere Informationen finden Sie in der [Dokumentation
-> OpenVPN] (https://openvpn.net/index.php/open-source/documentation.html)
+> OpenVPN] (https:
 
 > **Notiz**
 >
@@ -42,7 +42,7 @@ Nachfolgend finden Sie die Liste der Bestellungen :
 
 -   **Anzeige** : ermöglicht die Anzeige der Daten im Dashboard,
 
--   **Test** : ermöglicht das Testen des Befehls
+-   **Test** : Wird zum Testen des Befehls verwendet
 
 > **Notiz**
 >

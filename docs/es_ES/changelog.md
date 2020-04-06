@@ -10,15 +10,15 @@
 
 - Optimizaciones
 
-# 01/16/2019
+# 16/01/2019
 
 - Corrección de un problema de dependencia.
 
-# 11/23/2018
+# 23/11/2018
 
 - Optimizaciones
 
-# 09/11/2018
+# 
 
 - Posibilidad de agregar opciones en la configuración openvpn
 - Capacidad para ejecutar comandos después de iniciar DNS (la etiqueta # interface # proporciona el nombre de la interfaz)

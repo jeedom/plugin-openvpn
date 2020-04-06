@@ -18,7 +18,7 @@
 
 - Optimizations
 
-# 09/11/2018
+# 
 
 - Possibility of adding options on the openvpn configuration
 - Ability to execute commands after starting DNS (the # interface # tag gives the interface name)
@@ -39,6 +39,6 @@
 
 - The verification of the VPN status is now done every 5 min instead of 15 min
 
-# 01/03/2018
+# 03/01/2018
 
 -	Correction of a bug on file upload (CA and others)

@@ -10,11 +10,11 @@
 
 - Optimierungen
 
-# 2019.01.16
+# 16.01.2019
 
 - Korrektur eines Abhängigkeitsproblems
 
-# 2018.11.23
+# 23.11.2008
 
 - Optimierungen
 
@@ -39,6 +39,6 @@
 
 - Die Überprüfung des VPN-Status erfolgt jetzt alle 5 Minuten statt 15 Minuten
 
-# 2018.01.03
+# 03/01/2018
 
 -	Behebung eines Fehlers beim Hochladen von Dateien (CA und andere)

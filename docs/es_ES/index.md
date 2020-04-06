@@ -2,7 +2,7 @@ Este complemento permite conectar Jeedom a un servidor openvpn. El también es
 usado y, por lo tanto, obligatorio para el servicio DNS de Jeedom que le permite
 para acceder a su Jeedom desde internet
 
-Configuración del complemento 
+Configuración del plugin 
 =======================
 
 Después de descargar el complemento, solo necesita activar y
@@ -14,7 +14,7 @@ Configuración del equipo
 
 Aquí encontrarás toda la configuración de tu equipo :
 
--   **Apellidobre del dispositivo Openvpn** : nombre de su dispositivo Openvpn,
+-   **Nombrebre del dispositivo openvpn** : nombre de su dispositivo Openvpn,
 
 -   **Objeto padre** : indica el objeto padre al que pertenece
     equipo,
@@ -30,7 +30,7 @@ Aquí encontrarás toda la configuración de tu equipo :
 >
 > Las otras opciones no se detallarán aquí, para tener más
 > Para más información, consulte la [documentación
-> openvpn] (https://openvpn.net/index.php/open-source/documentation.html)
+> openvpn] (https:
 
 > **Nota**
 >
@@ -38,11 +38,11 @@ Aquí encontrarás toda la configuración de tu equipo :
 
 A continuación encontrará la lista de pedidos. :
 
--   **Apellido** : el nombre que se muestra en el tablero,
+-   **Nombre** : el nombre que se muestra en el tablero,
 
--   **Visualización** : permite mostrar los datos en el tablero,
+-   **Mostrar** : permite mostrar los datos en el tablero,
 
--   **Prueba** : permite probar el comando
+-   **Probar** : Se usa para probar el comando
 
 > **Nota**
 >

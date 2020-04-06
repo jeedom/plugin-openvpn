@@ -2,37 +2,31 @@
     "plugins\/openvpn\/plugin_info\/configuration.php": {
         "401 - Accès non autorisé": "401 - Acceso no autorizado"
     },
-    "plugins\/openvpn\/desktop\/js\/openvpn.js": {
-        "Fichier envoyé avec succès": "Archivo enviado con éxito",
-        "Afficher": "Visualización",
-        "Historiser": "Historizar",
-        "Tester": "Prueba"
-    },
     "plugins\/openvpn\/desktop\/php\/openvpn.php": {
         "401 - Accès non autorisé": "401 - Acceso no autorizado",
-        "Gestion": "Administración",
+        "Gestion": "Gestión",
         "Ajouter": "Añadir",
         "Mes openvpns": "Mi openvpns",
         "Rechercher": "Buscar",
         "Configuration avancée": "Configuración avanzada",
         "Sauvegarder": "Guardar",
-        "Supprimer": "Remove",
-        "Equipement": "Equipo",
+        "Supprimer": "Borrar",
+        "Equipement": "Dispositivos",
         "Commandes": "Comandos",
         "Nom de l'équipement openvpn": "Nombre del dispositivo openvpn",
         "Objet parent": "Objeto padre",
-        "Aucun": "No",
+        "Aucun": "Ninguna",
         "Catégorie": "Categoría",
         "Activer": "Activar",
         "Visible": "Visible",
         "Certificat CA": "Certificado de CA",
-        "Envoyer": "Enviar a",
+        "Envoyer": "Enviar",
         "Serveur hôte": "Servidor host",
         "Port hôte": "Puerto host",
         "Paramètres optionnels": "Parámetros opcionales",
         "Commande post démarrage": "Comando post inicio",
         "Authentification mode": "Autenticación de moda",
-        "Nom d'utilisateur": "Nombre del usuario",
+        "Nom d'utilisateur": "Nombre de usuario",
         "Password": "Contraseña",
         "Certification client": "Certificación del cliente",
         "Clef client": "Clave de cliente",
@@ -41,9 +35,15 @@
         "Compression": "Compresión",
         "Script sécurité": "Script de seguridad",
         "Pull": "Suéter",
-        "Nom": "Apellido",
+        "Nom": "Nombre",
         "Type": "Tipo",
         "Action": "Acción"
+    },
+    "plugins\/openvpn\/desktop\/js\/openvpn.js": {
+        "Fichier envoyé avec succès": "Archivo enviado con éxito",
+        "Afficher": "Mostrar",
+        "Historiser": "Guardar historial",
+        "Tester": "Probar"
     },
     "plugins\/openvpn\/core\/ajax\/openvpn.ajax.php": {
         "401 - Accès non autorisé": "401 - Acceso no autorizado",
@@ -53,12 +53,12 @@
         "Aucune méthode correspondante à : ": "Ningún método correspondiente a:"
     },
     "plugins\/openvpn\/core\/class\/openvpn.class.php": {
-        "Démarré": "Comenzado",
-        "Actif": "Bienes",
+        "Démarré": "Iniciado",
+        "Actif": "Activo",
         "Démarrer": "Comienzo",
-        "Arrêter": "Parar",
+        "Arrêter": "Detener",
         "IP": "IP",
         "Lancement openvpn : ": "Lanzamiento de Openvpn:",
-        "Aucune": "No"
+        "Aucune": "Ninguna"
     }
 }
