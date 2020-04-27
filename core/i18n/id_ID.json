@@ -55,7 +55,7 @@
     "plugins\/openvpn\/core\/class\/openvpn.class.php": {
         "Démarré": "Mulai",
         "Actif": "Aktiva",
-        "Démarrer": "",
+        "Démarrer": "Awal",
         "Arrêter": "Berhenti",
         "IP": "",
         "Lancement openvpn : ": "",

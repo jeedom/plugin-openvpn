@@ -55,7 +55,7 @@
     "plugins\/openvpn\/core\/class\/openvpn.class.php": {
         "Démarré": "Começado",
         "Actif": "Ativos",
-        "Démarrer": "",
+        "Démarrer": "Começo",
         "Arrêter": "Parar",
         "IP": "",
         "Lancement openvpn : ": "",

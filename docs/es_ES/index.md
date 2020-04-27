@@ -30,7 +30,7 @@ Aquí encontrarás toda la configuración de tu equipo :
 >
 > Las otras opciones no se detallarán aquí, para tener más
 > Para más información, consulte la [documentación
-> openvpn] (https:
+> openvpn] (https://openvpn.net/index.php/open-source/documentation.html)
 
 > **Nota**
 >
