@@ -14,7 +14,7 @@ Configuración del equipo
 
 Aquí encontrarás toda la configuración de tu equipo :
 
--   **Nombrebre del dispositivo openvpn** : nombre de su dispositivo Openvpn,
+-   **Nombre del dispositivo openvpn** : nombre de su dispositivo Openvpn,
 
 -   **Objeto padre** : indica el objeto padre al que pertenece
     equipo,
@@ -22,29 +22,29 @@ Aquí encontrarás toda la configuración de tu equipo :
 -   **Categoría** : categorías de equipos (puede pertenecer a
     categorías múltiples),
 
--   **Activar** : activa su equipo,
+-   **Activer** : activa su equipo,
 
 -   **Visible** : hace que su equipo sea visible en el tablero,
 
-> **Nota**
+> **Note**
 >
 > Las otras opciones no se detallarán aquí, para tener más
 > Para más información, consulte la [documentación
-> openvpn] (https://openvpn.net/index.php/open-source/documentation.html)
+> openvpn](https://openvpn.net/index.php/open-source/documentation.html)
 
-> **Nota**
+> **Note**
 >
 > Para los comandos de shell ejecutados después del inicio, tiene la etiqueta # interface # para el nombre de la interfaz reemplazada automáticamente
 
 A continuación encontrará la lista de pedidos. :
 
--   **Nombre** : el nombre que se muestra en el tablero,
+-   **Nom** : el nombre que se muestra en el tablero,
 
--   **Mostrar** : permite mostrar los datos en el tablero,
+-   **Afficher** : permite mostrar los datos en el tablero,
 
--   **Probar** : Se usa para probar el comando
+-   **Tester** : Se usa para probar el comando
 
-> **Nota**
+> **Note**
 >
 > Jeedom verificará cada 15 minutos si se inicia la VPN o
 > arrestado (si es necesario) y actuar en consecuencia si este no es el caso

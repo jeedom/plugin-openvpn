@@ -22,29 +22,29 @@ Hier finden Sie die gesamte Konfiguration Ihrer Geräte :
 -   **Kategorie** : Gerätekategorien (es kann gehören
     mehrere Kategorien),
 
--   **Aktivieren** : macht Ihre Ausrüstung aktiv,
+-   **Activer** : macht Ihre Ausrüstung aktiv,
 
--   **Sichtbar** : macht Ihre Ausrüstung auf dem Armaturenbrett sichtbar,
+-   **Visible** : macht Ihre Ausrüstung auf dem Armaturenbrett sichtbar,
 
-> **Notiz**
+> **Note**
 >
 > Die anderen Optionen werden hier nicht näher erläutert, um mehr zu haben
 > Weitere Informationen finden Sie in der [Dokumentation
-> OpenVPN] (https:
+> openvpn](https://openvpn.net/index.php/open-source/documentation.html)
 
-> **Notiz**
+> **Note**
 >
 > Für Shell-Befehle, die nach dem Start ausgeführt werden, wird das Tag # interface # für den Namen der Schnittstelle automatisch ersetzt
 
 Nachfolgend finden Sie die Liste der Bestellungen :
 
--   **Name** : Der im Dashboard angezeigte Name,
+-   **Nom** : Der im Dashboard angezeigte Name,
 
--   **Anzeige** : ermöglicht die Anzeige der Daten im Dashboard,
+-   **Afficher** : ermöglicht die Anzeige der Daten im Dashboard,
 
--   **Test** : Wird zum Testen des Befehls verwendet
+-   **Tester** : Wird zum Testen des Befehls verwendet
 
-> **Notiz**
+> **Note**
 >
 > Jeedom überprüft alle 15 Minuten, ob das VPN gestartet wurde oder
 > verhaftet (falls erforderlich) und entsprechend handeln, wenn dies nicht der Fall ist

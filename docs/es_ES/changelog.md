@@ -8,7 +8,7 @@
 
 # 04/16/2019
 
-- Optimizaciones
+- Optimisations
 
 # 16/01/2019
 
@@ -16,7 +16,7 @@
 
 # 23/11/2018
 
-- Optimizaciones
+- Optimisations
 
 # 09/11/2018
 

@@ -22,29 +22,29 @@ Here you find all the configuration of your equipment :
 -   **Category** : equipment categories (it may belong to
     multiple categories),
 
--   **Activate** : makes your equipment active,
+-   **Activer** : makes your equipment active,
 
 -   **Visible** : makes your equipment visible on the dashboard,
 
-> **NOTE**
+> **Note**
 >
 > The other options will not be detailed here, to have more
 > further information please refer to the [documention
-> openvpn] (https:
+> openvpn](https://openvpn.net/index.php/open-source/documentation.html)
 
-> **NOTE**
+> **Note**
 >
 > For shell commands executed after startup you have the tag # interface # for the name of the interface automatically replaced
 
 Below you find the list of orders :
 
--   **Name** : the name displayed on the dashboard,
+-   **Nom** : the name displayed on the dashboard,
 
--   **Pin up** : allows to display the data on the dashboard,
+-   **Afficher** : allows to display the data on the dashboard,
 
--   **Test** : Used to test the command
+-   **Tester** : Used to test the command
 
-> **NOTE**
+> **Note**
 >
 > Jeedom will check every 15 minutes if the VPN is started or
 > arrested (if necessary) and act accordingly if this is not the case

@@ -8,7 +8,7 @@
 
 # 04/16/2019
 
-- Optimizations
+- Optimisations
 
 # 01/16/2019
 
@@ -16,9 +16,9 @@
 
 # 11/23/2018
 
-- Optimizations
+- Optimisations
 
-# 
+# 11/09/2018
 
 - Possibility of adding options on the openvpn configuration
 - Ability to execute commands after starting DNS (the # interface # tag gives the interface name)
