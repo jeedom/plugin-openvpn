@@ -1,6 +1,6 @@
->**IMPORTANT**
+>**Importante**
 >
->Como recordatorio si no hay información sobre la actualización, significa que solo se refiere a la actualización de documentación, traducción o texto.
+>Como recordatorio si no hay información sobre la actualización, significa que solo se refiere a la actualización de documentación, traducción o texto
 
 # 11/14/2019
 
@@ -16,7 +16,7 @@
 
 # 16/01/2019
 
-- Corrección de un problema de dependencia.
+- Corrección de un problema de dependencia
 
 # 23/11/2018
 
@@ -29,7 +29,7 @@
 
 # 10/30/2018
 
-- Mejora del cálculo de la instalación o no de las dependencias.
+- Mejora del cálculo de la instalación o no de las dependencias
 
 # 05/29/2018
 

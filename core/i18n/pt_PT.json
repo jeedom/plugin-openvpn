@@ -50,7 +50,7 @@
         "EqLogic inconnu verifié l\\'id": "ID verificado do EqLogic desconhecido",
         "Aucun fichier trouvé. Vérifiez paramètre PHP (post size limit)": "Nenhum arquivo encontrado. Verifique a configuração do PHP (limite de tamanho da postagem)",
         "Le fichier est trop gros (maximum 1mo)": "O arquivo é muito grande (máximo de 1mo)",
-        "Aucune méthode correspondante à : ": "Aucune methode correspondante à : "
+        "Aucune méthode correspondante à : ": "Aucune methode correspondante à :"
     },
     "plugins\/openvpn\/core\/class\/openvpn.class.php": {
         "Démarré": "Começado",
