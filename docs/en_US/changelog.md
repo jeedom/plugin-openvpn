@@ -1,3 +1,7 @@
+>**IMPORTANT**
+>
+>As a reminder if there is no information on the update, it means that it only concerns the updating of documentation, translation or text.
+
 # 11/14/2019
 
 - Bugfix
@@ -21,7 +25,7 @@
 # 11/09/2018
 
 - Possibility of adding options on the openvpn configuration
-- Ability to execute commands after starting DNS (the # interface # tag gives the interface name)
+- Ability to execute commands after starting DNS (the tag #interface# allows to have the name of the interface)
 
 # 10/30/2018
 

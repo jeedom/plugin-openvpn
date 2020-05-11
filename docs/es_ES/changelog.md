@@ -1,3 +1,7 @@
+>**IMPORTANT**
+>
+>Como recordatorio si no hay información sobre la actualización, significa que solo se refiere a la actualización de documentación, traducción o texto.
+
 # 11/14/2019
 
 - Correcciones de errores
@@ -21,7 +25,7 @@
 # 09/11/2018
 
 - Posibilidad de agregar opciones en la configuración openvpn
-- Capacidad para ejecutar comandos después de iniciar DNS (la etiqueta # interface # proporciona el nombre de la interfaz)
+- Capacidad para ejecutar comandos después de iniciar DNS (la etiqueta #interface# permite tener el nombre de la interfaz)
 
 # 10/30/2018
 
