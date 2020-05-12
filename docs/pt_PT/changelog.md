@@ -1,3 +1,9 @@
+# Changelog Openvpn
+
+>**IMPORTANTE**
+>
+>Como lembrete, se não houver informações sobre a atualização, isso significa que se trata apenas da atualização da documentação, tradução ou texto
+
 # 14/11/2019
 
 - Correções de bugs
@@ -21,7 +27,7 @@
 # 09/11/2018
 
 - Possibilidade de adicionar opções na configuração do openvpn
-- Capacidade de executar comandos após iniciar o DNS (a tag # interface # fornece o nome da interface)
+- Capacidade de executar comandos após iniciar o DNS (a tag #interface# permite ter o nome da interface)
 
 # 30/10/2018
 
