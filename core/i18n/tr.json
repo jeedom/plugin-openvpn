@@ -1,0 +1,64 @@
+{
+    "plugins\/openvpn\/plugin_info\/configuration.php": {
+        "401 - Accès non autorisé": "401 - Yetkisiz erişim"
+    },
+    "plugins\/openvpn\/desktop\/php\/openvpn.php": {
+        "401 - Accès non autorisé": "401 - Yetkisiz erişim",
+        "Gestion": "Idare",
+        "Ajouter": "Ekle",
+        "Mes openvpns": "",
+        "Rechercher": "Arayın",
+        "Configuration avancée": "Gelişmiş ayarlar",
+        "Sauvegarder": "Kaydet",
+        "Supprimer": "Sil",
+        "Equipement": "Cihaz",
+        "Commandes": "Komutalar",
+        "Nom de l'équipement openvpn": "",
+        "Objet parent": "Üst nesne",
+        "Aucun": "Hiçbir",
+        "Catégorie": "Kategori",
+        "Activer": "Etkinleştir",
+        "Visible": "Görülebilir",
+        "Certificat CA": "",
+        "Envoyer": "Gönder",
+        "Serveur hôte": "",
+        "Port hôte": "",
+        "Paramètres optionnels": "",
+        "Commande post démarrage": "",
+        "Authentification mode": "",
+        "Nom d'utilisateur": "Kullanıcı adı",
+        "Password": "",
+        "Certification client": "",
+        "Clef client": "",
+        "Protocole": "Protokol",
+        "Interface": "Arayüz",
+        "Compression": "",
+        "Script sécurité": "",
+        "Pull": "",
+        "Nom": "İsim",
+        "Type": "Çeşit",
+        "Action": "Eylem"
+    },
+    "plugins\/openvpn\/desktop\/js\/openvpn.js": {
+        "Fichier envoyé avec succès": "",
+        "Afficher": "Göster",
+        "Historiser": "Tarihe göre sırala",
+        "Tester": "Test et"
+    },
+    "plugins\/openvpn\/core\/ajax\/openvpn.ajax.php": {
+        "401 - Accès non autorisé": "401 - Yetkisiz erişim",
+        "EqLogic inconnu verifié l\\'id": "",
+        "Aucun fichier trouvé. Vérifiez paramètre PHP (post size limit)": "",
+        "Le fichier est trop gros (maximum 1mo)": "",
+        "Aucune méthode correspondante à : ": "Aşağıdakilere karşılık gelen bir yöntem yok:"
+    },
+    "plugins\/openvpn\/core\/class\/openvpn.class.php": {
+        "Démarré": "Başladı",
+        "Actif": "Varlıklar",
+        "Démarrer": "Başlangıç",
+        "Arrêter": "Durdur",
+        "IP": "",
+        "Lancement openvpn : ": "",
+        "Aucune": "Hayır"
+    }
+}

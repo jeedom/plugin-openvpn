@@ -1,0 +1,64 @@
+{
+    "plugins\/openvpn\/plugin_info\/configuration.php": {
+        "401 - Accès non autorisé": "401 - Accesso non autorizzato"
+    },
+    "plugins\/openvpn\/desktop\/php\/openvpn.php": {
+        "401 - Accès non autorisé": "401 - Accesso non autorizzato",
+        "Gestion": "Gestione",
+        "Ajouter": "Aggiungi",
+        "Mes openvpns": "",
+        "Rechercher": "Ricercare",
+        "Configuration avancée": "Configurazione avanzata",
+        "Sauvegarder": "Salva",
+        "Supprimer": "Rimuovere",
+        "Equipement": "Dispositivo",
+        "Commandes": "Comandi",
+        "Nom de l'équipement openvpn": "",
+        "Objet parent": "Oggetto padre",
+        "Aucun": "Nessuno",
+        "Catégorie": "Categoria",
+        "Activer": "Attivare",
+        "Visible": "Visibile",
+        "Certificat CA": "",
+        "Envoyer": "Invia",
+        "Serveur hôte": "",
+        "Port hôte": "",
+        "Paramètres optionnels": "",
+        "Commande post démarrage": "",
+        "Authentification mode": "",
+        "Nom d'utilisateur": "Nome utente",
+        "Password": "",
+        "Certification client": "",
+        "Clef client": "",
+        "Protocole": "Protocoll",
+        "Interface": "Interfaccia",
+        "Compression": "",
+        "Script sécurité": "",
+        "Pull": "",
+        "Nom": "Nome",
+        "Type": "Tipo",
+        "Action": "Azione"
+    },
+    "plugins\/openvpn\/desktop\/js\/openvpn.js": {
+        "Fichier envoyé avec succès": "",
+        "Afficher": "Mostra",
+        "Historiser": "Storicizza",
+        "Tester": "Prova"
+    },
+    "plugins\/openvpn\/core\/ajax\/openvpn.ajax.php": {
+        "401 - Accès non autorisé": "401 - Accesso non autorizzato",
+        "EqLogic inconnu verifié l\\'id": "",
+        "Aucun fichier trouvé. Vérifiez paramètre PHP (post size limit)": "",
+        "Le fichier est trop gros (maximum 1mo)": "",
+        "Aucune méthode correspondante à : ": "Nessun metodo corrispondente a:"
+    },
+    "plugins\/openvpn\/core\/class\/openvpn.class.php": {
+        "Démarré": "Parte",
+        "Actif": "Beni",
+        "Démarrer": "Avvio",
+        "Arrêter": "Ferma",
+        "IP": "",
+        "Lancement openvpn : ": "",
+        "Aucune": "No"
+    }
+}

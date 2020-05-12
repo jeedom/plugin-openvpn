@@ -72,10 +72,14 @@ class openvpn extends eqLogic {
 		}
 	}
 	
+	public static function cleanVpnName($_name){
+		return str_replace(array(' ','(',')','/',',',';','\\','%','*','$'), '_', $_name);
+	}
+	
 	/*     * *********************Méthodes d'instance************************* */
 	
 	public function getInterfaceName() {
-		$log_name = ('openvpn_' . str_replace(' ', '_', $this->getName()));
+		$log_name = ('openvpn_' . self::cleanVpnName($this->getName()));
 		$path =  log::getPathToLog($log_name);
 		if (!file_exists($path)) {
 			return false;
@@ -94,7 +98,7 @@ class openvpn extends eqLogic {
 	}
 	
 	public function getIp() {
-		$log_name = ('openvpn_' . str_replace(' ', '_', $this->getName()));
+		$log_name = ('openvpn_' . self::cleanVpnName($this->getName()));
 		if (!file_exists(log::getPathToLog($log_name))) {
 			return false;
 		}
@@ -236,7 +240,7 @@ class openvpn extends eqLogic {
 	public function start_openvpn() {
 		$this->stop_openvpn();
 		$this->writeConfig();
-		$log_name = ('openvpn_' . str_replace(' ', '_', $this->getName()));
+		$log_name = ('openvpn_' . self::cleanVpnName($this->getName()));
 		log::remove($log_name);
 		$cmd = system::getCmdSudo() . $this->getCmdLine() . ' >> ' . log::getPathToLog($log_name) . '  2>&1 &';
 		log::add($log_name, 'info', __('Lancement openvpn : ', __FILE__) . $cmd);

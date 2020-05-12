@@ -1,0 +1,64 @@
+{
+    "plugins\/openvpn\/plugin_info\/configuration.php": {
+        "401 - Accès non autorisé": "401-不正アクセス"
+    },
+    "plugins\/openvpn\/desktop\/php\/openvpn.php": {
+        "401 - Accès non autorisé": "401-不正アクセス",
+        "Gestion": "管理",
+        "Ajouter": "加えます",
+        "Mes openvpns": "",
+        "Rechercher": "検索",
+        "Configuration avancée": "高度な構成",
+        "Sauvegarder": "セーブ",
+        "Supprimer": "取り除きます",
+        "Equipement": "設備",
+        "Commandes": "コマンド",
+        "Nom de l'équipement openvpn": "",
+        "Objet parent": "親オブジェクト",
+        "Aucun": "何でもありません",
+        "Catégorie": "カテゴリ",
+        "Activer": "アクティブ",
+        "Visible": "目に見えます",
+        "Certificat CA": "",
+        "Envoyer": "送ります",
+        "Serveur hôte": "",
+        "Port hôte": "",
+        "Paramètres optionnels": "",
+        "Commande post démarrage": "",
+        "Authentification mode": "",
+        "Nom d'utilisateur": "ユーザー名",
+        "Password": "",
+        "Certification client": "",
+        "Clef client": "",
+        "Protocole": "プロトコル",
+        "Interface": "インターフェース",
+        "Compression": "",
+        "Script sécurité": "",
+        "Pull": "",
+        "Nom": "表題",
+        "Type": "タイプ",
+        "Action": "アクション"
+    },
+    "plugins\/openvpn\/desktop\/js\/openvpn.js": {
+        "Fichier envoyé avec succès": "",
+        "Afficher": "ディスプレイ",
+        "Historiser": "Historicize",
+        "Tester": "テスト"
+    },
+    "plugins\/openvpn\/core\/ajax\/openvpn.ajax.php": {
+        "401 - Accès non autorisé": "401-不正アクセス",
+        "EqLogic inconnu verifié l\\'id": "",
+        "Aucun fichier trouvé. Vérifiez paramètre PHP (post size limit)": "",
+        "Le fichier est trop gros (maximum 1mo)": "",
+        "Aucune méthode correspondante à : ": "以下に対応するメソッドはありません："
+    },
+    "plugins\/openvpn\/core\/class\/openvpn.class.php": {
+        "Démarré": "開始",
+        "Actif": "財産",
+        "Démarrer": "スタート",
+        "Arrêter": "ストップ",
+        "IP": "",
+        "Lancement openvpn : ": "",
+        "Aucune": "いいえ"
+    }
+}

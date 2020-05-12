@@ -1,0 +1,64 @@
+{
+    "plugins\/openvpn\/plugin_info\/configuration.php": {
+        "401 - Accès non autorisé": "401 - Akses tidak sah"
+    },
+    "plugins\/openvpn\/desktop\/php\/openvpn.php": {
+        "401 - Accès non autorisé": "401 - Akses tidak sah",
+        "Gestion": "Manajemen",
+        "Ajouter": "Tambahan",
+        "Mes openvpns": "",
+        "Rechercher": "Pencarian",
+        "Configuration avancée": "Konfigurasi lanjutan",
+        "Sauvegarder": "Menyimpan",
+        "Supprimer": "Menghapus",
+        "Equipement": "Peralatan",
+        "Commandes": "Perintah",
+        "Nom de l'équipement openvpn": "",
+        "Objet parent": "Objek induk",
+        "Aucun": "Tak ada",
+        "Catégorie": "Kategori",
+        "Activer": "Mengaktifkan",
+        "Visible": "Terlihat",
+        "Certificat CA": "",
+        "Envoyer": "Kirim",
+        "Serveur hôte": "",
+        "Port hôte": "",
+        "Paramètres optionnels": "",
+        "Commande post démarrage": "",
+        "Authentification mode": "",
+        "Nom d'utilisateur": "Nama pemakai",
+        "Password": "",
+        "Certification client": "",
+        "Clef client": "",
+        "Protocole": "Protokol",
+        "Interface": "Antarmuka",
+        "Compression": "",
+        "Script sécurité": "",
+        "Pull": "",
+        "Nom": "Nama",
+        "Type": "Jenis",
+        "Action": "Tindakan"
+    },
+    "plugins\/openvpn\/desktop\/js\/openvpn.js": {
+        "Fichier envoyé avec succès": "",
+        "Afficher": "Memenitikan",
+        "Historiser": "Historicize",
+        "Tester": "Coba"
+    },
+    "plugins\/openvpn\/core\/ajax\/openvpn.ajax.php": {
+        "401 - Accès non autorisé": "401 - Akses tidak sah",
+        "EqLogic inconnu verifié l\\'id": "",
+        "Aucun fichier trouvé. Vérifiez paramètre PHP (post size limit)": "",
+        "Le fichier est trop gros (maximum 1mo)": "",
+        "Aucune méthode correspondante à : ": "Aucune methode correspondante à :"
+    },
+    "plugins\/openvpn\/core\/class\/openvpn.class.php": {
+        "Démarré": "Mulai",
+        "Actif": "Aktiva",
+        "Démarrer": "Awal",
+        "Arrêter": "Berhenti",
+        "IP": "",
+        "Lancement openvpn : ": "",
+        "Aucune": "Tidak"
+    }
+}

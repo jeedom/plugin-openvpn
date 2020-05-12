@@ -1,0 +1,64 @@
+{
+    "plugins\/openvpn\/plugin_info\/configuration.php": {
+        "401 - Accès non autorisé": "401 - Несанкционированный доступ"
+    },
+    "plugins\/openvpn\/desktop\/php\/openvpn.php": {
+        "401 - Accès non autorisé": "401 - Несанкционированный доступ",
+        "Gestion": "Управление",
+        "Ajouter": "Добавить",
+        "Mes openvpns": "",
+        "Rechercher": "поиск",
+        "Configuration avancée": "Расширенные настройки",
+        "Sauvegarder": "Сохранить",
+        "Supprimer": "удаление",
+        "Equipement": "Оборудование",
+        "Commandes": "Команды",
+        "Nom de l'équipement openvpn": "",
+        "Objet parent": "Родительский объект",
+        "Aucun": "Нет",
+        "Catégorie": "категория",
+        "Activer": "активировать",
+        "Visible": "Видимый",
+        "Certificat CA": "",
+        "Envoyer": "Отправить",
+        "Serveur hôte": "",
+        "Port hôte": "",
+        "Paramètres optionnels": "",
+        "Commande post démarrage": "",
+        "Authentification mode": "",
+        "Nom d'utilisateur": "Имя пользователя",
+        "Password": "",
+        "Certification client": "",
+        "Clef client": "",
+        "Protocole": "Протокол",
+        "Interface": "интерфейс",
+        "Compression": "",
+        "Script sécurité": "",
+        "Pull": "",
+        "Nom": "Имя",
+        "Type": "Тип",
+        "Action": "Действие"
+    },
+    "plugins\/openvpn\/desktop\/js\/openvpn.js": {
+        "Fichier envoyé avec succès": "",
+        "Afficher": "дисплей",
+        "Historiser": "История",
+        "Tester": "Тест"
+    },
+    "plugins\/openvpn\/core\/ajax\/openvpn.ajax.php": {
+        "401 - Accès non autorisé": "401 - Несанкционированный доступ",
+        "EqLogic inconnu verifié l\\'id": "",
+        "Aucun fichier trouvé. Vérifiez paramètre PHP (post size limit)": "",
+        "Le fichier est trop gros (maximum 1mo)": "",
+        "Aucune méthode correspondante à : ": "Aucune methode correspondante à :"
+    },
+    "plugins\/openvpn\/core\/class\/openvpn.class.php": {
+        "Démarré": "Начало",
+        "Actif": "активы",
+        "Démarrer": "",
+        "Arrêter": "Стоп",
+        "IP": "",
+        "Lancement openvpn : ": "",
+        "Aucune": "нет"
+    }
+}

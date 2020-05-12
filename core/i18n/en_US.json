@@ -1,0 +1,64 @@
+{
+    "plugins\/openvpn\/plugin_info\/configuration.php": {
+        "401 - Accès non autorisé": "401 - Unauthorized access"
+    },
+    "plugins\/openvpn\/desktop\/php\/openvpn.php": {
+        "401 - Accès non autorisé": "401 - Unauthorized access",
+        "Gestion": "Management",
+        "Ajouter": "Add",
+        "Mes openvpns": "My openvpns",
+        "Rechercher": "Search",
+        "Configuration avancée": "Advanced configuration",
+        "Sauvegarder": "Save",
+        "Supprimer": "Delete",
+        "Equipement": "Device",
+        "Commandes": "Commands",
+        "Nom de l'équipement openvpn": "Name of the openvpn device",
+        "Objet parent": "Parent object",
+        "Aucun": "None",
+        "Catégorie": "Category",
+        "Activer": "Activate",
+        "Visible": "Visible",
+        "Certificat CA": "CA certificate",
+        "Envoyer": "Send",
+        "Serveur hôte": "Host server",
+        "Port hôte": "Host port",
+        "Paramètres optionnels": "Optional parameters",
+        "Commande post démarrage": "Post start command",
+        "Authentification mode": "Fashion authentication",
+        "Nom d'utilisateur": "Username",
+        "Password": "Password",
+        "Certification client": "Customer certification",
+        "Clef client": "Customer key",
+        "Protocole": "Protocol",
+        "Interface": "Interface",
+        "Compression": "Compression",
+        "Script sécurité": "Security script",
+        "Pull": "Sweater",
+        "Nom": "Name",
+        "Type": "Type",
+        "Action": "Action"
+    },
+    "plugins\/openvpn\/desktop\/js\/openvpn.js": {
+        "Fichier envoyé avec succès": "File successfully sent",
+        "Afficher": "Pin up",
+        "Historiser": "Historize",
+        "Tester": "Test"
+    },
+    "plugins\/openvpn\/core\/ajax\/openvpn.ajax.php": {
+        "401 - Accès non autorisé": "401 - Unauthorized access",
+        "EqLogic inconnu verifié l\\'id": "Unknown EqLogic verified id",
+        "Aucun fichier trouvé. Vérifiez paramètre PHP (post size limit)": "No files found. Check PHP setting (post size limit)",
+        "Le fichier est trop gros (maximum 1mo)": "The file is too large (maximum 1mo)",
+        "Aucune méthode correspondante à : ": "No method corresponding to:"
+    },
+    "plugins\/openvpn\/core\/class\/openvpn.class.php": {
+        "Démarré": "Started",
+        "Actif": "Active",
+        "Démarrer": "Start",
+        "Arrêter": "Stop",
+        "IP": "IP",
+        "Lancement openvpn : ": "Openvpn launch:",
+        "Aucune": "Any"
+    }
+}
