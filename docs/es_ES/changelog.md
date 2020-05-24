@@ -1,3 +1,9 @@
+# Registro de cambios Openvpn
+
+>**Importante**
+>
+>Como recordatorio si no hay información sobre la actualización, significa que solo se refiere a la actualización de documentación, traducción o texto
+
 # 11/14/2019
 
 - Correcciones de errores
@@ -8,24 +14,24 @@
 
 # 04/16/2019
 
-- Optimizaciones
+- Optimisations
 
-# 01/16/2019
+# 16/01/2019
 
-- Corrección de un problema de dependencia.
+- Corrección de un problema de dependencia
 
-# 11/23/2018
+# 23/11/2018
 
-- Optimizaciones
+- Optimisations
 
 # 09/11/2018
 
 - Posibilidad de agregar opciones en la configuración openvpn
-- Capacidad para ejecutar comandos después de iniciar DNS (la etiqueta # interface # proporciona el nombre de la interfaz)
+- Capacidad para ejecutar comandos después de iniciar DNS (la etiqueta #interface# permite tener el nombre de la interfaz)
 
 # 10/30/2018
 
-- Mejora del cálculo de la instalación o no de las dependencias.
+- Mejora del cálculo de la instalación o no de las dependencias
 
 # 05/29/2018
 

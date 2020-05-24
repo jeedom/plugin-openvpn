@@ -2,12 +2,6 @@
     "plugins\/openvpn\/plugin_info\/configuration.php": {
         "401 - Accès non autorisé": "401 - Unauthorized access"
     },
-    "plugins\/openvpn\/desktop\/js\/openvpn.js": {
-        "Fichier envoyé avec succès": "File successfully sent",
-        "Afficher": "Pin up",
-        "Historiser": "Historicize",
-        "Tester": "Test"
-    },
     "plugins\/openvpn\/desktop\/php\/openvpn.php": {
         "401 - Accès non autorisé": "401 - Unauthorized access",
         "Gestion": "Management",
@@ -16,17 +10,17 @@
         "Rechercher": "Search",
         "Configuration avancée": "Advanced configuration",
         "Sauvegarder": "Save",
-        "Supprimer": "Remove",
-        "Equipement": "Equipment",
-        "Commandes": "Orders",
+        "Supprimer": "Delete",
+        "Equipement": "Device",
+        "Commandes": "Commands",
         "Nom de l'équipement openvpn": "Name of the openvpn device",
         "Objet parent": "Parent object",
-        "Aucun": "No",
+        "Aucun": "None",
         "Catégorie": "Category",
         "Activer": "Activate",
         "Visible": "Visible",
         "Certificat CA": "CA certificate",
-        "Envoyer": "To send",
+        "Envoyer": "Send",
         "Serveur hôte": "Host server",
         "Port hôte": "Host port",
         "Paramètres optionnels": "Optional parameters",
@@ -41,9 +35,15 @@
         "Compression": "Compression",
         "Script sécurité": "Security script",
         "Pull": "Sweater",
-        "Nom": "Last name",
+        "Nom": "Name",
         "Type": "Type",
         "Action": "Action"
+    },
+    "plugins\/openvpn\/desktop\/js\/openvpn.js": {
+        "Fichier envoyé avec succès": "File successfully sent",
+        "Afficher": "Pin up",
+        "Historiser": "Historize",
+        "Tester": "Test"
     },
     "plugins\/openvpn\/core\/ajax\/openvpn.ajax.php": {
         "401 - Accès non autorisé": "401 - Unauthorized access",

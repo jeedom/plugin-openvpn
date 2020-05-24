@@ -1,3 +1,9 @@
+# Changelog Openvpn
+
+>**Important**
+>
+>As a reminder if there is no information on the update, it means that it only concerns the updating of documentation, translation or text
+
 # 11/14/2019
 
 - Bugfix
@@ -8,7 +14,7 @@
 
 # 04/16/2019
 
-- Optimizations
+- Optimisations
 
 # 01/16/2019
 
@@ -16,12 +22,12 @@
 
 # 11/23/2018
 
-- Optimizations
+- Optimisations
 
-# 09/11/2018
+# 11/09/2018
 
 - Possibility of adding options on the openvpn configuration
-- Ability to execute commands after starting DNS (the # interface # tag gives the interface name)
+- Ability to execute commands after starting DNS (the tag #interface# allows to have the name of the interface)
 
 # 10/30/2018
 
@@ -39,6 +45,6 @@
 
 - The verification of the VPN status is now done every 5 min instead of 15 min
 
-# 01/03/2018
+# 03/01/2018
 
 -	Correction of a bug on file upload (CA and others)

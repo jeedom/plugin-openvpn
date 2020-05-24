@@ -2,12 +2,6 @@
     "plugins\/openvpn\/plugin_info\/configuration.php": {
         "401 - Accès non autorisé": "401 - Accès non autorisé"
     },
-    "plugins\/openvpn\/desktop\/js\/openvpn.js": {
-        "Fichier envoyé avec succès": "Fichier envoyé avec succès",
-        "Afficher": "Afficher",
-        "Historiser": "Historiser",
-        "Tester": "Tester"
-    },
     "plugins\/openvpn\/desktop\/php\/openvpn.php": {
         "401 - Accès non autorisé": "401 - Accès non autorisé",
         "Gestion": "Gestion",
@@ -44,6 +38,12 @@
         "Nom": "Nom",
         "Type": "Type",
         "Action": "Action"
+    },
+    "plugins\/openvpn\/desktop\/js\/openvpn.js": {
+        "Fichier envoyé avec succès": "Fichier envoyé avec succès",
+        "Afficher": "Afficher",
+        "Historiser": "Historiser",
+        "Tester": "Tester"
     },
     "plugins\/openvpn\/core\/ajax\/openvpn.ajax.php": {
         "401 - Accès non autorisé": "401 - Accès non autorisé",

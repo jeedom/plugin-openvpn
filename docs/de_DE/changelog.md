@@ -1,3 +1,9 @@
+# Changelog Openvpn
+
+>**Wichtig**
+>
+>Zur Erinnerung: Wenn keine Informationen zum Update vorhanden sind, bedeutet dies, dass es sich nur um die Aktualisierung von Dokumentation, Übersetzung oder Text handelt
+
 # 2019.11.14
 
 - Fehlerbehebungen
@@ -8,20 +14,20 @@
 
 # 2019.04.16
 
-- Optimierungen
+- Optimisations
 
-# 2019.01.16
+# 16.01.2019
 
 - Korrektur eines Abhängigkeitsproblems
 
-# 2018.11.23
+# 23.11.2008
 
-- Optimierungen
+- Optimisations
 
 # 2018.09.11
 
 - Möglichkeit, Optionen zur openvpn-Konfiguration hinzuzufügen
-- Möglichkeit, Befehle nach dem Starten von DNS auszuführen (das Tag # interface # gibt den Namen der Schnittstelle an)
+- Möglichkeit, Befehle nach dem Start von DNS (dem Tag) auszuführen #interface# erlaubt den Namen der Schnittstelle zu haben)
 
 # 2018.10.30
 
@@ -39,6 +45,6 @@
 
 - Die Überprüfung des VPN-Status erfolgt jetzt alle 5 Minuten statt 15 Minuten
 
-# 2018.01.03
+# 03/01/2018
 
 -	Behebung eines Fehlers beim Hochladen von Dateien (CA und andere)

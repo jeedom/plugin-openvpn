@@ -2,31 +2,25 @@
     "plugins\/openvpn\/plugin_info\/configuration.php": {
         "401 - Accès non autorisé": "401 - Nicht autorisierter Zugriff"
     },
-    "plugins\/openvpn\/desktop\/js\/openvpn.js": {
-        "Fichier envoyé avec succès": "Datei erfolgreich gesendet",
-        "Afficher": "Anzeige",
-        "Historiser": "Historisieren",
-        "Tester": "Test"
-    },
     "plugins\/openvpn\/desktop\/php\/openvpn.php": {
         "401 - Accès non autorisé": "401 - Nicht autorisierter Zugriff",
-        "Gestion": "Management",
+        "Gestion": "Verwaltung",
         "Ajouter": "Hinzufügen",
         "Mes openvpns": "Meine openvpns",
-        "Rechercher": "Suche",
+        "Rechercher": "Suchen nach",
         "Configuration avancée": "Erweiterte Konfiguration",
         "Sauvegarder": "Speichern",
-        "Supprimer": "Entfernen",
-        "Equipement": "Ausrüstung",
+        "Supprimer": "Löschen",
+        "Equipement": "Gerät",
         "Commandes": "Befehle",
         "Nom de l'équipement openvpn": "Name des openvpn-Geräts",
         "Objet parent": "Übergeordnetes Objekt",
-        "Aucun": "Keine",
+        "Aucun": "Ohne",
         "Catégorie": "Kategorie",
-        "Activer": "Activate",
+        "Activer": "Aktivieren",
         "Visible": "Sichtbar",
         "Certificat CA": "CA-Zertifikat",
-        "Envoyer": "Send",
+        "Envoyer": "Senden",
         "Serveur hôte": "Host-Server",
         "Port hôte": "Host-Port",
         "Paramètres optionnels": "Optionale Parameter",
@@ -36,7 +30,7 @@
         "Password": "Kennwort",
         "Certification client": "Kundenzertifizierung",
         "Clef client": "Kundenschlüssel",
-        "Protocole": "Protokoll",
+        "Protocole": "Protokolle",
         "Interface": "Schnittstelle",
         "Compression": "Kompression",
         "Script sécurité": "Sicherheitsskript",
@@ -44,6 +38,12 @@
         "Nom": "Name",
         "Type": "Typ",
         "Action": "Aktion"
+    },
+    "plugins\/openvpn\/desktop\/js\/openvpn.js": {
+        "Fichier envoyé avec succès": "Datei erfolgreich gesendet",
+        "Afficher": "Anzeige",
+        "Historiser": "Chronik",
+        "Tester": "Test"
     },
     "plugins\/openvpn\/core\/ajax\/openvpn.ajax.php": {
         "401 - Accès non autorisé": "401 - Nicht autorisierter Zugriff",
@@ -56,7 +56,7 @@
         "Démarré": "Gestartet",
         "Actif": "Aktiva",
         "Démarrer": "Start",
-        "Arrêter": "Anschlag",
+        "Arrêter": "Beenden",
         "IP": "IP",
         "Lancement openvpn : ": "Openvpn-Start:",
         "Aucune": "Keine"
