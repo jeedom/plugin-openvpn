@@ -204,14 +204,10 @@ class openvpn extends eqLogic {
 	}
 	
 	public function decrypt(){
-		$this->setConfiguration('remote_host',utils::decrypt($this->getConfiguration('remote_host')));
 		$this->setConfiguration('password',utils::decrypt($this->getConfiguration('password')));
-		$this->setConfiguration('username',utils::decrypt($this->getConfiguration('username')));
 	}
 	public function encrypt(){
-		$this->setConfiguration('remote_host',utils::encrypt($this->getConfiguration('remote_host')));
 		$this->setConfiguration('password',utils::encrypt($this->getConfiguration('password')));
-		$this->setConfiguration('username',utils::encrypt($this->getConfiguration('username')));
 	}
 	
 	private function writeConfig() {
