@@ -29,7 +29,7 @@ class openvpn extends eqLogic {
 		$return['log'] = 'openvpn_update';
 		$return['progress_file'] = jeedom::getTmpFolder('openvpn') . '/dependance';
 		$return['state'] = 'ok';
-		if (exec('which openvpn | wc -l') == 0 && exec('dpkg -s openvpn | grep install | wc -l') == 0){
+		if (exec('which openvpn | wc -l') == 0){
 			$return['state'] = 'nok';
 		}
 		return $return;
@@ -201,6 +201,13 @@ class openvpn extends eqLogic {
 		if ($this->getIsEnable() == 0) {
 			$this->stop_openvpn();
 		}
+	}
+	
+	public function decrypt(){
+		$this->setConfiguration('password',utils::decrypt($this->getConfiguration('password')));
+	}
+	public function encrypt(){
+		$this->setConfiguration('password',utils::encrypt($this->getConfiguration('password')));
 	}
 	
 	private function writeConfig() {

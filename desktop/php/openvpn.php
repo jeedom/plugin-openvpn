@@ -8,7 +8,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 ?>
 
 <div class="row row-overflow">
-    <div class="col-xs-12 eqLogicThumbnailDisplay">
+	<div class="col-xs-12 eqLogicThumbnailDisplay">
 		<legend><i class="fas fa-cog"></i> {{Gestion}}</legend>
 		<div class="eqLogicThumbnailContainer">
 			<div class="cursor eqLogicAction logoPrimary" data-action="add">
@@ -37,8 +37,8 @@ $eqLogics = eqLogic::byType($plugin->getId());
 		<div class="input-group pull-right" style="display:inline-flex">
 			<span class="input-group-btn">
 				<a class="btn btn-default eqLogicAction btn-sm roundedLeft" data-action="configure"><i class="fas fa-cogs"></i> {{Configuration avancée}}</a>
-                <a class="btn btn-sm btn-success eqLogicAction" data-action="save"><i class="fas fa-check-circle"></i> {{Sauvegarder}}</a>
-                <a class="btn btn-danger btn-sm eqLogicAction roundedRight" data-action="remove"><i class="fas fa-minus-circle"></i> {{Supprimer}}</a>
+				<a class="btn btn-sm btn-success eqLogicAction" data-action="save"><i class="fas fa-check-circle"></i> {{Sauvegarder}}</a>
+				<a class="btn btn-danger btn-sm eqLogicAction roundedRight" data-action="remove"><i class="fas fa-minus-circle"></i> {{Supprimer}}</a>
 			</span>
 		</div>
 		<ul class="nav nav-tabs" role="tablist">
@@ -46,7 +46,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 			<li role="presentation" class="active"><a href="#eqlogictab" aria-controls="home" role="tab" data-toggle="tab"><i class="fas fa-tachometer-alt"></i> {{Equipement}}</a></li>
 			<li role="presentation"><a href="#commandtab" aria-controls="profile" role="tab" data-toggle="tab"><i class="fas fa-list-alt"></i> {{Commandes}}</a></li>
 		</ul>
-        <div class="tab-content" style="height:calc(100% - 50px);overflow:auto;overflow-x: hidden;">
+		<div class="tab-content" style="height:calc(100% - 50px);overflow:auto;overflow-x: hidden;">
 			<div role="tabpanel" class="tab-pane active" id="eqlogictab">
 				<br/>
 				<div class="row">
@@ -66,14 +66,16 @@ $eqLogics = eqLogic::byType($plugin->getId());
 										<select id="sel_object" class="eqLogicAttr form-control" data-l1key="object_id">
 											<option value="">{{Aucun}}</option>
 											<?php
-											foreach (jeeObject::all() as $object) {
-												echo '<option value="' . $object->getId() . '">' . $object->getName() . '</option>';
+											$options = '';
+											foreach ((jeeObject::buildTree(null, false)) as $object) {
+												$options .= '<option value="' . $object->getId() . '">' . str_repeat('&nbsp;&nbsp;', $object->getConfiguration('parentNumber')) . $object->getName() . '</option>';
 											}
+											echo $options;
 											?>
 										</select>
 									</div>
 								</div>
-                                <div class="form-group">
+								<div class="form-group">
 									<label class="col-sm-4 control-label">{{Catégorie}}</label>
 									<div class="col-sm-8">
 										<?php
@@ -87,13 +89,13 @@ $eqLogics = eqLogic::byType($plugin->getId());
 									</div>
 								</div>
 								<div class="form-group">
-                                    <label class="col-sm-4 control-label"></label>
-                                    <div class="col-sm-8">
-                                        <label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isEnable" checked/>{{Activer}}</label>
-                                        <label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isVisible" checked/>{{Visible}}</label>
-                                    </div>
-                                </div>
-                                <br/>
+									<label class="col-sm-4 control-label"></label>
+									<div class="col-sm-8">
+										<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isEnable" checked/>{{Activer}}</label>
+										<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isVisible" checked/>{{Visible}}</label>
+									</div>
+								</div>
+								<br/>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">{{Certificat CA}}</label>
 									<div class="col-sm-8">
@@ -229,9 +231,9 @@ $eqLogics = eqLogic::byType($plugin->getId());
 				<table id="table_cmd" class="table table-bordered table-condensed">
 					<thead>
 						<tr>
-                            <th>{{Nom}}</th>
-                            <th>{{Type}}</th>
-                            <th>{{Action}}</th>
+							<th>{{Nom}}</th>
+							<th>{{Type}}</th>
+							<th>{{Action}}</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -242,6 +244,6 @@ $eqLogics = eqLogic::byType($plugin->getId());
 	</div>
 </div>
 <?php
-    include_file('desktop', 'openvpn', 'js', 'openvpn');
-    include_file('core', 'plugin.template', 'js');
+include_file('desktop', 'openvpn', 'js', 'openvpn');
+include_file('core', 'plugin.template', 'js');
 ?>

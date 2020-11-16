@@ -60,5 +60,8 @@
         "IP": "IP",
         "Lancement openvpn : ": "Lançamento do Openvpn:",
         "Aucune": "Não"
+    },
+    "info.json": {
+        "Plugin permettant de gérer la connexion à un serveur openvpn": "Plugin para gerenciar a conexão com um servidor openvpn"
     }
 }
