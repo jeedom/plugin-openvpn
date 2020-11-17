@@ -62,6 +62,6 @@
         "Aucune": "Não"
     },
     "info.json": {
-        "Plugin permettant de gérer la connexion à un serveur openvpn": "Plugin para gerenciar a conexão com um servidor openvpn"
+        "Plugin permettant de gérer la connexion à un serveur openvpn.": "Plugin para gerenciar a conexão com um servidor openvpn"
     }
 }
