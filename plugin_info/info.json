@@ -2,7 +2,7 @@
     "id": "openvpn",
     "name": "Openvpn",
     "description": {
-        "fr_FR": "Plugin permettant de gérer la connexion à un serveur openvpn",
+        "fr_FR": "Plugin permettant de gérer la connexion à un serveur openvpn.",
         "en_US": "Plugin to manage the connection to an openvpn server",
         "es_ES": "Complemento para administrar la conexión a un servidor openvpn",
         "de_DE": "Plugin zum Verwalten der Verbindung zu einem OpenVPN-Server",
