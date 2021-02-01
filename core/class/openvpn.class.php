@@ -214,11 +214,11 @@ class openvpn extends eqLogic {
 		if (!file_exists(dirname(__FILE__) . '/../../data')) {
 			mkdir(dirname(__FILE__) . '/../../data');
 		}
+		$remote = 'remote '.$this->getConfiguration('remote_host').' '.$this->getConfiguration('remote_port', 1194);
 		$replace = array(
 			'#dev#' => $this->getConfiguration('dev'),
 			'#proto#' => $this->getConfiguration('proto'),
-			'#remote_host#' => $this->getConfiguration('remote_host'),
-			'#remote_port#' => $this->getConfiguration('remote_port', 1194),
+			'#remote#' => $remote,
 			'#ca_path#' => trim(dirname(__FILE__) . '/../../data/ca_' . $this->getConfiguration('key') . '.crt'),
 			'#compression#' => $this->getConfiguration('compression'),
 			'#script_security#' => $this->getConfiguration('script_security'),
