@@ -216,6 +216,7 @@ class openvpn extends eqLogic {
 		}
 		if(trim($this->getConfiguration('remote')) != ''){
 			$remotes = explode(',',$this->getConfiguration('remote'));
+			shuffle($remotes);
 			$remote = '';
 			foreach ($remotes as $value) {
 				$remote .= 'remote '.$value."\n";
