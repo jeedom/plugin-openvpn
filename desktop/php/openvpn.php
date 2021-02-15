@@ -105,15 +105,9 @@ $eqLogics = eqLogic::byType($plugin->getId());
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-sm-4 control-label">{{Serveur hôte}}</label>
-									<div class="col-sm-4">
-										<input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="remote_host" />
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-4 control-label">{{Port hôte}}</label>
-									<div class="col-sm-4">
-										<input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="remote_port" />
+									<label class="col-sm-4 control-label">{{Serveur (host1 port1,host 2 port 2....)}}</label>
+									<div class="col-sm-8">
+										<textarea class="eqLogicAttr form-control ta_autosize" data-l1key="configuration" data-l2key="remote" ></textarea>
 									</div>
 								</div>
 								<div class="form-group">

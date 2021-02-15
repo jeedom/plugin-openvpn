@@ -21,8 +21,7 @@
         "Visible": "Visivél",
         "Certificat CA": "Certificado CA",
         "Envoyer": "Enviar",
-        "Serveur hôte": "Servidor host",
-        "Port hôte": "Porta do host",
+        "Serveur (host1 port1,host 2 port 2....)": "Servidor (host1 porta1, host 2 porta 2 ....)",
         "Paramètres optionnels": "Parâmetros opcionais",
         "Commande post démarrage": "Comando pós-início",
         "Authentification mode": "Autenticação de moda",
@@ -62,6 +61,6 @@
         "Aucune": "Não"
     },
     "info.json": {
-        "Plugin permettant de gérer la connexion à un serveur openvpn": "Plugin para gerenciar a conexão com um servidor openvpn"
+        "Plugin permettant de gérer la connexion à un serveur openvpn.": "Plugin para gerenciar a conexão com um servidor openvpn"
     }
 }

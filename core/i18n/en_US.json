@@ -11,18 +11,17 @@
         "Configuration avancée": "Advanced configuration",
         "Sauvegarder": "Save",
         "Supprimer": "Delete",
-        "Equipement": "Device",
+        "Equipement": "Equipment",
         "Commandes": "Commands",
-        "Nom de l'équipement openvpn": "Name of the openvpn device",
+        "Nom de l'équipement openvpn": "Name of openvpn equipment",
         "Objet parent": "Parent object",
         "Aucun": "None",
         "Catégorie": "Category",
-        "Activer": "Activate",
+        "Activer": "Active",
         "Visible": "Visible",
         "Certificat CA": "CA certificate",
         "Envoyer": "Send",
-        "Serveur hôte": "Host server",
-        "Port hôte": "Host port",
+        "Serveur (host1 port1,host 2 port 2....)": "Server (host1 port1, host 2 port 2 ....)",
         "Paramètres optionnels": "Optional parameters",
         "Commande post démarrage": "Post start command",
         "Authentification mode": "Fashion authentication",
@@ -41,7 +40,7 @@
     },
     "plugins\/openvpn\/desktop\/js\/openvpn.js": {
         "Fichier envoyé avec succès": "File successfully sent",
-        "Afficher": "Pin up",
+        "Afficher": "Show",
         "Historiser": "Historize",
         "Tester": "Test"
     },
@@ -62,6 +61,6 @@
         "Aucune": "Any"
     },
     "info.json": {
-        "Plugin permettant de gérer la connexion à un serveur openvpn": "Plugin to manage the connection to an openvpn server"
+        "Plugin permettant de gérer la connexion à un serveur openvpn.": "Plugin to manage the connection to an openvpn server"
     }
 }
