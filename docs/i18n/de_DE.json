@@ -2,6 +2,8 @@
     "changelog.md": {
         "Changelog Openvpn": "Changelog Openvpn",
         "Pour rappel s'il n'y a pas d'information sur la mise à jour, c'est que celle-ci concerne uniquement de la mise à jour de documentation, de traduction ou de texte": "Zur Erinnerung: Wenn keine Informationen zum Update vorhanden sind, bedeutet dies, dass es sich nur um die Aktualisierung von Dokumentation, Übersetzung oder Text handelt",
+        "15\/02\/2021": "15.02.2021",
+        "Debut du support haute disponibilité pour le nouveau systeme de DNS": "Beginn der Hochverfügbarkeitsunterstützung für das neue DNS-System",
         "16\/11\/2020": "16\/11\/2020",
         "Nouvelle présentation de la liste des objets": "Neue Darstellung der Objektliste",
         "Ajout du tag \"Compatibilité V4": "Hinzufügung des Tags \"V4-Kompatibilität",
