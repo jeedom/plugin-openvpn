@@ -1,4 +1,4 @@
-PROGRESS_FILE=/tmp/dependancy_camera_in_progress
+PROGRESS_FILE=/tmp/dependancy_openvpn_in_progress
 if [ ! -z $1 ]; then
 	PROGRESS_FILE=$1
 fi
