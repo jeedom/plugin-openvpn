@@ -13,17 +13,23 @@ $eqLogics = eqLogic::byType($plugin->getId());
 		<div class="eqLogicThumbnailContainer">
 			<div class="cursor eqLogicAction logoPrimary" data-action="add">
 				<i class="fas fa-plus-circle"></i>
-				<br/>
-				<span >{{Ajouter}}</span>
+				<br />
+				<span>{{Ajouter}}</span>
 			</div>
 		</div>
 		<legend><i class="fas fa-archway"></i> {{Mes openvpns}}</legend>
-		<input class="form-control" placeholder="{{Rechercher}}" id="in_searchEqlogic" />
+		<div class="input-group" style="margin:5px;">
+			<input class="form-control roundedLeft" placeholder="{{Rechercher}}" id="in_searchEqlogic" />
+			<div class="input-group-btn">
+				<a id="bt_resetSearch" class="btn roundedRight" style="width:30px"><i class="fas fa-times"></i></a>
+				<a class="btn roundedRight hidden" id="bt_pluginDisplayAsTable" data-coreSupport="1" data-state="0"><i class="fas fa-grip-lines"></i></a>
+			</div>
+		</div>
 		<div class="eqLogicThumbnailContainer">
 			<?php
 			foreach ($eqLogics as $eqLogic) {
 				$opacity = ($eqLogic->getIsEnable()) ? '' : 'disableCard';
-				echo '<div class="eqLogicDisplayCard cursor '.$opacity.'" data-eqLogic_id="' . $eqLogic->getId() . '">';
+				echo '<div class="eqLogicDisplayCard cursor ' . $opacity . '" data-eqLogic_id="' . $eqLogic->getId() . '">';
 				echo '<img src="' . $plugin->getPathImgIcon() . '"/>';
 				echo '<br/>';
 				echo '<span class="name">' . $eqLogic->getHumanName(true, true) . '</span>';
@@ -32,7 +38,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 			?>
 		</div>
 	</div>
-	
+
 	<div class="col-xs-12 eqLogic" style="display: none;">
 		<div class="input-group pull-right" style="display:inline-flex">
 			<span class="input-group-btn">
@@ -48,7 +54,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 		</ul>
 		<div class="tab-content" style="height:calc(100% - 50px);overflow:auto;overflow-x: hidden;">
 			<div role="tabpanel" class="tab-pane active" id="eqlogictab">
-				<br/>
+				<br />
 				<div class="row">
 					<div class="col-sm-6">
 						<form class="form-horizontal">
@@ -57,11 +63,11 @@ $eqLogics = eqLogic::byType($plugin->getId());
 									<label class="col-sm-4 control-label">{{Nom de l'équipement openvpn}}</label>
 									<div class="col-sm-4">
 										<input type="text" class="eqLogicAttr form-control" data-l1key="id" style="display : none;" />
-										<input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'équipement openvpn}}"/>
+										<input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'équipement openvpn}}" />
 									</div>
 								</div>
 								<div class="form-group">
-									<label class="col-sm-4 control-label" >{{Objet parent}}</label>
+									<label class="col-sm-4 control-label">{{Objet parent}}</label>
 									<div class="col-sm-4">
 										<select id="sel_object" class="eqLogicAttr form-control" data-l1key="object_id">
 											<option value="">{{Aucun}}</option>
@@ -85,41 +91,41 @@ $eqLogics = eqLogic::byType($plugin->getId());
 											echo '</label>';
 										}
 										?>
-										
+
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-4 control-label"></label>
 									<div class="col-sm-8">
-										<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isEnable" checked/>{{Activer}}</label>
-										<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isVisible" checked/>{{Visible}}</label>
+										<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isEnable" checked />{{Activer}}</label>
+										<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isVisible" checked />{{Visible}}</label>
 									</div>
 								</div>
-								<br/>
+								<br />
 								<div class="form-group">
 									<label class="col-sm-4 control-label">{{Certificat CA}}</label>
 									<div class="col-sm-8">
 										<span class="btn btn-default btn-file">
-											<i class="fa fa-cloud-upload"></i> {{Envoyer}}<input  id="bt_uploadCaCrt" type="file" name="file" style="display: inline-block;">
+											<i class="fa fa-cloud-upload"></i> {{Envoyer}}<input id="bt_uploadCaCrt" type="file" name="file" style="display: inline-block;">
 										</span>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">{{Serveur (host1 port1,host 2 port 2....)}}</label>
 									<div class="col-sm-8">
-										<textarea class="eqLogicAttr form-control ta_autosize" data-l1key="configuration" data-l2key="remote" ></textarea>
+										<textarea class="eqLogicAttr form-control ta_autosize" data-l1key="configuration" data-l2key="remote"></textarea>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">{{Paramètres optionnels}}</label>
 									<div class="col-sm-8">
-										<textarea class="eqLogicAttr form-control ta_autosize" data-l1key="configuration" data-l2key="additionalVpnParameters" ></textarea>
+										<textarea class="eqLogicAttr form-control ta_autosize" data-l1key="configuration" data-l2key="additionalVpnParameters"></textarea>
 									</div>
 								</div>
 								<div class="form-group">
 									<label class="col-sm-4 control-label">{{Commande post démarrage}}</label>
 									<div class="col-sm-8">
-										<textarea class="eqLogicAttr form-control ta_autosize" data-l1key="configuration" data-l2key="optionsAfterStart" ></textarea>
+										<textarea class="eqLogicAttr form-control ta_autosize" data-l1key="configuration" data-l2key="optionsAfterStart"></textarea>
 									</div>
 								</div>
 							</fieldset>
@@ -156,7 +162,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 										<label class="col-sm-4 control-label">{{Certification client}}</label>
 										<div class="col-sm-8">
 											<span class="btn btn-default btn-file">
-												<i class="fa fa-cloud-upload"></i> {{Envoyer}}<input  id="bt_uploadCaCrtClient" type="file" name="file" style="display: inline-block;">
+												<i class="fa fa-cloud-upload"></i> {{Envoyer}}<input id="bt_uploadCaCrtClient" type="file" name="file" style="display: inline-block;">
 											</span>
 										</div>
 									</div>
@@ -164,7 +170,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 										<label class="col-sm-4 control-label">{{Clef client}}</label>
 										<div class="col-sm-8">
 											<span class="btn btn-default btn-file">
-												<i class="fa fa-cloud-upload"></i> {{Envoyer}}<input  id="bt_uploadCaKeyClient" type="file" name="file" style="display: inline-block;">
+												<i class="fa fa-cloud-upload"></i> {{Envoyer}}<input id="bt_uploadCaKeyClient" type="file" name="file" style="display: inline-block;">
 											</span>
 										</div>
 									</div>
@@ -218,10 +224,10 @@ $eqLogics = eqLogic::byType($plugin->getId());
 						</form>
 					</div>
 				</div>
-				
+
 			</div>
 			<div role="tabpanel" class="tab-pane" id="commandtab">
-				<br/>
+				<br />
 				<table id="table_cmd" class="table table-bordered table-condensed">
 					<thead>
 						<tr>
