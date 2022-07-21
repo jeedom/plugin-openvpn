@@ -108,7 +108,7 @@ class openvpn extends eqLogic {
 	public function isUp() {
 		$interface = $this->getInterfaceName();
 		if ($interface === false) {
-			return false;
+			return null;
 		}
 		$result = shell_exec('ip addr show ' . $interface . ' 2>&1 | wc -l');
 		return ($result > 1);
@@ -334,13 +334,18 @@ class openvpn extends eqLogic {
 			}
 		}
 		$up = $this->isUp();
+		if($up == null){
+				return;
+		}
 		if ($up) {
 			$ip = $this->getIp();
 		} else {
 			$ip = __('Aucune', __FILE__);
 		}
 		$this->checkAndUpdateCmd('up', $up);
-		$this->checkAndUpdateCmd('ip', $ip);
+		if($ip !== null){
+		  $this->checkAndUpdateCmd('ip', $ip);
+		}
 	}
 
 	/*     * **********************Getteur Setteur*************************** */
