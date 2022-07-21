@@ -334,8 +334,8 @@ class openvpn extends eqLogic {
 			}
 		}
 		$up = $this->isUp();
-		if($up == null){
-				return;
+		if($up === null){
+			return;
 		}
 		if ($up) {
 			$ip = $this->getIp();
@@ -344,7 +344,7 @@ class openvpn extends eqLogic {
 		}
 		$this->checkAndUpdateCmd('up', $up);
 		if($ip !== null){
-		  $this->checkAndUpdateCmd('ip', $ip);
+			$this->checkAndUpdateCmd('ip', $ip);
 		}
 	}
 
