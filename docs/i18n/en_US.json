@@ -2,6 +2,8 @@
     "changelog.md": {
         "Changelog Openvpn": "Changelog Openvpn",
         "Pour rappel s'il n'y a pas d'information sur la mise à jour, c'est que celle-ci concerne uniquement de la mise à jour de documentation, de traduction ou de texte": "As a reminder if there is no information on the update, it means that it only concerns the updating of documentation, translation or text",
+        "13\/01\/2023": "01\/13\/2023",
+        "Reduction de la charge pour l'infrastructure DNS": "Reduced load for DNS infrastructure",
         "15\/02\/2021": "02\/15\/2021",
         "Debut du support haute disponibilité pour le nouveau systeme de DNS": "Beginning of high availability support for the new DNS system",
         "16\/11\/2020": "16\/11\/2020",
