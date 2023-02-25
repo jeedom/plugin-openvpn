@@ -62,6 +62,7 @@ function printEqLogic(_eqLogic){
       }
     }
   });
+  jeedomUtils.taAutosize();
 }
 
 
