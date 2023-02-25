@@ -62,7 +62,6 @@ function printEqLogic(_eqLogic){
       }
     }
   });
-  taAutosize();
 }
 
 
