@@ -224,7 +224,7 @@ class openvpn extends eqLogic {
 		}
 		$replace = array(
 			'#dev#' => $this->getConfiguration('dev'),
-			'#proto#' => $this->getConfiguration('proto'),
+			'#proto#' => $this->getConfiguration('proto','udp'),
 			'#remote#' => $remote,
 			'#ca_path#' => trim(dirname(__FILE__) . '/../../data/ca_' . $this->getConfiguration('key') . '.crt'),
 			'#compression#' => $this->getConfiguration('compression'),
