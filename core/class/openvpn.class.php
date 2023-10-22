@@ -233,13 +233,18 @@ class openvpn extends eqLogic {
 			'#auth_path#' => jeedom::getTmpFolder('openvpn') . '/openvpn_auth_' . $this->getConfiguration('key') . '.conf'
 		);
 
-		if ($this->getConfiguration('auth_mode') == 'password') {
-			$replace['#authentification#'] = 'auth-user-pass ' . jeedom::getTmpFolder('openvpn') . '/openvpn_auth_' . $this->getConfiguration('key') . '.conf';
+		$replace['#authentification#'] = '';
+		if (trim($this->getConfiguration('username')) !== '' && trim($this->getConfiguration('password')) !== '') {
+			$replace['#authentification#'] .= 'auth-user-pass ' . jeedom::getTmpFolder('openvpn') . '/openvpn_auth_' . $this->getConfiguration('key') . '.conf' . "\n";
 			file_put_contents(jeedom::getTmpFolder('openvpn') . '/openvpn_auth_' . $this->getConfiguration('key') . '.conf', trim($this->getConfiguration('username')) . "\n" . trim($this->getConfiguration('password')));
-		} else {
-			$replace['#authentification#'] = 'cert ' . dirname(__FILE__) . '/../../data/cert_' . $this->getConfiguration('key') . '.crt' . "\n";
-			$replace['#authentification#'] .= 'key ' . dirname(__FILE__) . '/../../data/key_' . $this->getConfiguration('key') . '.key';
 		}
+		$cert_client_file_path = dirname(__FILE__) . '/../../data/cert_' . $this->getConfiguration('key') . '.crt';
+		$key_client_file_path = dirname(__FILE__) . '/../../data/key_' . $this->getConfiguration('key') . '.key';
+		if (file_exists($cert_client_file_path) && file_exists($key_client_file_path)){
+			$replace['#authentification#'] .= 'cert ' . $cert_client_file_path . "\n";
+			$replace['#authentification#'] .= 'key ' . $key_client_file_path;
+		}
+		
 		$config = str_replace(array_keys($replace), $replace, file_get_contents(dirname(__FILE__) . '/../config/openvpn.client.tmpl.ovpn'));
 		if (trim($this->getConfiguration('additionalVpnParameters')) != '') {
 			$config .= "\n\n" . $this->getConfiguration('additionalVpnParameters');
