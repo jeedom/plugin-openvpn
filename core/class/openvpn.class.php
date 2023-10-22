@@ -199,6 +199,18 @@ class openvpn extends eqLogic {
 		if ($this->getIsEnable() == 0) {
 			$this->stop_openvpn();
 		}
+
+		$refresh = $this->getCmd(null, 'refresh');
+		if (!is_object($refresh)) {
+			$refresh = new openvpnCmd();
+			$refresh->setName(__('Rafraichir', __FILE__));
+		}
+		$refresh->setEqLogic_id($this->getId());
+		$refresh->setLogicalId('refresh');
+		$refresh->setType('action');
+		$refresh->setSubType('other');
+		$refresh->save();
+
 	}
 
 	public function decrypt() {
@@ -385,6 +397,9 @@ class openvpnCmd extends cmd {
 				$eqLogic->setConfiguration('enable', 0);
 				$eqLogic->save(true);
 			}
+		}
+		if ($this->getLogicalId() == 'refresh') {
+			$eqLogic->updateState();
 		}
 	}
 
