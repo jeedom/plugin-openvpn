@@ -82,11 +82,11 @@ class openvpn extends eqLogic {
 		if (!file_exists($path)) {
 			return false;
 		}
-		$result = shell_exec('grep "/sbin/ip addr add dev " ' . $path . ' | tail -n 1');
+		$result=shell_exec('grep "TUN/TAP device " '.$path.' | tail -n 1');
 		$i = 0;
 		while ($result == '') {
 			sleep(1);
-			$result = shell_exec('grep "/sbin/ip addr add dev " ' . $path . ' | tail -n 1');
+			$result = shell_exec('grep "TUN/TAP device " '.$path.' | tail -n 1');
 			$i++;
 			if ($i > 5) {
 				break;
@@ -96,13 +96,14 @@ class openvpn extends eqLogic {
 	}
 
 	public function getIp() {
-		$log_name = ('openvpn_' . self::cleanVpnName($this->getName()));
-		if (!file_exists(log::getPathToLog($log_name))) {
-			return false;
+		$interface = $this->getInterfaceName();
+		if ($interface === false || $interface === '') {
+			return 'Interface inconnue ' . $interface;
 		}
-		$result = shell_exec('grep "/sbin/ip addr add dev " ' . log::getPathToLog($log_name) . ' | tail -n 1');
-		$result = trim(substr($result, strpos($result, 'local') + 5));
-		return trim(substr($result, 0, strpos($result, 'peer')));
+		$result = shell_exec('ip a l ' . $interface . ' | awk "/inet/ {print \$2}"');
+		if($result === '' || $result === 0)
+			return 'Interface '.$interface.' non trouvée';
+		return $result;
 	}
 
 	public function isUp() {
@@ -199,6 +200,18 @@ class openvpn extends eqLogic {
 		if ($this->getIsEnable() == 0) {
 			$this->stop_openvpn();
 		}
+
+		$refresh = $this->getCmd(null, 'refresh');
+		if (!is_object($refresh)) {
+			$refresh = new openvpnCmd();
+			$refresh->setName(__('Rafraichir', __FILE__));
+		}
+		$refresh->setEqLogic_id($this->getId());
+		$refresh->setLogicalId('refresh');
+		$refresh->setType('action');
+		$refresh->setSubType('other');
+		$refresh->save();
+
 	}
 
 	public function decrypt() {
@@ -233,13 +246,18 @@ class openvpn extends eqLogic {
 			'#auth_path#' => jeedom::getTmpFolder('openvpn') . '/openvpn_auth_' . $this->getConfiguration('key') . '.conf'
 		);
 
-		if ($this->getConfiguration('auth_mode') == 'password') {
-			$replace['#authentification#'] = 'auth-user-pass ' . jeedom::getTmpFolder('openvpn') . '/openvpn_auth_' . $this->getConfiguration('key') . '.conf';
+		$replace['#authentification#'] = '';
+		if (trim($this->getConfiguration('username')) !== '' && trim($this->getConfiguration('password')) !== '') {
+			$replace['#authentification#'] .= 'auth-user-pass ' . jeedom::getTmpFolder('openvpn') . '/openvpn_auth_' . $this->getConfiguration('key') . '.conf' . "\n";
 			file_put_contents(jeedom::getTmpFolder('openvpn') . '/openvpn_auth_' . $this->getConfiguration('key') . '.conf', trim($this->getConfiguration('username')) . "\n" . trim($this->getConfiguration('password')));
-		} else {
-			$replace['#authentification#'] = 'cert ' . dirname(__FILE__) . '/../../data/cert_' . $this->getConfiguration('key') . '.crt' . "\n";
-			$replace['#authentification#'] .= 'key ' . dirname(__FILE__) . '/../../data/key_' . $this->getConfiguration('key') . '.key';
 		}
+		$cert_client_file_path = dirname(__FILE__) . '/../../data/cert_' . $this->getConfiguration('key') . '.crt';
+		$key_client_file_path = dirname(__FILE__) . '/../../data/key_' . $this->getConfiguration('key') . '.key';
+		if (file_exists($cert_client_file_path) && file_exists($key_client_file_path)){
+			$replace['#authentification#'] .= 'cert ' . $cert_client_file_path . "\n";
+			$replace['#authentification#'] .= 'key ' . $key_client_file_path;
+		}
+		
 		$config = str_replace(array_keys($replace), $replace, file_get_contents(dirname(__FILE__) . '/../config/openvpn.client.tmpl.ovpn'));
 		if (trim($this->getConfiguration('additionalVpnParameters')) != '') {
 			$config .= "\n\n" . $this->getConfiguration('additionalVpnParameters');
@@ -380,6 +398,9 @@ class openvpnCmd extends cmd {
 				$eqLogic->setConfiguration('enable', 0);
 				$eqLogic->save(true);
 			}
+		}
+		if ($this->getLogicalId() == 'refresh') {
+			$eqLogic->updateState();
 		}
 	}
 

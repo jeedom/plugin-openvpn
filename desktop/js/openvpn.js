@@ -14,10 +14,6 @@
 * You should have received a copy of the GNU General Public License
 * along with Jeedom. If not, see <http://www.gnu.org/licenses/>.
 */
-$('.eqLogicAttr[data-l1key=configuration][data-l2key=auth_mode]').on('change',function(){
-  $('.auth_mode').hide();
-  $('.auth_mode.'+$(this).value()).show();
-});
 
 
 function printEqLogic(_eqLogic){
