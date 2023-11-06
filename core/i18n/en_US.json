@@ -57,6 +57,7 @@
         "Démarrer": "Start",
         "Arrêter": "Stop",
         "IP": "IP",
+        "Rafraichir": "Refresh",
         "Lancement openvpn : ": "Openvpn launch:",
         "Aucune": "Any"
     },
