@@ -71,179 +71,173 @@ $eqLogics = eqLogic::byType($plugin->getId());
 			<li role="presentation" class="active"><a href="#eqlogictab" aria-controls="home" role="tab" data-toggle="tab"><i class="fas fa-tachometer-alt"></i> {{Equipement}}</a></li>
 			<li role="presentation"><a href="#commandtab" aria-controls="profile" role="tab" data-toggle="tab"><i class="fas fa-list-alt"></i> {{Commandes}}</a></li>
 		</ul>
-		<div class="tab-content" style="height:calc(100% - 50px);overflow:auto;overflow-x: hidden;">
+		<div class="tab-content">
 			<div role="tabpanel" class="tab-pane active" id="eqlogictab">
-				<br />
-				<div class="row">
-					<div class="col-sm-6">
-						<form class="form-horizontal">
-							<fieldset>
-								<div class="form-group">
-									<label class="col-sm-4 control-label">{{Nom de l'équipement openvpn}}</label>
-									<div class="col-sm-4">
-										<input type="text" class="eqLogicAttr form-control" data-l1key="id" style="display : none;" />
-										<input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'équipement openvpn}}" />
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-4 control-label">{{Objet parent}}</label>
-									<div class="col-sm-4">
-										<select id="sel_object" class="eqLogicAttr form-control" data-l1key="object_id">
-											<option value="">{{Aucun}}</option>
-											<?php
-											$options = '';
-											foreach ((jeeObject::buildTree(null, false)) as $object) {
-												$options .= '<option value="' . $object->getId() . '">' . str_repeat('&nbsp;&nbsp;', $object->getConfiguration('parentNumber')) . $object->getName() . '</option>';
-											}
-											echo $options;
-											?>
-										</select>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-4 control-label">{{Catégorie}}</label>
-									<div class="col-sm-8">
-										<?php
-										foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
-											echo '<label class="checkbox-inline">';
-											echo '<input type="checkbox" class="eqLogicAttr" data-l1key="category" data-l2key="' . $key . '" />' . $value['name'];
-											echo '</label>';
-										}
-										?>
+				<form class="form-horizontal">
+					<div class="col-lg-6">
+						<legend><i class="fas fa-wrench"></i> {{Paramètres généraux}}</legend>
+						<div class="form-group">
+							<label class="col-sm-4 control-label">{{Nom de l'équipement openvpn}}</label>
+							<div class="col-sm-6">
+								<input type="text" class="eqLogicAttr form-control" data-l1key="id" style="display : none;" />
+								<input type="text" class="eqLogicAttr form-control" data-l1key="name" placeholder="{{Nom de l'équipement openvpn}}" />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-4 control-label">{{Objet parent}}</label>
+							<div class="col-sm-6">
+								<select id="sel_object" class="eqLogicAttr form-control" data-l1key="object_id">
+									<option value="">{{Aucun}}</option>
+									<?php
+									$options = '';
+									foreach ((jeeObject::buildTree(null, false)) as $object) {
+										$options .= '<option value="' . $object->getId() . '">' . str_repeat('&nbsp;&nbsp;', $object->getConfiguration('parentNumber')) . $object->getName() . '</option>';
+									}
+									echo $options;
+									?>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-4 control-label">{{Catégorie}}</label>
+							<div class="col-sm-6">
+								<?php
+								foreach (jeedom::getConfiguration('eqLogic:category') as $key => $value) {
+									echo '<label class="checkbox-inline">';
+									echo '<input type="checkbox" class="eqLogicAttr" data-l1key="category" data-l2key="' . $key . '" >' . $value['name'];
+									echo '</label>';
+								}
+								?>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-4 control-label">{{Options}}</label>
+							<div class="col-sm-6">
+								<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isEnable" checked>{{Activer}}</label>
+								<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isVisible" checked>{{Visible}}</label>
+							</div>
+						</div>
 
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-4 control-label"></label>
-									<div class="col-sm-8">
-										<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isEnable" checked />{{Activer}}</label>
-										<label class="checkbox-inline"><input type="checkbox" class="eqLogicAttr" data-l1key="isVisible" checked />{{Visible}}</label>
-									</div>
-								</div>
-								<br />
-								<div class="form-group">
-									<label class="col-sm-4 control-label">{{Certificat CA}}</label>
-									<div class="col-sm-8">
-										<span class="btn btn-default btn-file">
-											<i class="fa fa-cloud-upload"></i> {{Envoyer}}<input id="bt_uploadCaCrt" type="file" name="file" style="display: inline-block;">
-										</span>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-4 control-label">{{Serveur (host1 port1,host 2 port 2....)}}</label>
-									<div class="col-sm-8">
-										<textarea class="eqLogicAttr form-control ta_autosize" data-l1key="configuration" data-l2key="remote"></textarea>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-4 control-label">{{Paramètres optionnels}}</label>
-									<div class="col-sm-8">
-										<textarea class="eqLogicAttr form-control ta_autosize" data-l1key="configuration" data-l2key="additionalVpnParameters"></textarea>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-4 control-label">{{Commande post démarrage}}</label>
-									<div class="col-sm-8">
-										<textarea class="eqLogicAttr form-control ta_autosize" data-l1key="configuration" data-l2key="optionsAfterStart"></textarea>
-									</div>
-								</div>
-							</fieldset>
-						</form>
+						<legend><i class="fas fa-cogs"></i> {{Paramètres spécifiques}}</legend>
+						<div class="form-group">
+							<label class="col-sm-4 control-label">{{Certificat CA}}</label>
+							<div class="col-sm-7">
+								<span class="btn btn-default btn-file">
+									<i class="fas fa-cloud-upload-alt"></i> {{Envoyer}}<input id="bt_uploadCaCrt" type="file" name="file" style="display: inline-block;">
+								</span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-4 control-label">{{Serveur (host1 port1,host 2 port 2....)}}</label>
+							<div class="col-sm-7">
+								<textarea class="eqLogicAttr form-control ta_autosize" data-l1key="configuration" data-l2key="remote"></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-4 control-label">{{Paramètres optionnels}}</label>
+							<div class="col-sm-7">
+								<textarea class="eqLogicAttr form-control ta_autosize" data-l1key="configuration" data-l2key="additionalVpnParameters"></textarea>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-4 control-label">{{Commande post démarrage}}</label>
+							<div class="col-sm-7">
+								<textarea class="eqLogicAttr form-control ta_autosize" data-l1key="configuration" data-l2key="optionsAfterStart"></textarea>
+							</div>
+						</div>
 					</div>
-					<div class="col-sm-6">
-						<form class="form-horizontal">
-							<fieldset>
-								<div class="form-group">
-									<label class="col-sm-4 control-label">{{Authentification mode}}</label>
-									<div class="col-sm-4">
-										<select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="auth_mode">
-											<option value="cert">Certificat</option>
-											<option value="password">Mot de passe</option>
-										</select>
-									</div>
-								</div>
-								<div class="auth_mode password">
-									<div class="form-group">
-										<label class="col-sm-4 control-label">{{Nom d'utilisateur}}</label>
-										<div class="col-sm-4">
-											<input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="username" />
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-sm-4 control-label">{{Password}}</label>
-										<div class="col-sm-4">
-											<input type="password" autocomplete="new-password" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="password" />
-										</div>
-									</div>
-								</div>
-								<div class="auth_mode cert">
-									<div class="form-group">
-										<label class="col-sm-4 control-label">{{Certification client}}</label>
-										<div class="col-sm-8">
-											<span class="btn btn-default btn-file">
-												<i class="fa fa-cloud-upload"></i> {{Envoyer}}<input id="bt_uploadCaCrtClient" type="file" name="file" style="display: inline-block;">
-											</span>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-sm-4 control-label">{{Clef client}}</label>
-										<div class="col-sm-8">
-											<span class="btn btn-default btn-file">
-												<i class="fa fa-cloud-upload"></i> {{Envoyer}}<input id="bt_uploadCaKeyClient" type="file" name="file" style="display: inline-block;">
-											</span>
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-4 control-label">{{Protocole}}</label>
-									<div class="col-sm-4">
-										<select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="proto">
-											<option value="udp">UDP</option>
-											<option value="tcp">TCP</option>
-										</select>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-4 control-label">{{Interface}}</label>
-									<div class="col-sm-4">
-										<select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="dev">
-											<option value="tun">TUN</option>
-											<option value="tap">TAP</option>
-										</select>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-4 control-label">{{Compression}}</label>
-									<div class="col-sm-4">
-										<select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="compression">
-											<option value="">Non</option>
-											<option value="comp-lzo">Oui</option>
-										</select>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-4 control-label">{{Script sécurité}}</label>
-									<div class="col-sm-4">
-										<select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="script_security">
-											<option value="">Non</option>
-											<option value="script-security 2">2</option>
-										</select>
-									</div>
-								</div>
-								<div class="form-group">
-									<label class="col-sm-4 control-label">{{Pull}}</label>
-									<div class="col-sm-4">
-										<select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="pull">
-											<option value="">Non</option>
-											<option value="pull">Oui</option>
-										</select>
-									</div>
-								</div>
-							</fieldset>
-						</form>
-					</div>
-				</div>
 
+					<div class="col-lg-6">
+						<legend><i class="fas fa-info"></i> {{Authentification}}</legend>
+						<div class="form-group">
+							<label class="col-sm-4 control-label">{{Authentification mode}}</label>
+							<div class="col-sm-7">
+								<select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="auth_mode">
+									<option value="cert">{{Certificat}}</option>
+									<option value="password">{{Mot de passe}}</option>
+								</select>
+							</div>
+						</div>
+						<div class="auth_mode password">
+							<div class="form-group">
+								<label class="col-sm-4 control-label">{{Nom d'utilisateur}}</label>
+								<div class="col-sm-7">
+									<input type="text" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="username" />
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-4 control-label">{{Password}}</label>
+								<div class="col-sm-7">
+									<input type="password" autocomplete="new-password" class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="password" />
+								</div>
+							</div>
+						</div>
+						<div class="auth_mode cert">
+							<div class="form-group">
+								<label class="col-sm-4 control-label">{{Certification client}}</label>
+								<div class="col-sm-7">
+									<span class="btn btn-default btn-file">
+										<i class="fas fa-cloud-upload-alt"></i> {{Envoyer}}<input id="bt_uploadCaCrtClient" type="file" name="file" style="display: inline-block;">
+									</span>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-4 control-label">{{Clef client}}</label>
+								<div class="col-sm-7">
+									<span class="btn btn-default btn-file">
+										<i class="fas fa-cloud-upload-alt"></i> {{Envoyer}}<input id="bt_uploadCaKeyClient" type="file" name="file" style="display: inline-block;">
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-4 control-label">{{Protocole}}</label>
+							<div class="col-sm-7">
+								<select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="proto">
+									<option value="udp">UDP</option>
+									<option value="tcp">TCP</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-4 control-label">{{Interface}}</label>
+							<div class="col-sm-7">
+								<select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="dev">
+									<option value="tun">TUN</option>
+									<option value="tap">TAP</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-4 control-label">{{Compression}}</label>
+							<div class="col-sm-7">
+								<select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="compression">
+									<option value="">{{Non}}</option>
+									<option value="comp-lzo">{{Oui}}</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-4 control-label">{{Script sécurité}}</label>
+							<div class="col-sm-7">
+								<select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="script_security">
+									<option value="">{{Non}}</option>
+									<option value="script-security 2">2</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-4 control-label">{{Pull}}</label>
+							<div class="col-sm-7">
+								<select class="eqLogicAttr form-control" data-l1key="configuration" data-l2key="pull">
+									<option value="">{{Non}}</option>
+									<option value="pull">{{Oui</option>
+								</select>
+							</div>
+						</div>
+
+					</div>
+				</form>
 			</div>
 			<div role="tabpanel" class="tab-pane" id="commandtab">
 				<br />
@@ -251,18 +245,19 @@ $eqLogics = eqLogic::byType($plugin->getId());
 					<thead>
 						<tr>
 							<th>{{Nom}}</th>
-							<th>{{Type}}</th>
-							<th>{{Action}}</th>
-						</tr>
-					</thead>
-					<tbody>
-					</tbody>
-				</table>
+										<th>{{Type}}</th>
+										<th>{{Valeur}}</th>
+										<th>{{Action}}</th>
+										</tr>
+										</thead>
+										<tbody>
+										</tbody>
+										</table>
+							</div>
+						</div>
+					</div>
 			</div>
-		</div>
-	</div>
-</div>
-<?php
-include_file('desktop', 'openvpn', 'js', 'openvpn');
-include_file('core', 'plugin.template', 'js');
-?>
+			<?php
+			include_file('desktop', 'openvpn', 'js', 'openvpn');
+			include_file('core', 'plugin.template', 'js');
+			?>
