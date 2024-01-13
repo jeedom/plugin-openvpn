@@ -16,13 +16,32 @@ $eqLogics = eqLogic::byType($plugin->getId());
 				<br />
 				<span>{{Ajouter}}</span>
 			</div>
+			<div class="cursor eqLogicAction logoSecondary" data-action="gotoPluginConf">
+				<i class="fas fa-wrench"></i><br>
+				<span>{{Configuration}}</span>
+			</div>
+			<?php
+			// à conserver
+			// sera afficher uniquement si l'utilisateur est en version 4.4 ou supérieur
+			$jeedomVersion  = jeedom::version() ?? '0';
+			$displayInfoValue = version_compare($jeedomVersion, '4.4.0', '>=');
+			if ($displayInfoValue) :
+			?>
+				<div class="cursor eqLogicAction info" data-action="createCommunityPost">
+					<i class="fas fa-ambulance"></i>
+					<br>
+					<span style="color:var(--txt-color)">{{Créer un post Community}}</span>
+				</div>
+			<?php
+			endif;
+			?>
 		</div>
 		<legend><i class="fas fa-archway"></i> {{Mes openvpns}}</legend>
-		<div class="input-group" style="margin:5px;">
+		<div class="input-group" style="margin-bottom:5px;">
 			<input class="form-control roundedLeft" placeholder="{{Rechercher}}" id="in_searchEqlogic" />
 			<div class="input-group-btn">
-				<a id="bt_resetSearch" class="btn roundedRight" style="width:30px"><i class="fas fa-times"></i></a>
-				<a class="btn roundedRight hidden" id="bt_pluginDisplayAsTable" data-coreSupport="1" data-state="0"><i class="fas fa-grip-lines"></i></a>
+				<a id="bt_resetObjectSearch" class="btn" style="width:30px"><i class="fas fa-times"></i>
+				</a><a class="btn roundedRight hidden" id="bt_pluginDisplayAsTable" data-coreSupport="1" data-state="0"><i class="fas fa-grip-lines"></i></a>
 			</div>
 		</div>
 		<div class="eqLogicThumbnailContainer">
