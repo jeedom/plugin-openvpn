@@ -143,7 +143,7 @@ $eqLogics = eqLogic::byType($plugin->getId());
 										</select>
 									</div>
 								</div>
-								<div class="auth_mode password" style="display:none;">
+								<div class="auth_mode password">
 									<div class="form-group">
 										<label class="col-sm-4 control-label">{{Nom d'utilisateur}}</label>
 										<div class="col-sm-4">
