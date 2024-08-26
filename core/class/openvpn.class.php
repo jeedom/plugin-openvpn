@@ -310,7 +310,7 @@ class openvpn extends eqLogic {
 				shell_exec($cmd);
 				if (config::byKey('dns::openport') != '') {
 					foreach (explode(',', config::byKey('dns::openport')) as $port) {
-						if (is_nan($port)) {
+						if (!is_numeric($port)) {
 							continue;
 						}
 						try {
