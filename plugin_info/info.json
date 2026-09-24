@@ -11,7 +11,7 @@
 	},
 	"licence": "AGPL",
 	"author": "Jeedom SAS",
-	"require": "4.3",
+	"require": "4.5",
 	"category": "communication",
 	"hasDependency": true,
 	"changelog": "https://doc.jeedom.com/#language#/plugins/communication/openvpn/changelog",
