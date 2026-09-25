@@ -6,7 +6,8 @@
 		"en_US": "Plugin to manage the connection to an openvpn server",
 		"es_ES": "Complemento para administrar la conexión a un servidor openvpn",
 		"de_DE": "Plugin zum Verwalten der Verbindung zu einem OpenVPN-Server",
-		"pt_PT": "Plugin para gerenciar a conexão com um servidor openvpn"
+		"pt_PT": "Plugin para gerenciar a conexão com um servidor openvpn",
+		"it_IT": "Plugin che consente di gestire la connessione a un server OpenVPN."
 	},
 	"licence": "AGPL",
 	"author": "Jeedom SAS",
