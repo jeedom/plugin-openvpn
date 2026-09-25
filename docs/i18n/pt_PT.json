@@ -2,6 +2,9 @@
     "changelog.md": {
         "Changelog Openvpn": "Changelog Openvpn",
         "Pour rappel s'il n'y a pas d'information sur la mise à jour, c'est que celle-ci concerne uniquement de la mise à jour de documentation, de traduction ou de texte": "Como lembrete, se não houver informações sobre a atualização, isso significa que se trata apenas da atualização da documentação, tradução ou texto",
+        "26\/08\/2024": "26\/08\/2024",
+        "Meilleur support de PHP8": "Melhor suporte PHP8",
+        "Support des images d'équipement personnalisées (Jeedom 4.5": "Suporte para imagens de equipamentos personalizados (Jeedom 4.5",
         "08\/01\/2024": "01\/08\/2024",
         "Préparation pour jeedom 4.4": "Preparando-se para Jeedom 4.4",
         "06\/11\/2023": "11\/06\/2023",

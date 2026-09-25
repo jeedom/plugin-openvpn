@@ -1,67 +1,65 @@
 {
-    "plugins\/openvpn\/plugin_info\/configuration.php": {
-        "401 - Accès non autorisé": "401 - Accesso non autorizzato"
-    },
-    "plugins\/openvpn\/desktop\/php\/openvpn.php": {
+    "plugins\/openvpn\/core\/ajax\/openvpn.ajax.php": {
         "401 - Accès non autorisé": "401 - Accesso non autorizzato",
-        "Gestion": "Gestione",
-        "Ajouter": "Aggiungi",
-        "Mes openvpns": "Mes openvpns",
-        "Rechercher": "Ricercare",
-        "Configuration avancée": "Configurazione avanzata",
-        "Sauvegarder": "Salva",
-        "Supprimer": "Rimuovere",
-        "Equipement": "Dispositivo",
-        "Commandes": "Comandi",
-        "Nom de l'équipement openvpn": "Nom de l'équipement openvpn",
-        "Objet parent": "Oggetto padre",
-        "Aucun": "Nessuno",
-        "Catégorie": "Categoria",
-        "Activer": "Attivare",
-        "Visible": "Visibile",
-        "Certificat CA": "Certificat CA",
-        "Envoyer": "Invia",
-        "Serveur (host1 port1,host 2 port 2....)": "Serveur (host1 port1,host 2 port 2....)",
-        "Paramètres optionnels": "Paramètres optionnels",
-        "Commande post démarrage": "Commande post démarrage",
-        "Authentification mode": "Authentification mode",
-        "Nom d'utilisateur": "Nome utente",
-        "Password": "Password",
-        "Certification client": "Certification client",
-        "Clef client": "Clef client",
-        "Protocole": "Protocoll",
-        "Interface": "Interfaccia",
-        "Compression": "Compression",
-        "Script sécurité": "Script sécurité",
-        "Pull": "Pull",
-        "Nom": "Nome",
-        "Type": "Tipo",
-        "Action": "Azione"
+        "Aucun fichier trouvé. Vérifiez paramètre PHP (post size limit)": "Nessun file trovato. Verificare le impostazioni PHP (limite di dimensione dei post)",
+        "Aucune méthode correspondante à : ": "Nessun metodo corrispondente a: ",
+        "EqLogic inconnu verifié l\\'id": "EqLogic sconosciuto ha verificato l'ID",
+        "Le fichier est trop gros (maximum 1mo)": "Il file è troppo grande (massimo 1 MB)"
+    },
+    "plugins\/openvpn\/core\/class\/openvpn.class.php": {
+        "Actif": "Beni",
+        "Arrêter": "Ferma",
+        "Aucune": "Nessuna",
+        "Démarrer": "Avvio",
+        "Démarré": "Avviato",
+        "IP": "IP",
+        "Lancement openvpn : ": "Avvio di OpenVPN: ",
+        "Rafraichir": "Aggiorna"
     },
     "plugins\/openvpn\/desktop\/js\/openvpn.js": {
-        "Fichier envoyé avec succès": "Fichier envoyé avec succès",
         "Afficher": "Mostra",
+        "Fichier envoyé avec succès": "File inviato con successo",
         "Historiser": "Storicizza",
         "Tester": "Prova"
     },
-    "plugins\/openvpn\/core\/ajax\/openvpn.ajax.php": {
+    "plugins\/openvpn\/desktop\/php\/openvpn.php": {
         "401 - Accès non autorisé": "401 - Accesso non autorizzato",
-        "EqLogic inconnu verifié l\\'id": "EqLogic inconnu verifié l\\'id",
-        "Aucun fichier trouvé. Vérifiez paramètre PHP (post size limit)": "Aucun fichier trouvé. Vérifiez paramètre PHP (post size limit)",
-        "Le fichier est trop gros (maximum 1mo)": "Le fichier est trop gros (maximum 1mo)",
-        "Aucune méthode correspondante à : ": "Nessun metodo corrispondente a:"
+        "Action": "Azione",
+        "Activer": "Attivare",
+        "Ajouter": "Aggiungi",
+        "Aucun": "Nessuno",
+        "Authentification mode": "Modalità di autenticazione",
+        "Catégorie": "Categoria",
+        "Certificat CA": "Certificato CA",
+        "Certification client": "Certificazione del cliente",
+        "Clef client": "Codice cliente",
+        "Commande post démarrage": "Comando post-avvio",
+        "Commandes": "Comandi",
+        "Compression": "Compressione",
+        "Configuration avancée": "Configurazione avanzata",
+        "Envoyer": "Invia",
+        "Equipement": "Dispositivo",
+        "Etat": "Stato",
+        "Gestion": "Gestione",
+        "Interface": "Interfaccia",
+        "Mes openvpns": "I miei OpenVPN",
+        "Nom": "Nome",
+        "Nom d'utilisateur": "Nome utente",
+        "Nom de l'équipement openvpn": "Nome del dispositivo OpenVPN",
+        "Objet parent": "Oggetto padre",
+        "Paramètres optionnels": "Parametri opzionali",
+        "Password": "Password",
+        "Protocole": "Protocollo",
+        "Pull": "Maglione",
+        "Rechercher": "Ricercare",
+        "Sauvegarder": "Salva",
+        "Script sécurité": "Script di sicurezza",
+        "Serveur (host1 port1,host 2 port 2....)": "Server (host1 porta1, host2 porta2....)",
+        "Supprimer": "Elimina",
+        "Type": "Tipo",
+        "Visible": "Visibile"
     },
-    "plugins\/openvpn\/core\/class\/openvpn.class.php": {
-        "Démarré": "Parte",
-        "Actif": "Beni",
-        "Démarrer": "Avvio",
-        "Arrêter": "Ferma",
-        "IP": "IP",
-        "Rafraichir": "Rafraichir",
-        "Lancement openvpn : ": "Lancement openvpn :",
-        "Aucune": "No"
-    },
-    "info.json": {
-        "Plugin permettant de gérer la connexion à un serveur openvpn.": "Plugin permettant de gérer la connexion à un serveur openvpn"
+    "plugins\/openvpn\/plugin_info\/configuration.php": {
+        "401 - Accès non autorisé": "401 - Accesso non autorizzato"
     }
 }

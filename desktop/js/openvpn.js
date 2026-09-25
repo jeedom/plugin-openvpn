@@ -16,45 +16,45 @@
 */
 
 
-function printEqLogic(_eqLogic){
+function printEqLogic(_eqLogic) {
   $('#bt_uploadCaCrt').fileupload({
     replaceFileInput: false,
-    url: 'plugins/openvpn/core/ajax/openvpn.ajax.php?action=uploadCaCrt&type=ca&id=' + _eqLogic.id+'&jeedom_token='+JEEDOM_AJAX_TOKEN,
+    url: 'plugins/openvpn/core/ajax/openvpn.ajax.php?action=uploadCaCrt&type=ca&id=' + _eqLogic.id + '&jeedom_token=' + JEEDOM_AJAX_TOKEN,
     dataType: 'json',
     done: function (e, data) {
       if (data.result.state != 'ok') {
-        $('#div_alert').showAlert({message: data.result.result, level: 'danger'});
+        $('#div_alert').showAlert({ message: data.result.result, level: 'danger' });
         return;
-      }else{
-        $('#div_alert').showAlert({message: '{{Fichier envoyé avec succès}}', level: 'success'});
+      } else {
+        $('#div_alert').showAlert({ message: '{{Fichier envoyé avec succès}}', level: 'success' });
       }
     }
   });
-  
+
   $('#bt_uploadCaCrtClient').fileupload({
     replaceFileInput: false,
-    url: 'plugins/openvpn/core/ajax/openvpn.ajax.php?action=uploadCaCrt&type=caClient&id=' + _eqLogic.id+'&jeedom_token='+JEEDOM_AJAX_TOKEN,
+    url: 'plugins/openvpn/core/ajax/openvpn.ajax.php?action=uploadCaCrt&type=caClient&id=' + _eqLogic.id + '&jeedom_token=' + JEEDOM_AJAX_TOKEN,
     dataType: 'json',
     done: function (e, data) {
       if (data.result.state != 'ok') {
-        $('#div_alert').showAlert({message: data.result.result, level: 'danger'});
+        $('#div_alert').showAlert({ message: data.result.result, level: 'danger' });
         return;
-      }else{
-        $('#div_alert').showAlert({message: '{{Fichier envoyé avec succès}}', level: 'success'});
+      } else {
+        $('#div_alert').showAlert({ message: '{{Fichier envoyé avec succès}}', level: 'success' });
       }
     }
   });
-  
+
   $('#bt_uploadCaKeyClient').fileupload({
     replaceFileInput: false,
-    url: 'plugins/openvpn/core/ajax/openvpn.ajax.php?action=uploadCaCrt&type=keyClient&id=' + _eqLogic.id+'&jeedom_token='+JEEDOM_AJAX_TOKEN,
+    url: 'plugins/openvpn/core/ajax/openvpn.ajax.php?action=uploadCaCrt&type=keyClient&id=' + _eqLogic.id + '&jeedom_token=' + JEEDOM_AJAX_TOKEN,
     dataType: 'json',
     done: function (e, data) {
       if (data.result.state != 'ok') {
-        $('#div_alert').showAlert({message: data.result.result, level: 'danger'});
+        $('#div_alert').showAlert({ message: data.result.result, level: 'danger' });
         return;
-      }else{
-        $('#div_alert').showAlert({message: '{{Fichier envoyé avec succès}}', level: 'success'});
+      } else {
+        $('#div_alert').showAlert({ message: '{{Fichier envoyé avec succès}}', level: 'success' });
       }
     }
   });
@@ -67,7 +67,7 @@ function printEqLogic(_eqLogic){
 */
 function addCmdToTable(_cmd) {
   if (!isset(_cmd)) {
-    var _cmd = {configuration: {}};
+    var _cmd = { configuration: {} };
   }
   var tr = '<tr class="cmd" data-cmd_id="' + init(_cmd.id) + '">';
   tr += '<td>';
@@ -76,6 +76,9 @@ function addCmdToTable(_cmd) {
   tr += '<td>';
   tr += '<span><label class="checkbox-inline"><input type="checkbox" class="cmdAttr checkbox-inline" data-l1key="isVisible" checked/>{{Afficher}}</label></span> ';
   tr += '<span><label class="checkbox-inline"><input type="checkbox" class="cmdAttr checkbox-inline" data-l1key="isHistorized" checked/>{{Historiser}}</label></span> ';
+  tr += '</td>';
+  tr += '<td>';
+  tr += '<span class="cmdAttr" data-l1key="htmlstate"></span>';
   tr += '</td>';
   tr += '<td style="width:150px">';
   tr += '<input class="cmdAttr form-control input-sm" data-l1key="type" style="display : none;">';

@@ -24,27 +24,12 @@ class openvpn extends eqLogic {
 
 	/*     * ***********************Methode static*************************** */
 
-	public static function dependancy_info() {
-		$return = array();
-		$return['log'] = 'openvpn_update';
-		$return['progress_file'] = jeedom::getTmpFolder('openvpn') . '/dependance';
-		$return['state'] = 'ok';
-		if (exec('which openvpn | wc -l') == 0) {
-			$return['state'] = 'nok';
-		}
-		return $return;
-	}
-
-	public static function dependancy_install() {
-		log::remove(__CLASS__ . '_update');
-		return array('script' => dirname(__FILE__) . '/../../resources/install_#stype#.sh ' . jeedom::getTmpFolder('openvpn') . '/dependance', 'log' => log::getPathToLog(__CLASS__ . '_update'));
-	}
-
 	public static function start() {
 		self::cron5();
 	}
 
 	public static function cron5() {
+		/** @var openvpn */
 		foreach (self::byType('openvpn') as $eqLogic) {
 			try {
 				if ($eqLogic->getConfiguration('enable') == 1 && !$eqLogic->getState()) {
@@ -70,7 +55,7 @@ class openvpn extends eqLogic {
 		}
 	}
 
-	public static function cleanVpnName($_name) {
+	private static function cleanVpnName(string $_name) {
 		return str_replace(array(' ', '(', ')', '/', ',', ';', '\\', '%', '*', '$'), '_', $_name);
 	}
 
@@ -82,11 +67,11 @@ class openvpn extends eqLogic {
 		if (!file_exists($path)) {
 			return false;
 		}
-		$result=shell_exec('grep "TUN/TAP device " '.$path.' | tail -n 1');
+		$result = shell_exec('grep "TUN/TAP device " ' . $path . ' | tail -n 1');
 		$i = 0;
 		while ($result == '') {
 			sleep(1);
-			$result = shell_exec('grep "TUN/TAP device " '.$path.' | tail -n 1');
+			$result = shell_exec('grep "TUN/TAP device " ' . $path . ' | tail -n 1');
 			$i++;
 			if ($i > 5) {
 				break;
@@ -101,8 +86,8 @@ class openvpn extends eqLogic {
 			return 'Interface inconnue ' . $interface;
 		}
 		$result = shell_exec('ip a l ' . $interface . ' | awk "/inet/ {print \$2}"');
-		if($result === '' || $result === 0)
-			return 'Interface '.$interface.' non trouvée';
+		if ($result === '' || $result === 0)
+			return 'Interface ' . $interface . ' non trouvée';
 		return $result;
 	}
 
@@ -113,6 +98,18 @@ class openvpn extends eqLogic {
 		}
 		$result = shell_exec('ip addr show ' . $interface . ' 2>&1 | wc -l');
 		return ($result > 1);
+	}
+
+	private function enableApacheRemoteIp(): void {
+		if ($this->getLogicalId() == 'dnsjeedom') {
+			shell_exec(system::getCmdSudo() . 'bash ' . dirname(__FILE__) . '/../../resources/enable_apache_remote_ip.sh');
+		}
+	}
+
+	private function disableApacheRemoteIp(): void {
+		if ($this->getLogicalId() == 'dnsjeedom') {
+			shell_exec(system::getCmdSudo() . 'bash ' . dirname(__FILE__) . '/../../resources/disable_apache_remote_ip.sh');
+		}
 	}
 
 	public function preRemove() {
@@ -138,11 +135,11 @@ class openvpn extends eqLogic {
 			$state->setName(__('Démarré', __FILE__));
 			$state->setOrder(1);
 			$state->setConfiguration('repeatEventManagement', 'never');
+			$state->setType('info');
+			$state->setSubType('binary');
+			$state->setEqLogic_id($this->getId());
+			$state->save();
 		}
-		$state->setType('info');
-		$state->setSubType('binary');
-		$state->setEqLogic_id($this->getId());
-		$state->save();
 
 		$up = $this->getCmd(null, 'up');
 		if (!is_object($up)) {
@@ -150,13 +147,13 @@ class openvpn extends eqLogic {
 			$up->setLogicalId('up');
 			$up->setIsVisible(1);
 			$up->setName(__('Actif', __FILE__));
-			$state->setOrder(2);
+			$up->setOrder(2);
 			$up->setConfiguration('repeatEventManagement', 'never');
+			$up->setType('info');
+			$up->setSubType('binary');
+			$up->setEqLogic_id($this->getId());
+			$up->save();
 		}
-		$up->setType('info');
-		$up->setSubType('binary');
-		$up->setEqLogic_id($this->getId());
-		$up->save();
 
 		$start = $this->getCmd(null, 'start');
 		if (!is_object($start)) {
@@ -165,11 +162,11 @@ class openvpn extends eqLogic {
 			$start->setIsVisible(1);
 			$start->setName(__('Démarrer', __FILE__));
 			$state->setOrder(4);
+			$start->setType('action');
+			$start->setSubType('other');
+			$start->setEqLogic_id($this->getId());
+			$start->save();
 		}
-		$start->setType('action');
-		$start->setSubType('other');
-		$start->setEqLogic_id($this->getId());
-		$start->save();
 
 		$stop = $this->getCmd(null, 'stop');
 		if (!is_object($stop)) {
@@ -177,12 +174,12 @@ class openvpn extends eqLogic {
 			$stop->setLogicalId('stop');
 			$stop->setIsVisible(1);
 			$stop->setName(__('Arrêter', __FILE__));
-			$state->setOrder(5);
+			$stop->setOrder(5);
+			$stop->setType('action');
+			$stop->setSubType('other');
+			$stop->setEqLogic_id($this->getId());
+			$stop->save();
 		}
-		$stop->setType('action');
-		$stop->setSubType('other');
-		$stop->setEqLogic_id($this->getId());
-		$stop->save();
 
 		$ip = $this->getCmd(null, 'ip');
 		if (!is_object($ip)) {
@@ -190,28 +187,27 @@ class openvpn extends eqLogic {
 			$ip->setLogicalId('ip');
 			$ip->setIsVisible(1);
 			$ip->setName(__('IP', __FILE__));
-			$state->setOrder(3);
-		}
-		$ip->setType('info');
-		$ip->setSubType('string');
-		$ip->setEqLogic_id($this->getId());
-		$ip->save();
-
-		if ($this->getIsEnable() == 0) {
-			$this->stop_openvpn();
+			$ip->setOrder(3);
+			$ip->setType('info');
+			$ip->setSubType('string');
+			$ip->setEqLogic_id($this->getId());
+			$ip->save();
 		}
 
 		$refresh = $this->getCmd(null, 'refresh');
 		if (!is_object($refresh)) {
 			$refresh = new openvpnCmd();
 			$refresh->setName(__('Rafraichir', __FILE__));
+			$refresh->setEqLogic_id($this->getId());
+			$refresh->setLogicalId('refresh');
+			$refresh->setType('action');
+			$refresh->setSubType('other');
+			$refresh->save();
 		}
-		$refresh->setEqLogic_id($this->getId());
-		$refresh->setLogicalId('refresh');
-		$refresh->setType('action');
-		$refresh->setSubType('other');
-		$refresh->save();
 
+		if ($this->getIsEnable() == 0) {
+			$this->stop_openvpn();
+		}
 	}
 
 	public function decrypt() {
@@ -237,7 +233,7 @@ class openvpn extends eqLogic {
 		}
 		$replace = array(
 			'#dev#' => $this->getConfiguration('dev'),
-			'#proto#' => $this->getConfiguration('proto','udp'),
+			'#proto#' => $this->getConfiguration('proto', 'udp'),
 			'#remote#' => $remote,
 			'#ca_path#' => trim(dirname(__FILE__) . '/../../data/ca_' . $this->getConfiguration('key') . '.crt'),
 			'#compression#' => $this->getConfiguration('compression'),
@@ -253,11 +249,11 @@ class openvpn extends eqLogic {
 		}
 		$cert_client_file_path = dirname(__FILE__) . '/../../data/cert_' . $this->getConfiguration('key') . '.crt';
 		$key_client_file_path = dirname(__FILE__) . '/../../data/key_' . $this->getConfiguration('key') . '.key';
-		if (file_exists($cert_client_file_path) && file_exists($key_client_file_path)){
+		if (file_exists($cert_client_file_path) && file_exists($key_client_file_path)) {
 			$replace['#authentification#'] .= 'cert ' . $cert_client_file_path . "\n";
 			$replace['#authentification#'] .= 'key ' . $key_client_file_path;
 		}
-		
+
 		$config = str_replace(array_keys($replace), $replace, file_get_contents(dirname(__FILE__) . '/../config/openvpn.client.tmpl.ovpn'));
 		if (trim($this->getConfiguration('additionalVpnParameters')) != '') {
 			$config .= "\n\n" . $this->getConfiguration('additionalVpnParameters');
@@ -287,6 +283,7 @@ class openvpn extends eqLogic {
 		if ($this->getLogicalId() == 'dnsjeedom') {
 			$interface = $this->getInterfaceName();
 			if ($interface !== null && $interface != '' && $interface !== false) {
+				$this->enableApacheRemoteIp();
 				$cmd = system::getCmdSudo() . 'iptables -L INPUT -v --line-numbers | grep ' . $interface;
 				log::add('openvpn', 'debug', $cmd);
 				$rules = shell_exec($cmd);
@@ -330,6 +327,7 @@ class openvpn extends eqLogic {
 
 	public function stop_openvpn() {
 		exec("(ps ax || ps w) | grep -ie '" . $this->getCmdLine() . "' | grep -v grep | awk '{print $1}' | xargs sudo kill -9 > /dev/null 2>&1");
+		$this->disableApacheRemoteIp();
 		$this->updateState();
 	}
 
@@ -352,7 +350,7 @@ class openvpn extends eqLogic {
 			}
 		}
 		$up = $this->isUp();
-		if($up === null){
+		if ($up === null) {
 			return;
 		}
 		if ($up) {
@@ -361,7 +359,7 @@ class openvpn extends eqLogic {
 			$ip = __('Aucune', __FILE__);
 		}
 		$this->checkAndUpdateCmd('up', $up);
-		if($ip !== null){
+		if ($ip !== null) {
 			$this->checkAndUpdateCmd('ip', $ip);
 		}
 	}
@@ -384,6 +382,7 @@ class openvpnCmd extends cmd {
 */
 
 	public function execute($_options = array()) {
+		/** @var openvpn */
 		$eqLogic = $this->getEqLogic();
 		if ($this->getLogicalId() == 'start') {
 			$eqLogic->start_openvpn();
