@@ -102,13 +102,27 @@ class openvpn extends eqLogic {
 
 	private function enableApacheRemoteIp(): void {
 		if ($this->getLogicalId() == 'dnsjeedom') {
-			shell_exec(system::getCmdSudo() . 'bash ' . dirname(__FILE__) . '/../../resources/enable_apache_remote_ip.sh');
+			$cmd = system::getCmdSudo() . 'bash ' . dirname(__FILE__) . '/../../resources/enable_apache_remote_ip.sh';
+			$output = shell_exec($cmd . ' 2>&1');
+			if ($output != false) {
+				$output = preg_replace('/\s+/', ' ', trim($output));
+				log::add(__CLASS__, 'info', "Enabling Apache remote IP module: {$output}");
+			} else {
+				log::add(__CLASS__, 'warning', "Issue enabling Apache remote IP module");
+			}
 		}
 	}
 
 	private function disableApacheRemoteIp(): void {
 		if ($this->getLogicalId() == 'dnsjeedom') {
-			shell_exec(system::getCmdSudo() . 'bash ' . dirname(__FILE__) . '/../../resources/disable_apache_remote_ip.sh');
+			$cmd = system::getCmdSudo() . 'bash ' . dirname(__FILE__) . '/../../resources/disable_apache_remote_ip.sh';
+			$output = shell_exec($cmd . ' 2>&1');
+			if ($output != false) {
+				$output = preg_replace('/\s+/', ' ', trim($output));
+				log::add(__CLASS__, 'info', "Disabling Apache remote IP module: {$output}");
+			} else {
+				log::add(__CLASS__, 'warning', "Issue disabling Apache remote IP module");
+			}
 		}
 	}
 
